@@ -1,0 +1,557 @@
+/* GLOBAL ---------------------------------------------------------------------- */
+html, body{
+	height: 100%;
+	margin: 0px;
+    font-family: 'Open Sans', sans-serif !important;
+    
+}
+
+/* JANELA CENTRAL -------------------------------------------------------------- */
+#janela{
+    display: none;
+    margin: 0px 0px 0px 40px;
+    height: 100%;
+    margin-left: 15%;
+    padding-left: 5%;
+}
+#janela img{
+    width: 90px;
+}
+
+/* MAPA ------------------------------------------------------------------------ */
+#mapa{
+    float:left;
+    width: 85%;
+    min-height: 100%;
+    margin-left: 15%;
+}
+
+/* JANELAS DE INFORMAÇÃO ------------------------------------------------------- */
+#info-moldura{
+    transition: width 2s;
+    transition: opacity 1s ease-out;
+    opacity: 0; 
+    height: 0;
+    overflow: hidden;
+
+	position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: 1;
+}
+#info-fundo{
+    
+    background-color: #101010;
+    border-bottom: 1px solid #101010;
+    height: 129px;
+    width: 398px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: -1;
+}
+#info-conteudo{
+    height: 130px;
+    width: 398px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: 1;
+    color: white;
+}
+#info-centro{
+    margin-top: 20px;
+    margin-left: 95px;
+    font-size: 11px;
+    position:absolute;
+}
+#info-conteudo #titulo{
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none; 
+    text-overflow: ellipsis; 
+    display: block; 
+    overflow: hidden; 
+    white-space: nowrap;
+    width: 180px;
+}
+
+#descricao{
+    text-decoration: none; 
+    text-overflow: ellipsis; 
+    display: block; 
+    overflow: hidden; 
+    white-space: nowrap;
+    width: 220px; 
+    height: 32px;
+}
+#info-centro button{
+    text-transform: uppercase;
+    z-index: 1;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 22px;
+    font-size: 10px;
+    border: 1px Solid white; 
+    border-radius: 0px;
+    background-color: #101010;
+    color: white;
+}
+#info-moldura-imagem{ 
+  width: 527px; 
+  height: 170px; 
+  overflow: hidden;
+}
+#info-triangulo-imagem{
+  position: relative;
+  overflow: hidden;
+  transform: rotate(45deg) skew(10deg,10deg);
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  width: 200px;
+  height: 159px;
+  margin:-100px 0 0 16px;
+}
+#info-fundo-imagem{
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-size: 100%;
+  transform: skew(-10deg,-10deg) rotate(-45deg) ;
+  transition: .3s;
+    background-image:url('https://trampaki-tunnes.c9users.io/view/img/no_image.jpeg');
+}
+
+/* MENU LATERAL ---------------------------------------------------------------- */
+#barraLateral{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    margin: 0px;
+    float:left;
+    background-color: #101010;
+    width: 15%;
+    min-height: 100%;
+}
+#menu-painel{
+   border-bottom: 2px solid white;
+}
+#barraLateral .nav{
+    margin-top: 30px;
+    margin-left: 10px;
+}
+#barraLateral .nav span{
+    color: white;
+    font-weight: 800;
+    font-size: 12px;
+    padding-top: 10px;
+    padding-bottom: 1px;
+    margin-left: 10px;
+    
+}
+#chat{
+    margin-top: 5px;
+    font-size: 17px;
+    font-weight: 100;
+    display: block;
+    color: white;
+}
+#barraLateral span{
+    cursor: pointer;
+}
+
+/* CORPO ----------------------------------------------------------------------- */
+#barraLateral .main{
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+/* CHAT ------------------------------------------------------------------------ */
+#barraLateral .main input{
+    margin-top:10px;
+    width: 90%;
+    height: 25px;
+    border-radius: 2px;
+    background-color: #101010;
+    border: 1px solid white;
+    font-size: 20px;
+    color:white;
+}
+::-webkit-input-placeholder {
+    font-size: 15px;
+    font-weight: 800;
+}
+#chat{
+    display: none;
+}
+#painel span{
+    margin-top: 5px;
+    font-size: 17px;
+    font-weight: 100;
+    display: block;
+    color: white;
+}
+
+
+/* JANELA-ANUNCIO -------------------------------------------------------------- */
+#buttons{
+    margin-top: 30px;
+    /*margin-right:40px;*/
+}
+
+#wrapper-anuncio button{
+    float: right;
+    border-color: #101010;
+    font-size: 12px;
+    border-radius: 0px;
+    margin-left: 8px;
+    background-color: white;
+    border-width: 1px;
+    padding: 8px 15px 8px 15px;
+}
+#wrapper-anuncio p{
+    font-size: 11px;
+}
+#imagem{
+    border-style: solid;
+    border-width: 1px 8px 1px 1px;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-image:url('https://trampaki-tunnes.c9users.io/view/img/anunc.jpg');
+    background-repeat:no-repeat;
+    background-size: cover;
+    /*border-radius: 50%;*/
+    float: left;
+}
+#informacoes{
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 7px;
+}
+#informacoes strong, p{
+    margin: 0px;
+}
+.categoria{
+    font-size: 11px;
+    display: inline-block;
+    border: 1px solid #101010;
+    padding: 1px 15px 1px 15px;
+    background-color: #F4511E;
+    margin-left: 5px;
+    color: white;
+    text-transform: uppercase;
+}
+
+#wrapper-imagens-anuncio{
+    width: 100%;
+    height: 180px;
+}
+#wrapper-imagens-anuncio div{
+    width: 31%;
+    border-style: solid;
+    border-width: 1px 14px 1px 1px;
+    height: 180px;
+    display: inline-block;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-left: 2px;
+}
+#imagem01{
+    background-image:url('https://trampaki-tunnes.c9users.io/view/img/no_image.jpeg');
+}
+#imagem02{
+    background-image:url('https://trampaki-tunnes.c9users.io/view/img/no_image.jpeg');
+}
+#imagem03{
+    background-image:url('https://trampaki-tunnes.c9users.io/view/img/no_image.jpeg');
+}
+
+
+/* JANELA-PEFIL ---------------------------------------------------------------- */
+
+#wrapper-perfil-prestador{
+    margin-top: 30px;
+}
+
+#wrapper-perfil-prestador p{
+    font-size: 11px;
+}
+
+#wrapper-perfil-prestador #header{
+    width: 100%;
+    height: 150px;
+    display: block;
+    margin-bottom: 20px;
+}
+#wrapper-perfil-prestador #titulo_header{
+    margin-left: 20px;
+    display: inline-block;
+    height: 140px;
+    float:left;
+}
+#titulo_header p{
+    font-size: 18px;
+}
+#wrapper-perfil-prestador h1{
+    font-weight: 800;
+    margin-top: 10px;
+    font-size: 44px;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+}
+
+#wrapper-perfil-prestador #imagem_header{
+    border-style: solid;
+    border-width: 1px 15px 1px 1px;
+    display: inline-block;
+    width: 140px;
+    height: 140px;
+    background-image:url('https://trampaki-tunnes.c9users.io/view/img/anunc.jpg');
+    background-repeat:no-repeat;
+    background-size: cover;
+    float:left;
+    
+}
+#titulo_header .categoria{
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 5px;
+}
+#dados_pessoais span{
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 800;
+    border-right: 1px solid #101010;
+    padding-right: 5px;
+    margin-right: 10px;
+    text-transform: uppercase;
+}
+#dados_pessoais p {
+    margin-right: 10px;
+    width: 20%;
+    display: inline-block;
+}
+
+#dados_endereco span{
+    display: inline-block;
+    font-size: 10px;
+        text-align: right;
+    font-weight: 800;
+    border-right: 1px solid #101010;
+    padding-right: 5px;
+    margin-right: 10px;
+    width: 50px;
+    text-transform: uppercase;
+}
+#dados_endereco p {
+    margin-right: 10px;
+    width: 30%;
+    display: inline-block;
+}
+
+
+#dados_acesso span{
+    display: inline-block;
+    font-size: 10px;
+        text-align: right;
+    font-weight: 800;
+    border-right: 1px solid #101010;
+    padding-right: 5px;
+    margin-right: 10px;
+    width: 50px;
+    text-transform: uppercase;
+}
+#dados_acesso p {
+    margin-right: 10px;
+    width: 20%;
+    display: inline-block;
+}
+#wrapper-perfil-prestador button{
+    margin-top: 35px;
+    float: right;
+    border-color: #101010;
+    font-size: 12px;
+    border-radius: 0px;
+    margin-left: 8px;
+    background-color: white;
+    border-width: 1px;
+    padding: 8px 15px 8px 15px;
+}
+
+#wrapper-perfil-prestador h2{
+    width: 100%;
+    margin-top: 25px;
+    font-size: 15px;
+    font-weight: 800;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #b0b0b0;
+}
+
+/* MEUS SERVICOS --------------------------------------------------------------------------------------- */
+.servicos{
+    display: inline-block;
+}
+
+.item_servico{
+    float: left;
+    margin-top: 10px;
+    margin-right: 6px;
+    width: 31%;
+    height: 90px;
+    border: 1px Solid #101010;
+    border-right-width: 8px;
+}
+.imagem_servico{
+    border-right: 1px Solid #101010;
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    background-image:url('https://trampaki-tunnes.c9users.io/view/img/anunc.jpg');
+    background-repeat:no-repeat;
+    background-size: cover;
+    float: left;
+}
+
+.info_servico{
+    
+    margin-top: 11px;
+    margin-left: 15px;
+    float: left;
+}
+.info_servico strong{
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.info_servico p{
+    font-size: 10px;
+}
+
+/* SOLICITACOES ---------------------------------------------------------------------------------------- */
+.item_solicitacao {
+    float:left;
+    
+    height: 100px;
+    margin-right: 6px;
+    margin-top: 10px;
+    border: 1px Solid #101010;
+    border-right-width: 8px;
+    padding: 0px !important;
+    
+}
+
+.item_solicitacao button{
+    margin-right: 2px;
+    font-size: 10px;
+    background-color: white;
+    border: 1px solid #101010;
+    padding: 3px 9px 3px 9px;
+}
+.item_cancelar{
+    color: white;
+    background-color: #ff2f2f !important;
+}
+.buttons_solicitacao{
+    margin-top: 15px;
+    float: right;
+    margin-right: 10px;
+    width: 20%;
+}
+.imagem_solicitacao{
+    border-right: 1px Solid #101010;
+    display: inline-block;
+    /*width: 90px;*/
+    height: 98px;
+    background-image:url('https://trampaki-tunnes.c9users.io/view/img/anunc.jpg');
+    background-repeat:no-repeat;
+    background-size: cover;
+    float: left;
+}
+
+.info_solicitacao{
+    margin-top: 15px;
+}
+.info_solicitacao strong{
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.info_solicitacao p{
+    font-size: 12px;
+}
+
+/* GENERICO */
+/*#wrapper-anuncio h1{*/
+/*    font-size: 35px;*/
+/*    font-weight: 800;*/
+/*    text-transform: uppercase;*/
+/*}*/
+.wrapper_janela h1{
+    font-size: 42px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.wrapper_janela hr{
+    border-width: 0px 0px 1px 0px; 
+    border-bottom-color: #a09f9f;
+    border-style: solid;
+}
+.fiter_tags button{
+    background-color: white;
+    border: 1px solid #101010;
+}
+.fiter_tags span{
+    margin-right: 4px;
+    font-weight: 800;
+    cursor: pointer;
+    color: gray;
+}
+.fiter_tags .ativada{
+    color: black;
+    border-bottom: 3px solid black;
+}
+
+.buttons_bugados{
+    position: absolute;
+    right: 0px;
+    bottom: 24px;
+    
+    
+}
+.buttons_bugados button{
+     margin-top: 35px;
+    float: right;
+    border-color: #101010;
+    font-size: 12px;
+    border-radius: 0px;
+    margin-left: 8px;
+    background-color: white;
+    border-width: 1px;
+    padding: 8px 15px 8px 15px;
+
+}
+
+.wrapper_janela h2{
+    width: 100%;
+    margin-top: 25px;
+    font-size: 15px;
+    font-weight: 800;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #b0b0b0;
+}
+
+
+/* teste remove */
+.gmnoprint:not(.gm-bundled-control) {
+    display: none;
+}
+
+.gm-bundled-control .gmnoprint {
+    display: block;
+}
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+a[href^="https://www.google.com/maps"]{display:none !important}

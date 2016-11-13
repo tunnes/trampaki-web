@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Trampaki</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,800" rel="stylesheet">
+        
+        <link rel="stylesheet" href="view/css/mapEngine.css" type="text/css"/>
+        <link rel="stylesheet" href="view/css/modal.css" type="text/css"/>
+        <script src="view/js/modal.js"></script>
+        <script src="view/js/barraLateral.js"></script>
+        <script src="view/js/main.js"></script>
+        
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    </head>
+    <body>
+        <!-- Marcador Expandido =========================================================================== -->
+        <div id="info-moldura">
+            <div id="info-moldura-imagem">
+                <div id="info-triangulo-imagem">
+                    <div id="info-fundo-imagem"></div>
+                </div>
+            </div>
+            <div id="info-fundo"></div>
+            <div id="info-conteudo">
+                <div id="info-centro">
+                    <span id="titulo">Ayrton Felipe</span>
+                    <div id="descricao">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                        magna aliquam erat volutpat.
+                    </div>
+                    <button id="pain" type="button" >Mais Detalhes</button>
+                    <button id="momo" type="button">Me conectar!</button>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================================================== -->
+        
+        <!-- Modal ======================================================================================== -->
+        <div id="modal_principal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id='modal_titulo'>Solicitacao Efetuada</h2>
+                </div>
+                <div class="modal-body">
+                    <p id='modal_descricao'></p>
+                </div>
+                <div class="modal-footer">
+                    <button id='modal_retornar'>RETORNAR</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Barra latereal para chat e configurações do sistema ========================================== -->
+        <div id="barraLateral">
+            <div class="nav">
+                <span id="configuracaoAjax" href="#" onclick="barraLateralMensagens()" >MENSAGENS</span>
+                <span id="menu-painel" href="#" onclick="barraLateralPainel()">PAINEL</span>
+            </div>
+            <div class="main">
+                <div id="painel">
+                    <span id="meu_perfil" onclick='meuPerfil()'>MEU PERFIL</span>
+                    <span onclick='solicitacoes()'>SOLICITAÇÕES</span>
+                    <span id='meus_servicos' onclick='meusServicos()'>MEUS SERVIÇOS</span>
+                    <span id='sair'>SAIR</span>
+                     
+                </div>
+                <div id="chat">
+                    <span>INCOMPLETO...</span>   
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================================================== -->
+        <div id="janela"></div>
+        <!-- Elemento que recebe o mapa e as informações ================================================== -->
+        <div id="mapa"></div>
+        <!-- ============================================================================================== -->
+        
+        <!-- Chamada da MapEngine Trampaki ================================================================ -->
+        <script src="view/js/mapEngine.js"></script>
+        <!-- ============================================================================================== -->
+        
+        <!-- Chamada da API JavaScript do Google Maps com minha chave -->
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOgRKKdJv0sJSZYLFQQUUjII20mGsbLj4&callback=mapEngine"></script>
+        
+    </body>
+</html>

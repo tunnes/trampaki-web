@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1>Página de autenticacão..</h1>
+        <div>
+            login-<input type="text" id="login"/>
+            senha-<input type="text" id="senha"/>
+            <button id='1'>Enviar</button>
+        </div>
+        <hr>
+        <script type="text/javascript">
+            function painelPrestador(){
+                $.ajax({
+                    async: false,
+                    method: 'GET',
+                    url:  "https://trampaki-tunnes.c9users.io/painel-de-operacoes",
+                    headers:{
+                        "Authorization": sessionStorage.getItem("authorization")
+                    },
+                    statusCode:{
+                    200:function(data, textStatus, request){
+                            //  alert('Que cioisa não.')
+                            window.location.assign("https://trampaki-tunnes.c9users.io/painel-de-operacoes");
+                        }    
+                    }
+
+                });
+            }
+        
+            $("#1").click(function(){
+                console.log(document.getElementById('senha').value);
+                $.ajax({
+                    type: 'POST',
+                    url:'https://trampaki-tunnes.c9users.io/login',
+                    data: { 
+                        login: document.getElementById('login').value, 
+                        senha: document.getElementById('senha').value
+                    },
+                    statusCode: {
+                    401:function(xhr) {
+                            console.log('INVALIDO');
+                        },
+                    200:function(data, textStatus, request){
+                            sessionStorage.setItem('authorization', request.getResponseHeader('authorization'));
+                            sessionStorage.setItem('trampaki-user', request.getResponseHeader('trampaki-user'));                            
+                            request.getResponseHeader('trampaki-user') == '0' ? window.location.assign("https://trampaki-tunnes.c9users.io/painel-de-operacoes") : painelPrestador();  
+                        }
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
