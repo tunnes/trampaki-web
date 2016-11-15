@@ -12,7 +12,9 @@
         public function rotear(){
             $url = $_GET['url'];
             $chave = array_search($url, $this->arrayRotas);
-            $chave === false ? include('view/pagina-404.html') : new  $this->arrayAcoes[$chave]();
+            // $chave === false ? include('view/pagina-404.html') : new  $this->arrayAcoes[$chave]();
+            $chave === false ? include('view/pagina-404.html') : include('view/'.$this->arrayAcoes[$chave].'.html');
+            
         }
     }
 ?>

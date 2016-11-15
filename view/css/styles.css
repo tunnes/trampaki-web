@@ -439,6 +439,7 @@ footer .nav>li>a:hover {
     background-image: url("https://d262ilb51hltx0.cloudfront.net/max/2000/1*vXjx4Y7EgQBwALkaeZJ0Cg.jpeg");
     min-height: 200px;
     border: 1px solid black;
+    border-right: none;
 }
 .sobre_dados{
     padding-left: 0px !important;
@@ -517,7 +518,7 @@ footer .nav>li>a:hover {
 }
 .contato_section label{
     font-size: 12px;
-    font-weight: 200;
+    font-weight: 400;
     text-align: right;
     padding-right: 0px;
     text-transform: uppercase;
@@ -547,6 +548,14 @@ footer .nav>li>a:hover {
     color: white;
     background-color: #ef914c;
 }
+.contato_section input:focus{
+    border-color: rgba(239, 145, 76, 0.68);
+    border-width: 1px;
+}
+.contato_section textarea:focus{
+    border-color: rgba(239, 145, 76, 0.68);
+    border-width: 1px;
+}
 .contato_section img{
     width: 40%;
     margin: 0 auto;
@@ -560,4 +569,16 @@ footer .nav>li>a:hover {
 }
 .contato_links{
     margin-top: 5%;
+}
+
+
+body::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+body::-webkit-scrollbar {
+    width: 5px;
+    background: #F4F4F4;
+}
+body::-webkit-scrollbar-thumb {
+    background: #ef914c;
 }

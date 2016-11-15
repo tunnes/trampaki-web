@@ -1,0 +1,26 @@
+#   O .htaccess é um recurso do apache, que tem prioridade de leitura, 
+#   logo com ele podemos controlar e criar acessos restritos, paginas 
+#   de erro, pagina principal, redirecionamentos, URL bonitinhas e um
+#   SEO mais consistente. 
+
+#   Habilita(on) ou desabilita(off) o módulo mod_rewrite o modo de reescrita.
+    RewriteEngine On
+
+#   Identifica qual o diretorio base do projeto no caso a 'raiz'.  
+    RewriteBase /
+
+#   Em português ficaria reescreva se a condição:     
+#   Se não foi requerido um diretorio (-d)
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+#   Se não foi requerido um arquivo (-f)
+    RewriteCond %{REQUEST_FILENAME} !-f
+
+#   Se não foi requerido um link simbólico (-l)
+    RewriteCond %{REQUEST_FILENAME} !-l
+
+#   No fim definimos a regra que queremos exibir como URL:
+#   Não to entendo que caralhos esta acontecendo aqui..
+    # RewriteRule ^(.+)/?([0-9]+)/?$ index.php?url=$1&param=$2 [QSA]
+    
+    RewriteRule ^([^/]*)/?(.*)$ index.php?url=$1&param=$2 
