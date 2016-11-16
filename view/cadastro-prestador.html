@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+    <head>
+        <!-- Configurações -->
+        <meta charset="UTF-8">
+        <title>Trampaki</title>
+        <meta name="description" content="Cliente web Trampaki">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/png" href="view/img/fav_logo.png"/>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+    
+        <!-- Estilos -->
+        <link rel="stylesheet" href="view/css/styles.css">
+        <script type="text/javascript" src="view/js/cadastro-prestador.js"></script>
+        
+        <!-- Font -->
+        <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,800" rel="stylesheet">
+            
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+        <!-- Scripts -->
+        <script src="js/scripts.js"></script>
+    
+    </head>
+
+    <body>
+        <!-- MENU ------------------------------------------------------------------------------------------------------------------------------------------- -->
+        <nav class="navbar navbar-trans navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                </div>
+                <div class="navbar-collapse collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/">PÁGINA PRINCIPAL</a></li>
+                        <li><a href="/login">LOGIN</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    
+        <!-- FORMULARIO DE CADASTRO ------------------------------------------------------------------------------------------------------------------------- -->
+        <div class="novo_prestador container">
+            <div class="row">
+                <div class="col-md-12">   
+                    <h1>Novo<br><span class='seilaMano'>Prestador</span></h1>
+                </div>
+            </div>
+            <div class="row">
+	            <div class="col-lg-12">
+				    <form id="form" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+				        <!-- DADOS PESSOAIS -------------------------------------------------------------------------- -->
+				        <h2>Dados Pessoais</h2>
+				        <hr>
+						<div class="row">
+							<div class="col-sm-6 form-group">
+								<label>Nome</label>
+								<input name="usuario_nome" type="text" placeholder="Digite seu nome.." class="form-control">
+							</div>
+    					    <div class="col-sm-3 form-group">
+    							<label>Login</label>
+    							<input name="usuario_login" type="text" placeholder="Digite seu login.." class="form-control">
+    						</div>
+    					    <div class="col-sm-3 form-group">
+    							<label>Senha</label>
+    							<input name="usuario_senha" type="password" placeholder="Digite uma senha.." class="form-control">
+    						</div>    						
+						</div>
+						<div class='row'>
+    						<div class="col-sm-4 form-group">
+        						<label>Email</label>
+        						<input name="usuario_email" type="text" placeholder="Endereço de Email.." class="form-control">
+    					    </div>
+    					    <div class="col-sm-4 form-group">
+						        <label>telefone</label>
+						        <input name="usuario_telefone" type="text" placeholder="Numero de telefone.." class="form-control">
+					        </div>	
+    					    <div class="col-sm-4 form-group">
+						        <label>Imagem</label>
+                                <!--<input name="imagem_perfil" type="file" name="pic" accept="image/*">-->
+                                <label class="myLabel">
+                                    <input name="imagem_perfil" type="file" name="pic" accept="image/*">
+                                    <span>Selecionar Imagem...</span>
+                                </label>
+					        </div>						        
+    					</div>
+    					
+    					<!-- DADOS DE LOCALIZAÇÃO -------------------------------------------------------------------- -->
+				        <h2>Localização</h2>
+				        <hr>
+				        <div class="row">
+				            <div class="col-sm-4 form-group">
+								<label>CIDADE</label>
+								<input name="nome_cidade" type="text" placeholder="Digite sua Cidade.." class="form-control">
+							</div>
+							<div class="col-sm-2 form-group">
+								<label>ESTADO</label>
+                                <select name="sigla_estado">
+                                	<option value="">Selecione</option>
+                                	<option value="AC">Acre</option>
+                                	<option value="AL">Alagoas</option>
+                                	<option value="AP">Amapá</option>
+                                	<option value="AM">Amazonas</option>
+                                	<option value="BA">Bahia</option>
+                                	<option value="CE">Ceará</option>
+                                	<option value="DF">Distrito Federal</option>
+                                	<option value="ES">Espirito Santo</option>
+                                	<option value="GO">Goiás</option>
+                                	<option value="MA">Maranhão</option>
+                                	<option value="MS">Mato Grosso do Sul</option>
+                                	<option value="MT">Mato Grosso</option>
+                                	<option value="MG">Minas Gerais</option>
+                                	<option value="PA">Pará</option>
+                                	<option value="PB">Paraíba</option>
+                                	<option value="PR">Paraná</option>
+                                	<option value="PE">Pernambuco</option>
+                                	<option value="PI">Piauí</option>
+                                	<option value="RJ">Rio de Janeiro</option>
+                                	<option value="RN">Rio Grande do Norte</option>
+                                	<option value="RS">Rio Grande do Sul</option>
+                                	<option value="RO">Rondônia</option>
+                                	<option value="RR">Roraima</option>
+                                	<option value="SC">Santa Catarina</option>
+                                	<option value="SP">São Paulo</option>
+                                	<option value="SE">Sergipe</option>
+                                	<option value="TO">Tocantins</option>
+                                </select>
+							</div>
+							<div class="col-sm-3 form-group">
+								<label>Nº RESIDENCIAL</label>
+								<input name="numero_residencial" type="text" placeholder="Digite seu numero residencial.." class="form-control">
+							</div>
+                            <div class="col-sm-3 form-group">
+								<label>CEP</label>
+								<input name="codigo_postal" type="text" placeholder="Entre com seu CEP.." class="form-control">
+							</div>							
+				        </div>
+				        
+    					<!-- DADOS PROFISSIONAIS --------------------------------------------------------------------- -->
+				        <h2>Dados Profissionais</h2>
+				        <hr>
+						<div class="row">
+							<div class="col-sm-3 form-group">
+							    <label>Categoria 01</label>
+                                <select id='codigo_categoria_01' name='codigo_categoria_01'>
+                                    <option selected="selected">Nenhuma Categoria</option>
+                                </select>
+							</div>	
+							<div class="col-sm-3 form-group">
+							    <label>Categoria 02</label>
+                                <select id='codigo_categoria_02' name='codigo_categoria_02'>
+                                    <option selected="selected">Nenhuma Categoria</option>
+                                </select>							
+                            </div>							
+							<div class="col-sm-3 form-group">
+							    <label>Categoria 03</label>
+                                <select id='codigo_categoria_03' name='codigo_categoria_03'>
+                                    <option selected="selected">Nenhuma Categoria</option>
+                                </select>							
+                            </div>
+							<div class="col-sm-3 form-group">
+								<label>Distancia de Atendimento</label>
+								<input name="distancia_alcance" type="text" placeholder="Em kilometros por favor.." class="form-control">
+							</div>
+						</div>
+						<div class="row">
+						    <div class="col-sm-12 form-group">
+							    <label>DESCRIÇÃO PROFISSIONAL</label>
+							    <textarea name="descricao_profissional" placeholder="Nos conte um pouco sobre seu perfil profissional.." rows="4" class="form-control"></textarea>
+						    </div>
+						</div>
+						<button type="button" class="pull-right">Limpar</button>
+						<button type="submit" class="pull-right">Cadastrar</button>
+				    </form>
+                    <script type="text/javascript">
+                    		caralhuda();
+                    		carregarCategorias();
+                    </script>
+				</div>
+	        </div>
+	    </div>
+        
+        <!-- FOOTER ----------------------------------------------------------------------------------------------------------------------------------------- -->    
+        <footer id="footer">
+            <div class="container">
+                <h4>Mapa do site</h4>
+                <ul class="nav">
+                    <li><a href="#home">COMO FUNCIONA?</a></li>
+                    <li><a href="#work">REGISTRAR-SE</a></li>
+                    <li><a href="#freelance">SOBRE</a></li>
+                    <li><a href="#contato">CONTATO</a></li>
+                    <li><a href="#contato">LOGIN</a></li>
+                </ul>
+                <p class="text-right">© 2016</p>
+            </div>
+        </footer>
+        <div class="scroll-up">
+            <a href="#home"><i class="fa fa-angle-up"></i></a>
+        </div>
+    </body>
+
+</html

@@ -48,6 +48,7 @@ function mapEngine(){
                 {featureType: "poi", stylers: [ { visibility: "off" }]},
                 {featureType: "transit.station.bus", stylers: [{ visibility: "off" }]}
             ];
+            
             var styledMap = new google.maps.StyledMapType(styles, {name: "Mapa Style"});
             
             mapa.mapTypes.set('map_style', styledMap);

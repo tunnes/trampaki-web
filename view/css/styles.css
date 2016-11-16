@@ -576,9 +576,173 @@ body::-webkit-scrollbar-track {
     background-color: #F4F4F4;
 }
 body::-webkit-scrollbar {
-    width: 5px;
+    width: 6px;
     background: #F4F4F4;
 }
 body::-webkit-scrollbar-thumb {
     background: #ef914c;
+}
+
+/* NOVO PRESTADOR PAGINA DO CARALHO */
+.novo_prestador{
+    margin-top: 8%;
+    margin-bottom: 120px;
+}
+.novo_prestador h1{
+    font-size: 90px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: black;
+    margin-bottom: 50px;
+}
+.novo_prestador h2{
+    text-transform: uppercase;
+    font-weight: 800;
+    color: black;
+    font-size: 12px;
+    margin-bottom: 0px;
+    margin-top: 30px;
+}
+.novo_prestador hr{
+    margin-top: 2px;
+}
+.novo_prestador form{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.novo_prestador label{
+    font-size: 12px;
+    font-weight: 400;
+    text-align: right;
+    padding-right: 0px;
+    text-transform: uppercase;
+}
+.novo_prestador input{
+    border: 1px solid #444;
+    border-radius: 0px;
+}
+.novo_prestador textarea{
+    resize: none;
+    border: 1px solid #444;
+    border-radius: 0px;
+}
+
+.novo_prestador button{
+    border: 1px solid black;
+    border-right-width: 5px;
+    border-radius: 0px;
+    color: black;
+    background-color: white;
+    margin-left: 10px;
+    margin-top: 20px;
+    font-size: 15px;
+    text-align: left;
+    padding: 6px 40px 6px 15px;
+    
+}
+.novo_prestador button:hover{
+    color: white;
+    background-color: #ef914c;
+    border-color: black;
+}
+.novo_prestador input:focus{
+    border-color: rgba(239, 145, 76, 0.68);
+    border-width: 1px;
+}
+.novo_prestador textarea:focus{
+    border-color: rgba(239, 145, 76, 0.68);
+    border-width: 1px;
+}
+.seilaMano{
+    display: inline-block;
+    background-color: #ef914c;
+    color: white;
+    padding-right: 20px;
+    
+}
+
+.novo_prestador select{
+    border: 1px solid black;
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+}
+/*.novo_prestador ::-webkit-file-upload-button {*/
+/*    margin: 0px !important;*/
+/*    border: 0.5px solid black;*/
+/*    box-shadow: none;*/
+/*    padding: 0px  !important;*/
+/*    background: white;*/
+/*    color: black;*/
+    /*width: 100%;*/
+/*    height: 34px*/
+/*}*/
+/*input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {*/
+/*    width: 100%;*/
+/*    padding: 6px 12px;*/
+/*    margin-bottom: 0;*/
+/*    font-size: 14px;*/
+/*    font-weight: 400;*/
+/*    line-height: 1.42857143;*/
+/*    text-align: center;*/
+/*    white-space: nowrap;*/
+/*    vertical-align: middle;*/
+/*    -ms-touch-action: manipulation;*/
+/*    touch-action: manipulation;*/
+/*    cursor: pointer;*/
+/*    -webkit-user-select: none;*/
+/*    -moz-user-select: none;*/
+/*    -ms-user-select: none;*/
+/*    user-select: none;*/
+/*    background-color: white;*/
+/*    background-image: none;*/
+/*    border: 1px solid black;*/
+/*    border-radius: 0px;*/
+/*    color: #333;*/
+/*    background-color: #fff;*/
+/*    border-color: #ccc;*/
+/*}*/
+label.myLabel input[type="file"] {
+    position: fixed;
+    top: -1000px;
+}
+
+/***** Example custom styling *****/
+.myLabel {
+    border: 1px solid black;
+    border-radius: 0px;
+    padding: 0px;
+    text-align: left;
+    margin: 0px;
+    height: 34px;
+    background: white;
+    display: block;
+}
+.myLabel:hover {
+    /*background: #ef914c;*/
+    /*color: white;*/
+    cursor: pointer;
+}
+.myLabel:active {
+    background: #CCF;
+}
+.myLabel :invalid + span {
+    color: #A44;
+}
+.myLabel :valid + span {
+    color: #4A4;
+}
+.myLabel span{
+    color: #928b8b !important;
+    text-transform: none;
+    font-size: 14px;
+    float: left;
+    margin-left: 15px;
+    margin-top: 5px;
 }
