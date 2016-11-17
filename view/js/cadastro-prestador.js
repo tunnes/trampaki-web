@@ -10,8 +10,8 @@ function caralhuda(){
                 contentType: false,
                 processData: false,
                 statusCode: {
-                    400:function(data, textStatus, data) {
-                        console.log(data);
+                    400:function(data) {
+                        modalConectar1(data);
                     },
                     201:function(data, textStatus, request){
                             sessionStorage.setItem('authorization', request.getResponseHeader('authorization'));
@@ -32,11 +32,11 @@ function carregarCategorias(){
         complete: function(data){   
             data = data.responseText;
             data = JSON.parse(data);
+            
             var categoriasDOM;
             var arrayResponse = [].slice.call(data);
             var arrayMarcadores = [];
                 arrayResponse.forEach(function(categoria){
-                    console.log(categoria.cd_categoria);
                     categoriasDOM = categoriasDOM + "<option value='" + categoria.cd_categoria + "'>" + categoria.nm_categoria + "</option>";
                 });
             $('#codigo_categoria_01').append(categoriasDOM);
@@ -48,14 +48,16 @@ function carregarCategorias(){
 }
 
 function mascaraTelefone(){
-
-  function mascara(o,f){
-    v_obj=o
-    v_fun=f
-    setTimeout(function (){
-        v_obj.value=v_fun(v_obj.value);},
-        1
-    )};
+    
+    /* M�scaras ER */
+    function mascara(o,f){
+        v_obj=o
+        v_fun=f
+        setTimeout(
+            function (){
+                v_obj.value=v_fun(v_obj.value)
+            },1)
+    }
     
     function mtel(v){
         v=v.replace(/\D/g,"");             //Remove tudo o que n�o � d�gito
@@ -92,9 +94,34 @@ function mascaraCep(){
     function id( el ){
       return document.getElementById( el );
     }
-    window.onload = function(){
-      id('codigo_postal').onkeypress = function(){
+    id('codigo_postal').onkeypress = function(){
         mascara( this, mtel );
-      }
+      
     }
 }
+
+function modalConectar1(data){
+            console.log(data.responseText);
+            data = JSON.parse(data.responseText);
+            console.log(data);
+            var erroINFO = '';
+            var arrayResponse = [].slice.call(data);
+                arrayResponse.forEach(function(erro){
+                    erroINFO+= "<strong>" + erro.codigo + "</strong> : <span>" + erro.descricao + "</span><br>";
+                });
+        document.getElementById('modal_titulo').innerHTML = 'Ops parace um erro bino!';
+    document.getElementById('modal_descricao').innerHTML = erroINFO;                                
+    var modal = document.getElementById('modal_principal');
+        modal.style.display = "block";
+    document.getElementById('modal_retornar').onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    
+    
+}
+

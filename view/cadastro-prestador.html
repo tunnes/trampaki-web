@@ -16,7 +16,8 @@
         <!-- Estilos -->
         <link rel="stylesheet" href="view/css/styles.css">
         <script type="text/javascript" src="view/js/cadastro-prestador.js"></script>
-        
+        <link rel="stylesheet" href="view/css/modal.css" type="text/css"/>
+                
         <!-- Font -->
         <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,800" rel="stylesheet">
@@ -30,6 +31,23 @@
     </head>
 
     <body>
+        <!-- MAYBE MODAL ------------------------------------------------------------------------------------------------------------------------------------ -->
+              <!-- Modal ======================================================================================== -->
+<div id="modal_principal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id='modal_titulo'>Solicitacao Efetuada</h2>
+        </div>
+        <div class="modal-body">
+            <p id='modal_descricao'></p>
+        </div>
+        <div class="modal-footer">
+            <button id='modal_retornar'>RETORNAR</button>
+        </div>
+    </div>
+</div>
+        
         <!-- MENU ------------------------------------------------------------------------------------------------------------------------------------------- -->
         <nav class="navbar navbar-trans navbar-fixed-top">
             <div class="container">
@@ -90,11 +108,11 @@
 					        </div>	
     					    <div class="col-sm-4 form-group">
 						        <label>Imagem</label>
-                                <!--<input name="imagem_perfil" type="file" name="pic" accept="image/*">-->
-                                <label class="myLabel">
-                                    <input name="imagem_perfil" type="file" name="pic" accept="image/*">
-                                    <span>Selecionar Imagem...</span>
-                                </label>
+                                <input name="imagem_perfil" type="file" name="pic" accept="image/*">
+                                <!--<label class="myLabel">-->
+                                <!--    <input name="imagem_perfil" type="file" name="pic" accept="image/*">-->
+                                <!--    <span>Selecionar Imagem...</span>-->
+                                <!--</label>-->
 					        </div>						        
     					</div>
     					
@@ -145,7 +163,7 @@
 							</div>
                             <div class="col-sm-3 form-group">
 								<label>CEP</label>
-								<input maxlength="8" name="codigo_postal" id="codigo_postal" type="text" placeholder="Entre com seu CEP.." class="form-control">
+								<input maxlength="11" name="codigo_postal" id="codigo_postal" type="text" placeholder="Entre com seu CEP.." class="form-control">
 							</div>							
 				        </div>
 				        
