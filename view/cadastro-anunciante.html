@@ -15,7 +15,7 @@
     
         <!-- Estilos -->
         <link rel="stylesheet" href="view/css/styles.css">
-        <script type="text/javascript" src="view/js/cadastro-prestador.js"></script>
+        <script type="text/javascript" src="view/js/cadastro-anunciante.js"></script>
         
         <!-- Font -->
         <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
@@ -25,7 +25,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
         <!-- Scripts -->
-        <!--<script src="view/js/scripts.js"></script>-->
+        <script src="view/js/scripts.js"></script>
     
     </head>
 
@@ -56,7 +56,7 @@
         <div class="novo_prestador container">
             <div class="row">
                 <div class="col-md-12">   
-                    <h1>Novo<br><span class='seilaMano'>Prestador</span></h1>
+                    <h1>Novo<br><span class='seilaMano'>Anunciante</span></h1>
                 </div>
             </div>
             <div class="row">
@@ -82,11 +82,11 @@
 						<div class='row'>
     						<div class="col-sm-4 form-group">
         						<label>Email</label>
-        						<input name="usuario_email" type="email" placeholder="Endereço de Email.." class="form-control">
+        						<input name="usuario_email" type="text" placeholder="Endereço de Email.." class="form-control">
     					    </div>
     					    <div class="col-sm-4 form-group">
 						        <label>telefone</label>
-						        <input maxlength="15" onfocus="mascaraTelefone()" id="usuario_telefone" name="usuario_telefone" type="text" placeholder="Numero de telefone.." class="form-control">
+						        <input name="usuario_telefone" type="text" placeholder="Numero de telefone.." class="form-control">
 					        </div>	
     					    <div class="col-sm-4 form-group">
 						        <label>Imagem</label>
@@ -141,58 +141,20 @@
 							</div>
 							<div class="col-sm-3 form-group">
 								<label>Nº RESIDENCIAL</label>
-								<input name="numero_residencial" type="number" placeholder="Digite seu numero residencial.." class="form-control">
+								<input name="numero_residencial" type="text" placeholder="Digite seu numero residencial.." class="form-control">
 							</div>
                             <div class="col-sm-3 form-group">
 								<label>CEP</label>
-								<input maxlength="8" name="codigo_postal" id="codigo_postal" type="text" placeholder="Entre com seu CEP.." class="form-control">
+								<input name="codigo_postal" type="text" placeholder="Entre com seu CEP.." class="form-control">
 							</div>							
 				        </div>
 				        
-    					<!-- DADOS PROFISSIONAIS --------------------------------------------------------------------- -->
-				        <h2>Dados Profissionais</h2>
-				        <hr>
-						<div class="row">
-							<div class="col-sm-3 form-group">
-							    <label>Categoria 01</label>
-                                <select id='codigo_categoria_01' name='codigo_categoria_01'>
-                                    <option selected="selected">Nenhuma Categoria</option>
-                                </select>
-							</div>	
-							<div class="col-sm-3 form-group">
-							    <label>Categoria 02</label>
-                                <select id='codigo_categoria_02' name='codigo_categoria_02'>
-                                    <option selected="selected">Nenhuma Categoria</option>
-                                </select>							
-                            </div>							
-							<div class="col-sm-3 form-group">
-							    <label>Categoria 03</label>
-                                <select id='codigo_categoria_03' name='codigo_categoria_03'>
-                                    <option selected="selected">Nenhuma Categoria</option>
-                                </select>							
-                            </div>
-							<div class="col-sm-3 form-group">
-								<div class="form-group has-feedback size-input-wrapper">
-                                    <label>Distancia de Atendimento</label>
-                                    <input name="distancia_alcance"type="number" class="form-control" id="inputValidation" placeholder="Quilômetros"/>
-                                    <span class="form-control-feedback">Km</span>
-                                </div>
-							</div>
-						</div>
-						<div class="row">
-						    <div class="col-sm-12 form-group">
-							    <label>DESCRIÇÃO PROFISSIONAL</label>
-							    <textarea name="descricao_profissional" placeholder="Nos conte um pouco sobre seu perfil profissional.." rows="4" class="form-control"></textarea>
-						    </div>
-						</div>
 						<button type="button" class="pull-right">Limpar</button>
 						<button type="submit" class="pull-right">Cadastrar</button>
 				    </form>
                     <script type="text/javascript">
                     		caralhuda();
-                     		carregarCategorias();
-                            mascaraTelefone();
-                            mascaraCep();
+                    		carregarCategorias();
                     </script>
 				</div>
 	        </div>

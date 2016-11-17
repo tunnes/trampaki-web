@@ -725,8 +725,7 @@ label.myLabel input[type="file"] {
     display: block;
 }
 .myLabel:hover {
-    /*background: #ef914c;*/
-    /*color: white;*/
+    background: #FFC79E;
     cursor: pointer;
 }
 .myLabel:active {

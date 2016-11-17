@@ -12,7 +12,8 @@
         '/'                         =>'pagina-principal',
         '/login'                    =>'login',
         '/painel-prestador'         =>'painel-prestador',
-        '/novo-prestador'           =>'cadastro-prestador'
+        '/novo-prestador'           =>'cadastro-prestador',
+        '/novo-anunciante'          =>'cadastro-anunciante'        
     );
     
     foreach ($rotas as $URL => $CLASS) { $roteador -> novaRota($URL, $CLASS); }

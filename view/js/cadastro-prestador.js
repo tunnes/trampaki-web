@@ -2,7 +2,7 @@ function caralhuda(){
     $("form").submit(function(){
         var formData = new FormData($(this)[0]);
             $.ajax({
-                url: 'https://trampaki-tunnes.c9users.io/novo-prestador',
+                url: 'https://trampaki-api-tunnes.c9users.io/novo-prestador',
                 type: 'POST',
                 data: formData,
                 async: true,
@@ -28,7 +28,7 @@ function caralhuda(){
 function carregarCategorias(){
     $.ajax({
         type: "GET",
-        url:'https://trampaki-tunnes.c9users.io/carregar-categorias',
+        url:'https://trampaki-api-tunnes.c9users.io/carregar-categorias',
         complete: function(data){   
             data = data.responseText;
             data = JSON.parse(data);
@@ -45,4 +45,56 @@ function carregarCategorias(){
             
         }
     });
+}
+
+function mascaraTelefone(){
+
+  function mascara(o,f){
+    v_obj=o
+    v_fun=f
+    setTimeout(function (){
+        v_obj.value=v_fun(v_obj.value);},
+        1
+    )};
+    
+    function mtel(v){
+        v=v.replace(/\D/g,"");             //Remove tudo o que n�o � d�gito
+        v=v.replace(/^(\d{2})(\d)/g,"($1) $2"); //Coloca par�nteses em volta dos dois primeiros d�gitos
+        v=v.replace(/(\d)(\d{4})$/,"$1-$2");    //Coloca h�fen entre o quarto e o quinto d�gitos
+        return v;
+    }
+    function id( el ){
+      return document.getElementById( el );
+    }
+    window.onload = function(){
+      id('usuario_telefone').onkeypress = function(){
+        mascara( this, mtel );
+      }
+    }
+}
+
+function mascaraCep(){
+
+  function mascara(o,f){
+    v_obj=o
+    v_fun=f
+    setTimeout(function (){
+        v_obj.value=v_fun(v_obj.value);},
+        1
+    )};
+    
+    function mtel(v){
+        v=v.replace(/\D/g,"");             //Remove tudo o que n�o � d�gito
+        v=v.replace(/^(\d{5})(\d)/g,"$1 - $2"); //Coloca par�nteses em volta dos dois primeiros d�gitos
+        // v=v.replace(/(\d)(\d{3})$/,"$1-$2");    //Coloca h�fen entre o quarto e o quinto d�gitos
+        return v;
+    }
+    function id( el ){
+      return document.getElementById( el );
+    }
+    window.onload = function(){
+      id('codigo_postal').onkeypress = function(){
+        mascara( this, mtel );
+      }
+    }
 }

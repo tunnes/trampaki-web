@@ -16,7 +16,7 @@
         });
     }
     function carregarImagem(elemento, codigoImagem){
-        elemento.style.backgroundImage = "url(https://trampaki-tunnes.c9users.io/carregar-imagem/" + codigoImagem;
+        elemento.style.backgroundImage = "url(https://trampaki-api-tunnes.c9users.io/carregar-imagem/" + codigoImagem;
     }
     
     function retornar(){
@@ -29,7 +29,7 @@
     	
     	$.ajax({
             type:"GET",
-            url:"https://trampaki-tunnes.c9users.io/carregar-anuncio/" + codigoAnuncio,
+            url:"https://trampaki-api-tunnes.c9users.io/carregar-anuncio/" + codigoAnuncio,
             headers:{
                 "Authorization": sessionStorage.getItem("authorization")
             },
@@ -44,7 +44,7 @@
     			var tituloAnuncioDOM = document.getElementById('tituloAnuncioDOM');
                     tituloAnuncioDOM.innerHTML = data.titulo;
                     
-                var caminhoImagem = "url(https://trampaki-tunnes.c9users.io/carregar-imagem/"   
+                var caminhoImagem = "url(https://trampaki-api-tunnes.c9users.io/carregar-imagem/"   
                     
                 var imagem01 = document.getElementById('imagem01');
                     data.cd_imagem_01 != null ? imagem01.style.backgroundImage = caminhoImagem + data.cd_imagem_01 : null;
@@ -68,7 +68,7 @@
     function enviarSolicitacao(codigoAnuncio){
     	$.ajax({
             type:"POST",
-            url:"https://trampaki-tunnes.c9users.io/nova-conexao-prestador",
+            url:"https://trampaki-api-tunnes.c9users.io/nova-conexao-prestador",
             headers:{
                 "Authorization": sessionStorage.getItem("authorization")
             },
@@ -107,7 +107,7 @@
         novaJanela("/view/ajax/prestador-perfil.html")
         $.ajax({
             type:"GET",
-            url:"https://trampaki-tunnes.c9users.io/carregar-dados-prestador",
+            url:"https://trampaki-api-tunnes.c9users.io/carregar-dados-prestador",
             headers:{
                 "Authorization": sessionStorage.getItem("authorization")
             },
@@ -157,7 +157,7 @@
 	    
 	    $.ajax({
             type:"GET",
-            url:"https://trampaki-tunnes.c9users.io/meus-servicos",
+            url:"https://trampaki-api-tunnes.c9users.io/meus-servicos",
             headers:{ 
                 "Authorization": sessionStorage.getItem("authorization")
             },
@@ -206,7 +206,7 @@
     function aceitarConexao(codigoConexao){
         $.ajax({
             type:"PUT",
-            url:"https://trampaki-tunnes.c9users.io/aceitar-conexao",
+            url:"https://trampaki-api-tunnes.c9users.io/aceitar-conexao",
             headers:{
                 "Authorization": sessionStorage.getItem("authorization"),
             },
@@ -226,7 +226,7 @@
 	    novaJanela("/view/ajax/prestador-solicitacoes.html");
 	    $.ajax({
             type:"GET",
-            url:"https://trampaki-tunnes.c9users.io/carregar-solicitacoes",
+            url:"https://trampaki-api-tunnes.c9users.io/carregar-solicitacoes",
             headers:{
                 "Authorization": sessionStorage.getItem("authorization"),
                 "TrampakiUser":"1"
