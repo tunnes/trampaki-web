@@ -10,7 +10,7 @@
     $roteador =  new Router();
     $rotas = array(
         '/'                         =>'pagina-principal',
-        '/login'                    =>'login',
+        '/login'                    =>'pagina-autenticacao',
         '/painel-prestador'         =>'painel-prestador',
         '/novo-prestador'           =>'cadastro-prestador',
         '/novo-anunciante'          =>'cadastro-anunciante'        

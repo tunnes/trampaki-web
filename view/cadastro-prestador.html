@@ -24,16 +24,12 @@
             
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
-        <!-- Scripts -->
-        <!--<script src="view/js/scripts.js"></script>-->
-    
+        
     </head>
 
     <body>
-        <!-- MAYBE MODAL ------------------------------------------------------------------------------------------------------------------------------------ -->
-              <!-- Modal ======================================================================================== -->
-<div id="modal_principal" class="modal">
+        <!-- MODAL ------------------------------------------------------------------------------------------------------------------------------------------ -->
+        <div id="modal_principal" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
         <div class="modal-header">
@@ -86,31 +82,31 @@
 						<div class="row">
 							<div class="col-sm-6 form-group">
 								<label>Nome</label>
-								<input name="usuario_nome" type="text" placeholder="Digite seu nome.." class="form-control">
+								<input required name="usuario_nome" type="text" placeholder="Digite seu nome.." class="form-control">
 							</div>
     					    <div class="col-sm-3 form-group">
     							<label>Login</label>
-    							<input name="usuario_login" type="text" placeholder="Digite seu login.." class="form-control">
+    							<input required name="usuario_login" type="text" placeholder="Digite seu login.." class="form-control">
     						</div>
     					    <div class="col-sm-3 form-group">
     							<label>Senha</label>
-    							<input name="usuario_senha" type="password" placeholder="Digite uma senha.." class="form-control">
+    							<input required name="usuario_senha" type="password" placeholder="Digite uma senha.." class="form-control">
     						</div>    						
 						</div>
 						<div class='row'>
     						<div class="col-sm-4 form-group">
         						<label>Email</label>
-        						<input name="usuario_email" type="email" placeholder="Endereço de Email.." class="form-control">
+        						<input required name="usuario_email" type="email" placeholder="Endereço de Email.." class="form-control">
     					    </div>
     					    <div class="col-sm-4 form-group">
 						        <label>telefone</label>
-						        <input maxlength="15" onfocus="mascaraTelefone()" id="usuario_telefone" name="usuario_telefone" type="text" placeholder="Numero de telefone.." class="form-control">
+						        <input required maxlength="15" onfocus="mascaraTelefone()" id="usuario_telefone" name="usuario_telefone" type="text" placeholder="Numero de telefone.." class="form-control">
 					        </div>	
     					    <div class="col-sm-4 form-group">
 						        <label>Imagem</label>
-                                <input name="imagem_perfil" type="file" name="pic" accept="image/*">
+                                <input required name="imagem_perfil" type="file" name="pic" accept="image/*">
                                 <!--<label class="myLabel">-->
-                                <!--    <input name="imagem_perfil" type="file" name="pic" accept="image/*">-->
+                                <!--    <input required name="imagem_perfil" type="file" name="pic" accept="image/*">-->
                                 <!--    <span>Selecionar Imagem...</span>-->
                                 <!--</label>-->
 					        </div>						        
@@ -122,7 +118,7 @@
 				        <div class="row">
 				            <div class="col-sm-4 form-group">
 								<label>CIDADE</label>
-								<input name="nome_cidade" type="text" placeholder="Digite sua Cidade.." class="form-control">
+								<input required name="nome_cidade" type="text" placeholder="Digite sua Cidade.." class="form-control">
 							</div>
 							<div class="col-sm-2 form-group">
 								<label>ESTADO</label>
@@ -159,11 +155,11 @@
 							</div>
 							<div class="col-sm-3 form-group">
 								<label>Nº RESIDENCIAL</label>
-								<input name="numero_residencial" type="number" placeholder="Digite seu numero residencial.." class="form-control">
+								<input required name="numero_residencial" type="number" placeholder="Digite seu numero residencial.." class="form-control">
 							</div>
                             <div class="col-sm-3 form-group">
 								<label>CEP</label>
-								<input maxlength="11" name="codigo_postal" id="codigo_postal" type="text" placeholder="Entre com seu CEP.." class="form-control">
+								<input required maxlength="11" name="codigo_postal" id="codigo_postal" type="text" placeholder="Entre com seu CEP.." class="form-control">
 							</div>							
 				        </div>
 				        
@@ -190,9 +186,9 @@
                                 </select>							
                             </div>
 							<div class="col-sm-3 form-group">
-								<div class="form-group has-feedback size-input-wrapper">
+								<div class="form-group has-feedback size-input required-wrapper">
                                     <label>Distancia de Atendimento</label>
-                                    <input name="distancia_alcance"type="number" class="form-control" id="inputValidation" placeholder="Quilômetros"/>
+                                    <input required name="distancia_alcance"type="number" class="form-control" id="input requiredValidation" placeholder="Quilômetros"/>
                                     <span class="form-control-feedback">Km</span>
                                 </div>
 							</div>
@@ -230,9 +226,6 @@
                 <p class="text-right">© 2016</p>
             </div>
         </footer>
-        <div class="scroll-up">
-            <a href="#home"><i class="fa fa-angle-up"></i></a>
-        </div>
     </body>
 
 </html

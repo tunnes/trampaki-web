@@ -175,14 +175,6 @@ section {
     background-color: #fff;
 }
 
-#contato {
-    color: #FF8C00;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-#contato h2 {
-    color: #FF8C00;
-}
 
 h2 {
     color: #000;
@@ -694,3 +686,7 @@ body::-webkit-scrollbar-thumb {
 .form-control-feedback{
     z-index: 0px;
 }
+/* ajuste de ancoras.. */
+#como-funciona{    padding-top: 60px;  }
+#cadastro{    padding-top: 60px;  }
+#sobre{    padding-top: 60px;  }

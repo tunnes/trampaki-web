@@ -16,20 +16,34 @@
         <!-- Estilos -->
         <link rel="stylesheet" href="view/css/styles.css">
         <script type="text/javascript" src="view/js/cadastro-anunciante.js"></script>
-        
+        <link rel="stylesheet" href="view/css/modal.css" type="text/css"/>
+                
         <!-- Font -->
         <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,800" rel="stylesheet">
             
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
-        <!-- Scripts -->
-        <script src="view/js/scripts.js"></script>
     
     </head>
 
     <body>
+        <!-- MODAL ------------------------------------------------------------------------------------------------------------------------------------------ -->
+        <div id="modal_principal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id='modal_titulo'>Solicitacao Efetuada</h2>
+                </div>
+                <div class="modal-body">
+                    <p id='modal_descricao'></p>
+                </div>
+                <div class="modal-footer">
+                    <button id='modal_retornar'>RETORNAR</button>
+                </div>
+            </div>
+        </div>
+
         <!-- MENU ------------------------------------------------------------------------------------------------------------------------------------------- -->
         <nav class="navbar navbar-trans navbar-fixed-top">
             <div class="container">
@@ -68,33 +82,33 @@
 						<div class="row">
 							<div class="col-sm-6 form-group">
 								<label>Nome</label>
-								<input name="usuario_nome" type="text" placeholder="Digite seu nome.." class="form-control">
+								<input required  name="usuario_nome" type="text" placeholder="Digite seu nome.." class="form-control">
 							</div>
     					    <div class="col-sm-3 form-group">
     							<label>Login</label>
-    							<input name="usuario_login" type="text" placeholder="Digite seu login.." class="form-control">
+    							<input required  name="usuario_login" type="text" placeholder="Digite seu login.." class="form-control">
     						</div>
     					    <div class="col-sm-3 form-group">
     							<label>Senha</label>
-    							<input name="usuario_senha" type="password" placeholder="Digite uma senha.." class="form-control">
+    							<input required  name="usuario_senha" type="password" placeholder="Digite uma senha.." class="form-control">
     						</div>    						
 						</div>
 						<div class='row'>
     						<div class="col-sm-4 form-group">
         						<label>Email</label>
-        						<input name="usuario_email" type="text" placeholder="Endereço de Email.." class="form-control">
+        						<input required  name="usuario_email" type="email" placeholder="Endereço de Email.." class="form-control">
     					    </div>
     					    <div class="col-sm-4 form-group">
 						        <label>telefone</label>
-						        <input name="usuario_telefone" type="text" placeholder="Numero de telefone.." class="form-control">
+						        <input required  maxlength="15" onfocus="mascaraTelefone()" id="usuario_telefone" name="usuario_telefone" type="text" placeholder="Numero de telefone.." class="form-control">
 					        </div>	
     					    <div class="col-sm-4 form-group">
 						        <label>Imagem</label>
-                                <!--<input name="imagem_perfil" type="file" name="pic" accept="image/*">-->
-                                <label class="myLabel">
-                                    <input name="imagem_perfil" type="file" name="pic" accept="image/*">
-                                    <span>Selecionar Imagem...</span>
-                                </label>
+                                <input required  name="imagem_perfil" type="file" name="pic" accept="image/*">
+                                <!--<label class="myLabel">-->
+                                <!--    <input required  name="imagem_perfil" type="file" name="pic" accept="image/*">-->
+                                <!--    <span>Selecionar Imagem...</span>-->
+                                <!--</label>-->
 					        </div>						        
     					</div>
     					
@@ -104,7 +118,7 @@
 				        <div class="row">
 				            <div class="col-sm-4 form-group">
 								<label>CIDADE</label>
-								<input name="nome_cidade" type="text" placeholder="Digite sua Cidade.." class="form-control">
+								<input required  name="nome_cidade" type="text" placeholder="Digite sua Cidade.." class="form-control">
 							</div>
 							<div class="col-sm-2 form-group">
 								<label>ESTADO</label>
@@ -141,20 +155,20 @@
 							</div>
 							<div class="col-sm-3 form-group">
 								<label>Nº RESIDENCIAL</label>
-								<input name="numero_residencial" type="text" placeholder="Digite seu numero residencial.." class="form-control">
+								<input required  name="numero_residencial" type="number" placeholder="Digite seu numero residencial.." class="form-control">
 							</div>
                             <div class="col-sm-3 form-group">
 								<label>CEP</label>
-								<input name="codigo_postal" type="text" placeholder="Entre com seu CEP.." class="form-control">
+								<input required  maxlength="11" name="codigo_postal" id="codigo_postal" type="text" placeholder="Entre com seu CEP.." class="form-control">
 							</div>							
 				        </div>
-				        
 						<button type="button" class="pull-right">Limpar</button>
 						<button type="submit" class="pull-right">Cadastrar</button>
 				    </form>
                     <script type="text/javascript">
-                    		caralhuda();
-                    		carregarCategorias();
+                    		cadastrarAnunciante();
+                            mascaraTelefone();
+                            mascaraCep();
                     </script>
 				</div>
 	        </div>
@@ -174,9 +188,6 @@
                 <p class="text-right">© 2016</p>
             </div>
         </footer>
-        <div class="scroll-up">
-            <a href="#home"><i class="fa fa-angle-up"></i></a>
-        </div>
     </body>
 
 </html

@@ -1,4 +1,11 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+    /*text-transform: uppercase;*/
+}
+
 body {
+      font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #fff;
@@ -14,22 +21,91 @@ body {
   margin-bottom: 10px;
 }
 
-.form-signin-heading{
-      margin-left: 100px;
+.form-signin h3{
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 100;
+    color: white;
+    margin-bottom: 0px;
+    background-color: rgb(0, 0, 0);
+    display: inline-block;
+    padding: 5px 20px 5px 5px;  
 }
 
-.form-signin .checkbox {
-  font-weight: normal;
+.form-signin-heading{
+    font-weight: 800;
+    background-color: #ef914c;
+    color: white;
+    padding: 5px 0px 5px 5px;
+    margin-top: 0px;
+    margin-bottom: 30px;
 }
-.form-signin .form-control {
-  position: relative;
-  height: auto;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 10px;
-  font-size: 16px;
+
+.form-signin label{
+    font-size: 13px;
+    font-weight: 400;
+    text-align: right;
+    padding-right: 0px;
+    text-transform: uppercase;
 }
+.form-signin input {
+    padding: 6px 12px;
+    border: 1px solid #444;
+    border-radius: 0px;
+    margin-bottom: 15px;
+    font-size: 14px !important;
+    /*width: 100%;*/
+    color: #999;
+}
+.form-signin button{
+    border: 1px solid black;
+    border-right-width: 5px;
+    border-radius: 0px;
+    color: black;
+    background-color: white;
+    /* margin-left: 10px; */
+    margin-top: 20px;
+    font-size: 15px;
+    text-align: center;
+    padding: 10px 40px 10px 15px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+.form-signin input:focus{
+    border-color: rgba(239, 145, 76, 0.68);
+    border-width: 1px;
+}
+.checkbox label{
+    padding-left: 0px !important; 
+  
+}
+.fix-checkbox {
+    font-weight: normal;
+    width: auto;
+}
+
+.control-label{
+      margin-top: 30px;
+}
+.control-label a{
+    font-size: 11px;
+    font-weight: 400;
+    text-align: right;
+    padding-right: 0px;
+    text-transform: uppercase;
+
+}
+
+
+/*.form-signin .form-control {*/
+/*  position: relative;*/
+/*  height: auto;*/
+/*  -webkit-box-sizing: border-box;*/
+/*     -moz-box-sizing: border-box;*/
+/*          box-sizing: border-box;*/
+/*  padding: 10px;*/
+/*  font-size: 16px;*/
+/*}*/
 .form-signin .form-control:focus {
   z-index: 2;
 }
@@ -49,7 +125,7 @@ a{
 }
 
 a:hover{
-    color:darkorange;
+    color: #ef914c;
 }
 
 .btn{
@@ -57,5 +133,17 @@ a:hover{
 }
 
 .btn:hover{
-    background-color: darkorange;
+    border-color: black;
+    color: white;
+    background-color: #ef914c;
+}
+/* ISSO BUG DO BOOSTRAP !!!*/
+input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio] {
+    position: absolute;
+    bottom: -15px;
+    margin-top: 4px \9;
+    margin-left: -20px;
+}
+.checkbox-inline{
+  font-size: 10px !important;
 }
