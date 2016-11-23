@@ -6,22 +6,26 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,800" rel="stylesheet">
+        <link rel="shortcut icon" type="image/png" href="view/img/fav_logo.png"/>
         
         <link rel="stylesheet" href="view/css/mapEngine.css" type="text/css"/>
         <link rel="stylesheet" href="view/css/modal.css" type="text/css"/>
+        <link rel="stylesheet" href="view/css/styles.css" type="text/css"/>
+
+        <script src="view/js/painel-abstrato.js"></script>
         <script src="view/js/modal.js"></script>
         <script src="view/js/barraLateral.js"></script>
         <script src="view/js/main.js"></script>
+
+        <script src="view/js/painel-anunciante.js"></script>        
         
+        <!--<script type="text/javascript" src="view/js/cadastro-prestador.js"></script>-->
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-               
+                
     </head>
     <body>
         <!-- Marcador Expandido =========================================================================== -->
@@ -71,11 +75,11 @@
             </div>
             <div class="main">
                 <div id="painel">
-                    <span id="meu_perfil" onclick='meuPerfil()'>MEU PERFIL</span>
-                    <span onclick='solicitacoes()'>SOLICITAÇÕES</span>
-                    <span id='meus_servicos' onclick='meusServicos()'>MEUS SERVIÇOS</span>
-                    <span id='sair'>SAIR</span>
-                     
+                    <span id="meu_perfil" onclick='carregarDadosAnunciante()'>MEU PERFIL</span>
+                    <span onclick='novoAnuncio()' id='meus_servicos'>NOVO ANUNCIO</span> 
+                    <span onclick='meusAnuncios()' id='meus_servicos'>MEUS ANUNCIOS</span>
+                    <span onclick='solicitacoes()'>SOLICITAÇÕES</span>                  
+                    <span onclick='deslogar()' id='sair'>SAIR</span>
                 </div>
                 <div id="chat">
                     <span>INCOMPLETO...</span>   
@@ -89,11 +93,11 @@
         <!-- ============================================================================================== -->
         
         <!-- Chamada da MapEngine Trampaki ================================================================ -->
-        <script src="view/js/mapEngine.js"></script>
+        <script src="view/js/mapEngineAnunciante.js"></script>
         <!-- ============================================================================================== -->
         
         <!-- Chamada da API JavaScript do Google Maps com minha chave -->
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOgRKKdJv0sJSZYLFQQUUjII20mGsbLj4&callback=mapEngine"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOgRKKdJv0sJSZYLFQQUUjII20mGsbLj4&callback=mapEngineAnunciante"></script>
         
     </body>
 </html>

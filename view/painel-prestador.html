@@ -6,22 +6,26 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,800" rel="stylesheet">
+        <link rel="shortcut icon" type="image/png" href="view/img/fav_logo.png"/>
         
         <link rel="stylesheet" href="view/css/mapEngine.css" type="text/css"/>
         <link rel="stylesheet" href="view/css/modal.css" type="text/css"/>
+
+        <script src="view/js/painel-abstrato.js"></script>
         <script src="view/js/modal.js"></script>
         <script src="view/js/barraLateral.js"></script>
         <script src="view/js/main.js"></script>
         
-        <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                
     </head>
     <body>
         <!-- Marcador Expandido =========================================================================== -->
@@ -73,8 +77,8 @@
                 <div id="painel">
                     <span id="meu_perfil" onclick='meuPerfil()'>MEU PERFIL</span>
                     <span onclick='solicitacoes()'>SOLICITAÇÕES</span>
-                    <span id='meus_servicos' onclick='meusServicos()'>MEUS SERVIÇOS</span>
-                    <span id='sair'>SAIR</span>
+                    <span onclick='meusServicos()' id='meus_servicos'>MEUS SERVIÇOS</span>
+                    <span onclick='deslogar()' id='sair'>SAIR</span>
                      
                 </div>
                 <div id="chat">

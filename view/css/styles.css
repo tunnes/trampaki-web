@@ -612,6 +612,13 @@ body::-webkit-scrollbar-thumb {
 .novo_prestador input{
     border: 1px solid #444;
     border-radius: 0px;
+    font-weight: 400 !important; 
+}
+.novo_prestador input::-webkit-input-placeholder {
+    font-weight: 400 !important; 
+}
+.novo_prestador textarea::-webkit-input-placeholder {
+    font-weight: 400 !important; 
 }
 .novo_prestador textarea{
     resize: none;
@@ -690,3 +697,21 @@ body::-webkit-scrollbar-thumb {
 #como-funciona{    padding-top: 60px;  }
 #cadastro{    padding-top: 60px;  }
 #sobre{    padding-top: 60px;  }
+
+/* CADASTRO DE ANUNCIOS */
+#wrapper_cadastrar_anuncio .novo_prestador{
+    margin-top: 5%;
+}
+
+#wrapper_cadastrar_anuncio .novo_prestador button{
+    text-transform: uppercase;
+    margin-top: 35px;
+    float: right;
+    border-color: #101010;
+    font-size: 12px;
+    border-radius: 0px;
+    margin-left: 8px;
+    background-color: white;
+    border-width: 1px;
+    padding: 8px 15px 8px 15px;
+}

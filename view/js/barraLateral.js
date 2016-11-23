@@ -316,5 +316,101 @@
     	$("#solicitacoes_recebidas").fadeIn('slow');
         $("#solicitacoes_enviadas").hide();        
     }
+
+//  PAINEL-ANUNCIANTE ----------------------------------------------------------------------------------------
+
+//  VISUALIZAR-PRESTADOR -----------------------------------------------
+    function visualizarPrestador(codigo){
+        novaJanela("/view/ajax/prestador-perfil.html");
+        $.ajax({
+            type:"GET",
+            url:"https://trampaki-api-tunnes.c9users.io/carregar-perfil-prestador/" + codigo,
+            complete: function(data){
+                data = JSON.parse(data.responseText);
+                	
+                carregarCategorias(data.categorias);
+                var imagem = document.getElementById('imagem_header');
+                	data.cd_imagem != null ? carregarImagem(imagem, data.cd_imagem) : null;
+                	
+                	document.getElementById('nm_prestador').innerHTML = data.nm_usuario;
+                    
+                    document.getElementById('nome').innerHTML = data.nm_usuario;
+                    
+                    document.getElementById('ds_profissional').innerHTML = data.ds_perfilProfissional;
+                    
+                    document.getElementById('ds_email').innerHTML = data.ds_email;
+                	
+                	document.getElementById('cd_telefone').innerHTML = data.ds_telefone;
+                	
+                    document.getElementById('sg_estado1').innerHTML = data.sg_estado;
+
+                	document.getElementById('header_estado').innerHTML = data.sg_estado;
+                	    
+                	document.getElementById('cidade').innerHTML = data.nm_cidade;
+                	
+                	document.getElementById('header_cidade').innerHTML = data.nm_cidade; 
+                	
+                	document.getElementById('cep').innerHTML = data.cd_cep;
+                	
+                	document.getElementById('numResiden').innerHTML = data.cd_numeroResidencia;
+                	
+                	document.getElementById('dados_acesso').style.display = 'none';
+                	
+                	document.getElementById('botao_01').innerHTML = 'ME CONECTAR!';
+
+                	document.getElementById("botao_01").onclick = function (){ alert('foo');}; 
+                }
+    });
+    }
+
+//  CARREGAR-DADOS-ANUNCIANTE ------------------------------------------
+    function carregarDadosAnunciante(){
+        novaJanela("/view/ajax/prestador-perfil.html")
+        $.ajax({
+            type:"GET",
+            url:"https://trampaki-api-tunnes.c9users.io/carregar-dados-anunciante",
+            headers:{
+                "Authorization": "aHVtUXVlQ29pc2E6MTIzMw=="
+            },
+            complete: function(data){
+                data = JSON.parse(data.responseText);
+                	console.log(data)
+                // carregarCategorias(data.categorias);
+                var imagem = document.getElementById('imagem_header');
+                	data.codigoImagem != null ? carregarImagem(imagem, data.codigoImagem) : null;
+                	
+                	document.getElementById('nm_prestador').innerHTML = data.nome;
+                    
+                    document.getElementById('nome').innerHTML = data.nome;
+                    
+                    document.getElementById('ds_profissional').innerHTML = data.dsProfissional;
+                    
+                    document.getElementById('ds_email').innerHTML = data.email;
+                	
+                	document.getElementById('cd_telefone').innerHTML = data.telefone;
+                	
+                    document.getElementById('sg_estado1').innerHTML = data.endereco.estado;
+
+                	document.getElementById('header_estado').innerHTML = data.endereco.estado;
+                	    
+                	document.getElementById('cidade').innerHTML = data.endereco.cidade;
+                	
+                	document.getElementById('header_cidade').innerHTML = data.endereco.cidade; 
+                	
+                	document.getElementById('cep').innerHTML = data.endereco.CEP;
+                	
+                	document.getElementById('numResiden').innerHTML = data.endereco.numeroResidencia;   
+                	   
+                	document.getElementById('login').innerHTML = data.login.login;
+
+                	document.getElementById('senha').innerHTML = data.login.senha;
+                	    
+                	document.getElementById('token').innerHTML = data.login.token;
+                	
+                	document.getElementById('profissional').style.display = 'none';
+                		
+                }
+    });
+    }
     
-    
+//  

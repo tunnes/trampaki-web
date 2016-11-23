@@ -120,7 +120,7 @@ html, body{
   background-size: 100%;
   transform: skew(-10deg,-10deg) rotate(-45deg) ;
   transition: .3s;
-    background-image:url('https://trampaki-tunnes.c9users.io/view/img/no_image.jpeg');
+    background-image:url('https://trampaki-web-tunnes.c9users.io/view/img/no_image.jpeg');
 }
 
 /* MENU LATERAL ---------------------------------------------------------------- */
@@ -219,7 +219,7 @@ html, body{
     display: inline-block;
     width: 60px;
     height: 60px;
-    background-image:url('https://trampaki-tunnes.c9users.io/view/img/anunc.jpg');
+    background-image:url('https://trampaki-web-tunnes.c9users.io/view/img/anunc.jpg');
     background-repeat:no-repeat;
     background-size: cover;
     /*border-radius: 50%;*/
@@ -260,13 +260,13 @@ html, body{
     margin-left: 2px;
 }
 #imagem01{
-    background-image:url('https://trampaki-tunnes.c9users.io/view/img/no_image.jpeg');
+    background-image:url('https://trampaki-web-tunnes.c9users.io/view/img/no_image.jpeg');
 }
 #imagem02{
-    background-image:url('https://trampaki-tunnes.c9users.io/view/img/no_image.jpeg');
+    background-image:url('https://trampaki-web-tunnes.c9users.io/view/img/no_image.jpeg');
 }
 #imagem03{
-    background-image:url('https://trampaki-tunnes.c9users.io/view/img/no_image.jpeg');
+    background-image:url('https://trampaki-web-tunnes.c9users.io/view/img/no_image.jpeg');
 }
 
 
@@ -309,7 +309,7 @@ html, body{
     display: inline-block;
     width: 140px;
     height: 140px;
-    background-image:url('https://trampaki-tunnes.c9users.io/view/img/anunc.jpg');
+    background-image:url('https://trampaki-web-tunnes.c9users.io/view/img/anunc.jpg');
     background-repeat:no-repeat;
     background-size: cover;
     float:left;
@@ -409,7 +409,7 @@ html, body{
     display: inline-block;
     width: 90px;
     height: 90px;
-    background-image:url('https://trampaki-tunnes.c9users.io/view/img/anunc.jpg');
+    background-image:url('https://trampaki-web-tunnes.c9users.io/view/img/anunc.jpg');
     background-repeat:no-repeat;
     background-size: cover;
     float: left;
@@ -425,6 +425,11 @@ html, body{
     font-size: 13px;
     font-weight: 800;
     text-transform: uppercase;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 180px;
+    display: block;
+    overflow: hidden;
 }
 .info_servico p{
     font-size: 10px;
@@ -465,7 +470,7 @@ html, body{
     display: inline-block;
     /*width: 90px;*/
     height: 98px;
-    background-image:url('https://trampaki-tunnes.c9users.io/view/img/anunc.jpg');
+    background-image:url('https://trampaki-web-tunnes.c9users.io/view/img/anunc.jpg');
     background-repeat:no-repeat;
     background-size: cover;
     float: left;
@@ -542,7 +547,9 @@ html, body{
     padding-bottom: 4px;
     border-bottom: 1px solid #b0b0b0;
 }
-
+.wrapper_janela{
+    padding-right: 8% !important;
+}
 
 /* teste remove */
 .gmnoprint:not(.gm-bundled-control) {
