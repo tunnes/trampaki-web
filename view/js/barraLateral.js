@@ -370,7 +370,7 @@
             type:"GET",
             url:"https://trampaki-api-tunnes.c9users.io/carregar-dados-anunciante",
             headers:{
-                "Authorization": "aHVtUXVlQ29pc2E6MTIzMw=="
+                "Authorization": sessionStorage.getItem("authorization")
             },
             complete: function(data){
                 data = JSON.parse(data.responseText);

@@ -17,6 +17,7 @@
     <!-- CSS -->
     <link href="view/css/logincss.css" rel="stylesheet">
 
+    <script type="text/javascript" src="view/js/pagina-autenticacao.js"></script>
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,800" rel="stylesheet">
 </head>
@@ -35,59 +36,16 @@
     					<label>SENHA</label>
     					<input id="senha" name="usuario_nome" type="password" placeholder="Digite sua senha.." class="form-control">
                         <label class="checkbox-inline"><input class="fix-checkbox" type="checkbox" value="">LEMBRAR MINHA SENHA</label>
-                        <button id="1" type="button" class="btn btn-lg btn-primary btn-block">Acessar</button>
+                        <button onclick="efetuarAutenticacao()" type="button" class="btn btn-lg btn-primary btn-block">Acessar</button>
 
                     <label class="control-label">
                         <a href="/#cadastro">Cadastre-se <i class="fa fa-pencil"></i></a> | 
                         <a href="/">RETONAR A PÁGINA PRINCIPAL</a>
-                        
                     </label>
                 </form>
             </div>
         </div>
 
     </div>
-    <script type="text/javascript">
-        function painelPrestador(){
-            $.ajax({
-                async: false,
-                method: 'GET',
-                url:  "https://trampaki-api-tunnes.c9users.io/login",
-                headers:{
-                    "Authorization": sessionStorage.getItem("authorization")
-                },
-                statusCode:{
-                200:function(data, textStatus, request){
-                        console.log(sessionStorage.getItem("authorization"));
-                        console.log(sessionStorage.getItem("trampaki-user"));
-                        window.location.assign("https://trampaki-web-tunnes.c9users.io/painel-prestador");
-                    }    
-                }
     
-            });
-        }
-    
-        $("#1").click(function(){
-            console.log(document.getElementById('senha').value);
-            $.ajax({
-                type: 'POST',
-                url:'https://trampaki-api-tunnes.c9users.io/login',
-                data: { 
-                    login: document.getElementById('login').value, 
-                    senha: document.getElementById('senha').value
-                },
-                statusCode: {
-                401:function(xhr) {
-                        console.log('INVALIDO');
-                    },
-                200:function(data, textStatus, request){
-                        sessionStorage.setItem('authorization', request.getResponseHeader('authorization'));
-                        sessionStorage.setItem('trampaki-user', request.getResponseHeader('trampaki-user'));                            
-                        request.getResponseHeader('trampaki-user') == '0' ? window.location.assign("https://trampaki-tunnes.c9users.io/painel-de-operacoes") : painelPrestador();  
-                    }
-                }
-            });
-        });
-    </script>
-    <!-- /container -->
 </body>

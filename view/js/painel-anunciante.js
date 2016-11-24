@@ -9,7 +9,7 @@ function cadastrarAnuncio(){
         var formData = new FormData($(this)[0]);
             $.ajax({
                 url: 'https://trampaki-api-tunnes.c9users.io/novo-anuncio',
-                headers:{ "Authorization": "aHVtUXVlQ29pc2E6MTIzMw==" },
+                headers:{ "Authorization": sessionStorage.getItem("authorization")  },
                 type: 'POST',
                 data: formData,
                 async: true,
@@ -70,14 +70,56 @@ function alertaCadastrado(){
     
 }
 
+function visualizaAnuncio(codigoAnuncio){
+        novaJanela("view/ajax/prestador-anuncio.html");
+    	
+    	$.ajax({
+            type:"GET",
+            url:"https://trampaki-api-tunnes.c9users.io/carregar-anuncio/" + codigoAnuncio,
+            headers:{
+                "Authorization": sessionStorage.getItem("authorization")
+            },
+            complete: function(data){
+                data = JSON.parse(data.responseText);
+
+                carregarCategorias(data.categorias);
+                
+                var descricaoDOM = document.getElementById('longHistorio');
+                    descricaoDOM.innerHTML = data.descricao;
+    			
+    			var tituloAnuncioDOM = document.getElementById('tituloAnuncioDOM');
+                    tituloAnuncioDOM.innerHTML = data.titulo;
+                    
+                var caminhoImagem = "url(https://trampaki-api-tunnes.c9users.io/carregar-imagem/"   
+                    
+                var imagem01 = document.getElementById('imagem01');
+                    data.cd_imagem_01 != null ? imagem01.style.backgroundImage = caminhoImagem + data.cd_imagem_01 : null;
+                
+                var imagem02 = document.getElementById('imagem02');
+            	    data.cd_imagem_02 != null ? imagem02.style.backgroundImage = caminhoImagem + data.cd_imagem_02 : null;
+                
+                var imagem03 = document.getElementById('imagem03');
+                    data.cd_imagem_03 != null ? imagem03.style.backgroundImage = caminhoImagem + data.cd_imagem_03 : null;
+                    		
+                $('#conectar').click(function(){
+                    enviarSolicitacao(codigoAnuncio);
+                });
+            }
+        });
+    	
+    	
+    	
+    }
+    
+
 function meusAnuncios(){
-    novaJanela("/view/ajax/anunciante-meus-anuncios.html");
+    novaJanela("/view/ajax/painel-anunciante/visualizar-anuncios.html");
 	    
     $.ajax({
         type:"GET",
         url:"https://trampaki-api-tunnes.c9users.io/carregar-meus-anuncios",
         headers:{ 
-            "Authorization": "aHVtUXVlQ29pc2E6MTIzMw=="
+            "Authorization": sessionStorage.getItem("authorization")
         },
         complete: function(data){
         	data = JSON.parse(data.responseText);
@@ -100,13 +142,12 @@ function meusAnuncios(){
                 item_servico.onclick=function(){
                     visualizaAnuncio(anuncio.cd_anuncio);
                 };
+                
                 item_servico.className = 'item_servico';
                 imagem_servico.className = 'imagem_servico';
                 info_servico.className = 'info_servico';
 
                 info_servico.appendChild(titulo);
-                info_servico.appendChild(status);
-                    
                     
                 item_servico.appendChild(imagem_servico);
                 item_servico.appendChild(info_servico);
