@@ -76,7 +76,7 @@ function mapEngineAnunciante(){
                     arrayResponse.forEach(function(prestador){
                     
                     var marcador = new google.maps.Marker({
-                        position: new google.maps.LatLng(prestador.cd_longitude, prestador.cd_latitude),
+                        position: new google.maps.LatLng(prestador.cd_latitude, prestador.cd_longitude),
                         title: prestador.titulo,
                         icon: "view/img/blackHoleSun.png",
                         map: mapa,

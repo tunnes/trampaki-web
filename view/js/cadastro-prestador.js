@@ -88,7 +88,7 @@ function mascaraCep(){
     
     function mtel(v){
         v=v.replace(/\D/g,"");             //Remove tudo o que n�o � d�gito
-        v=v.replace(/^(\d{5})(\d)/g,"$1 - $2"); //Coloca par�nteses em volta dos dois primeiros d�gitos
+        v=v.replace(/^(\d{5})(\d)/g,"$1-$2"); //Coloca par�nteses em volta dos dois primeiros d�gitos
         // v=v.replace(/(\d)(\d{3})$/,"$1-$2");    //Coloca h�fen entre o quarto e o quinto d�gitos
         return v;
     }
