@@ -746,3 +746,8 @@ body::-webkit-scrollbar-thumb {
     font-size: 12px;
     font-weight: 100;
 }
+
+.table > thead > tr > th{
+    font-size: 12px;
+    font-weight: 400;    
+}
