@@ -716,6 +716,27 @@ body::-webkit-scrollbar-thumb {
     padding: 8px 15px 8px 15px;
 }
 
+
+#wrapper-chat {
+    height: calc(100% - 35px);
+    overflow-y: auto;
+}
+
+#wrapper-chat input, #wrapper-chat button {
+    position: fixed;
+    bottom: 0;
+}
+#wrapper-chat #messagebox {
+    width: 100%;
+    margin-left: -95px;
+}
+#wrapper-chat #sendbox {
+    right: 180px;
+}
+#wrapper-chat #mapa-retornar {
+    right: 0px;
+}
+
 /* Painel administrado ---------------------------- */
 .soli_generic:hover{
     color: white;

@@ -25,8 +25,8 @@ function efetuarAutenticacao(){
     });
 }
 function direcionarPainelAnunciante(){ 
-    return window.location.assign("https://trampaki-web-tunnes.c9users.io/painel-anunciante") 
+    return window.location.href = "/painel-anunciante";
 }
 function direcionarPainelPrestador(){ 
-    return window.location.assign("https://trampaki-web-tunnes.c9users.io/painel-prestador") 
+    return window.location.href = "/painel-prestador";
 }

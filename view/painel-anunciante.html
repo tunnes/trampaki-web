@@ -16,6 +16,7 @@
         <script src="view/js/modal.js"></script>
         <script src="view/js/barraLateral.js"></script>
         <script src="view/js/main.js"></script>
+        <script src="view/js/chat.js"></script>
 
         <script src="view/js/painel-anunciante.js"></script>        
         
@@ -70,7 +71,7 @@
         <!-- Barra latereal para chat e configurações do sistema ========================================== -->
         <div id="barraLateral">
             <div class="nav">
-                <span id="configuracaoAjax" href="#" onclick="barraLateralMensagens()" >MENSAGENS</span>
+                <span id="configuracaoAjax" href="#" onclick="list()">MENSAGENS</span>
                 <span id="menu-painel" href="#" onclick="barraLateralPainel()">PAINEL</span>
             </div>
             <div class="main">
@@ -81,8 +82,7 @@
                     <span onclick='visualizarSolicitacoes()'>SOLICITAÇÕES</span>                  
                     <span onclick='deslogar()' id='sair'>SAIR</span>
                 </div>
-                <div id="chat">
-                    <span>INCOMPLETO...</span>   
+                <div id="chat"> 
                 </div>
             </div>
         </div>
