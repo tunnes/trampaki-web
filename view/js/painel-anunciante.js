@@ -29,7 +29,6 @@ function cadastrarAnuncio(){
         return false;
     }); 		
 }
-
 function pularCombobox(){
     $.ajax({
         type: "GET",
@@ -51,7 +50,6 @@ function pularCombobox(){
         }
     });
 }
-
 function alertaCadastrado(){
     document.getElementById('modal_titulo').innerHTML = "ANUNCIO CADASTRADO";
     document.getElementById('modal_descricao').innerHTML = "SEU ANUNCIO FOI CADASTRO COM SUCESSO PARABENS CARA, SÉRIO MESMO.";                
@@ -69,10 +67,8 @@ function alertaCadastrado(){
     
     
 }
-
-function visualizaAnuncio(codigoAnuncio){
-        novaJanela("view/ajax/prestador-anuncio.html");
-    	
+function visualizaMeuAnuncio(codigoAnuncio){
+        novaJanela("view/ajax/painel-anunciante/visualizar-anuncio.html");
     	$.ajax({
             type:"GET",
             url:"https://trampaki-api-tunnes.c9users.io/carregar-anuncio/" + codigoAnuncio,
@@ -110,8 +106,6 @@ function visualizaAnuncio(codigoAnuncio){
     	
     	
     }
-    
-
 function meusAnuncios(){
     novaJanela("/view/ajax/painel-anunciante/visualizar-anuncios.html");
 	    
@@ -124,7 +118,6 @@ function meusAnuncios(){
         complete: function(data){
         	data = JSON.parse(data.responseText);
             var anuncios = document.getElementById('servicos');
-            	anuncios.innerHTML = ' ';
             
             var sx = ['ABERTO','ENCERRADO','CANCELADO','SUSPENSO'];
             
@@ -140,7 +133,7 @@ function meusAnuncios(){
                     status.innerHTML = sx[parseInt(anuncio.codigoAnuncio)];
                     
                 item_servico.onclick=function(){
-                    visualizaAnuncio(anuncio.cd_anuncio);
+                    visualizaMeuAnuncio(anuncio.codigoAnuncio);
                 };
                 
                 item_servico.className = 'item_servico';
@@ -157,3 +150,38 @@ function meusAnuncios(){
             }
 });    
 }
+
+function visualizarSolicitacoes(){
+    novaJanela("view/ajax/painel-anunciante/visualizar-solicitacoes.html");
+    $.ajax({
+        type:"GET",
+        url:"https://trampaki-api-tunnes.c9users.io/carregar-solicitacoes",
+        headers:{
+            "Authorization": sessionStorage.getItem("authorization"),
+            "TrampakiUser":"0"
+        },
+        complete: function(data){
+                data = JSON.parse(data.responseText);
+                var table = document.getElementById('suprise');
+                [].slice.call(data).forEach(function(soli){
+                    var x = "<tr>"+
+                                "<td>"+ soli.cd_anuncio +"</td>"+
+                                "<td>"+ soli.nm_titulo  +"</td>"+
+                                "<td>"+ 
+                                    "<a onclick='visualizarPrestador("+ soli.cd_usuario +")'>"+ soli.nm_usuario +"</a>"+
+                                "</td>"+ 
+                                "<td>"+ 
+                                    "<a class='soli_generic soli_aceitar' onclick='aceitarConexao("+ soli.cd_conexao +")'>ACEITAR</a>"+
+                                    "<a class='soli_generic soli_recusar' onclick='recusarConexao("+ soli.cd_conexao +")'>RECUSAR</a>"+
+                                "</td>"+
+                            "</tr>";
+                            
+                    soli.cd_status == '0' ? table.innerHTML = table.innerHTML + x : null;            
+                });
+                 
+                
+        }
+    });
+} 
+
+

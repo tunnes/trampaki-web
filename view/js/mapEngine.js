@@ -80,7 +80,7 @@ function mapEngine(){
                 arrayResponse.forEach(function(anuncio){
                     
                     var marcador = new google.maps.Marker({
-                        position: new google.maps.LatLng(anuncio.cd_longitude, anuncio.cd_latitude),
+                        position: new google.maps.LatLng(anuncio.cd_latitude, anuncio.cd_longitude),
                         title: anuncio.titulo,
                         icon: "view/img/blackHoleSun.png",
                         // icon: "view/img/more_marker.png",
