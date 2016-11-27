@@ -8,7 +8,8 @@
         '/painel-prestador'  =>'painel-prestador',
         '/painel-anunciante' =>'painel-anunciante',        
         '/novo-prestador'    =>'cadastro-prestador',
-        '/novo-anunciante'   =>'cadastro-anunciante'        
+        '/novo-anunciante'   =>'cadastro-anunciante', 
+        '/docs'              =>'api-documentacao'         
     );
     
     foreach ($rotas as $URL => $HTML) { $roteador -> novaRota($URL, $HTML); }
