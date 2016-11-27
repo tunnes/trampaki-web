@@ -1,8 +1,15 @@
 /*global $*/ 
-    function novaJanela(caminho){
+    function novaJanela(caminho, id){
         document.getElementById('info-moldura').style.opacity = 0;
         document.getElementById('info-moldura').style.height = 1;
-        $("#janela").load(caminho);
+        $("#janela").load(caminho, function() {
+            if (id) {
+    	        update(null, id);
+    	    }
+    	    document.getElementById("sendbox").onclick = function() {
+    	        send(document.getElementById("messagebox").value, id);
+    	    };
+        });
     	$("#janela").fadeIn('slow');
     	$("#mapa").hide();
     }
@@ -86,13 +93,22 @@
         });
     }
 
-    function barraLateralMensagens(){
+    function barraLateralMensagens(j){
     document.getElementById('configuracaoAjax').style.borderBottom = '2px solid white';
     document.getElementById('menu-painel').style.borderBottom = 'none';
     document.getElementById('chat').style.display = 'block';
     document.getElementById('painel').style.display = 'none';
-    
-    // Future code here....  
+    // Future code here...
+    document.getElementById('chat').innerHTML = "";
+    j.forEach(function(v) {
+        let x = document.createElement("span");
+        x.innerHTML = v['nuu'];
+        x.onclick = function() {
+            novaJanela("view/ajax/chat.html", v['cuu']);
+        }
+        document.getElementById('chat').appendChild(x);
+        document.getElementById('chat').appendChild(document.createElement("br"));
+    });
 }
     function barraLateralPainel(){
     document.getElementById('configuracaoAjax').style.borderBottom = 'none';

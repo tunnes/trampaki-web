@@ -1,7 +1,7 @@
 function deslogar(){
     sessionStorage.removeItem('authorization');
     sessionStorage.removeItem('trampaki-user');
-    window.location.assign("https://trampaki-web-tunnes.c9users.io");
+    window.location.url = "/";
 }
 function novaJanela(caminho){
         document.getElementById('info-moldura').style.opacity = 0;
