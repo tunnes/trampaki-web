@@ -7,7 +7,11 @@
     	        update(null, id);
     	    }
     	    document.getElementById("sendbox").onclick = function() {
-    	        send(document.getElementById("messagebox").value, id);
+    	        const x = document.getElementById("messagebox").value;
+    	        if (x) {
+        	        send(x, id);
+        	        document.getElementById("messagebox").value = "";
+    	        }
     	    };
         });
     	$("#janela").fadeIn('slow');

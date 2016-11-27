@@ -12,6 +12,7 @@ const update = function(ts, ud) {
                 p.innerHTML = v;
                 document.getElementById("wrapper-chat").appendChild(p);
             });
+            document.getElementById("wrapper-chat").scrollTop = document.getElementById("wrapper-chat").scrollHeight;
             update(res['timestamp'], ud);
         }
     };
