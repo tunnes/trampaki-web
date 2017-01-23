@@ -223,81 +223,7 @@ footer .nav>li>a:hover {
 /* REFATORAÇÃO !*/
 
 /* DISPONIVEL EM ----------------------------------------------------------------------------------------- */
-.parallax {
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 
-}
-.filter-opacity {
-    /*-webkit-filter: opacity(.4);*/
-    filter: grayscale(30%) invert(.2);
-    /*filter: grayscale(50%) opacity(60%);*/
-}
-.regiao_section .parallax{
-/*  The image used */
-    background-image: url("/view/img/BS.jpg");
-    min-height: 300px;
-}
-.regiao_section{
-        border-bottom: 1px solid black;
-        border-top: 1px solid black;
-    margin-bottom: 50px;
-    background-color: black;
-    /*background-color: #ef914c;*/
-}
-.regiao_section .titulo{
-    text-transform: uppercase;
-    margin-top: 60px;
-    position: absolute;
-    z-index: 1;
-    display: block;
-    /*text-align: center;*/
-    width: 100%;
-    color: white;
-}
-.sub_titulo h3{
-    margin-top: 10px;
-    font-weight: 200;
-    margin-left: 5px;
-    font-size: 20px;
-}
-.regiao_section .sub_titulo{
-    color: white;
-    text-transform: uppercase;
-}
-.regiao_section .titulo h2{
-    color: white;
-    font-weight: 800;
-    font-size: 120px;
-    margin-top: 0px;
-    display: inline-block;
-    padding-right: 50px;
-    background-color: rgba(239, 145, 76, 0.81);
-}
-.regiao_section .titulo h3{
-    font-weight: 100;
-    font-size: 20px;
-    margin-bottom: 0px;
-        display: inline-block;
-    padding: 2px 20px 2px 5px;
-    background-color: rgba(0, 0, 0, 0.76);
-}
-.titulo_de_fora{
-    font-weight: 800;
-    font-size: 20px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    /*margin-left: 13px;*/
-}
-.hr_de_fora{
-    margin-left: 0px;
-    width: 15%;
-    margin-top: 10px;
-    border-bottom: 1px solid #444;
-}
 
 /* COMO FUNCIONA */
 .funciona_section {
@@ -429,7 +355,7 @@ footer .nav>li>a:hover {
 }
 .sobre_dados .parallax{
     background-image: url("https://d262ilb51hltx0.cloudfront.net/max/2000/1*vXjx4Y7EgQBwALkaeZJ0Cg.jpeg");
-    min-height: 200px;
+    min-height: 250px;
     border: 1px solid black;
     border-right: none;
 }
@@ -456,17 +382,13 @@ footer .nav>li>a:hover {
     color: black;
 }
 .name_logo{
+    width: 300px;
     margin-top: 80px;
     display: inline-block;
     margin-left: 20px;
 }
 .home_section{
-    margin-top: 100px;
-}
-.home_section img{
-    display: inline-block;
-    width: 30%;
-    /*margin-top: -80px;*/
+    padding-top: 100px !important;
 }
 
 .home_section span{
@@ -654,3 +576,8 @@ body::-webkit-scrollbar-thumb {
     font-size: 12px;
     font-weight: 400;    
 }
+
+
+/* SESSÃO "CID" */
+
+

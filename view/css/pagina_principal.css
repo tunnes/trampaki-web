@@ -1,34 +1,146 @@
 
 
 /* MediaQuery - Componentes responsivos: */
-
-@media (max-width: 800px){
+@media (max-width: 1200px){
+    /* COMECAR AGORA ----------- */
+    .cadastro_section .button{
+        font-size: 50px;
+    }    
+}
+@media (max-width: 950px) {
+    /* CABEÇALHO --------------- */
+    .name_logo h1{
+        font-size: 70px;
+    }
+}
+@media (max-width: 800px) {
+    /* GLOBAL ------------------- */
+    .container{
+        text-align: center;
+    }
+    
+    /* CABEÇALHO ---------------- */
     .home_section img{
+        width: 37%;
+        float: none;
         display: block;
-        margin-left: 40px;    
-        width: 59%
+        margin-right: auto;
+        margin-left: auto !important;
     }
     #home {
         padding-top: 0px;
     }
     .name_logo {
+        width: 100%;
         margin-top: 0px;
-        margin-left: 0px;
+        display: block;
+        margin-right: auto;
+        margin-left: auto !important;
+        float: none;
+        text-align: center;
     }
     .header_content{
         margin-left: 20%;
     }
-    .home_section h1{
-        
+    
+    /* COMO FUNCIONA ------------ */
+    .funciona_passos img {
+        width: 30%;
+    }
+    .funciona_passos h3{
+        font-size: 13px;
+        height: 46px;
+        margin-bottom: 0px;
+    }
+    .funciona_passos p{
+        text-align: justify;
+    }
+    
+    /* COMECAR AGORA ----------- */
+    .cadastro_section .button{
+        font-size: 35px;
+    }
+    
+    /* INFORMAÇÕES -------------- */
+    .sobre_dados .parallax{
+        min-height: 200px;
+    }
+    .nom{
+        font-size: 15px;
+    }
+    .num{
+        font-size: 70px !important;
+    }
+    
+    /* CONTATO ------------------ */
+    .contato_links{
+        margin-top: 60px !important;
+    }
+    
+    /* FOOTER ------------------- */
+    #footer .container{
+        text-align: left !important;
     }
 }
-@media (max-width: 600px){
+@media (max-width: 767px) {
+    
+    /* INFORMAÇÕES -------------- */
+    .sobre_dados .parallax{
+        min-height: 350px;
+    }
+    .num{
+        margin-top: 30px;
+    }
+}
+@media (max-width: 680px) {
+    /* COMECAR AGORA ----------- */
+    .cadastro_section .button{
+        font-size: 20px;
+    }
+}
+@media (max-width: 600px) {
+    /* CABEÇALHO -------------- */    
     .home_section h1 {
         font-size: 60px;
         margin-bottom: 0px;
     }
+    
+    /* DISPONIVEL EM ---------- */
+    .regiao_section .titulo h2{
+        font-size: 85px !important;
+    }
+    
+    /* COMECAR AGORA ---------- */
+    .cadastro_section .button{
+        font-size: 16px;
+    }
+    .contato_links h3{
+        font-size: 10px;    
+    }
 }
-@media (max-width: 450px){
+@media (max-width: 550px) {
+    /* COMO FUNCIONA ------------ */
+    .funciona_passos .col-xs-4{
+        width: 100% !important;
+    }
+    .funciona_passos img {
+        display: none;
+    }
+    .funciona_passos h3 {
+        font-size: 21px;
+        height: auto;
+        margin-top: 0px;
+    }
+    .funciona_passos p {
+        padding-top: 5px;
+        margin-bottom: 55px;
+        margin-top: 25px;
+        border-top: 1px solid black;
+    }
+    
+}
+@media (max-width: 450px) {
+    /* CABEÇALHO --------------- */
     .home_section h1 {
         font-size: 50px;
     }
@@ -37,5 +149,115 @@
          margin-left: 15%;
         
     }
+
+    /* DISPONIVEL EM ----------- */
+    .regiao_section .titulo h2{
+        font-size: 55px !important;
+        padding-right: 25px !important;
+    }
+    .regiao_section .titulo h3{
+        font-size: 12px !important;
+    }
+    .regiao_section .parallax{
+        min-height: 250px !important;
+    }
     
+    /* COMECAR AGORA ----------- */
+    .cadastro_section .button {
+        font-size: 33px;
+        margin-bottom: 20px;
+    }
+    .cadastro_section .col-xs-6{
+        width: 100%;
+    }
+    
+    /* INFORMAÇÕES ------------- */
+    .sobre_dados .parallax{
+        min-height: 700px;
+    }
+    .sobre_dados .col-xs-6{
+        width: 100%;
+    }
 }
+
+/* CABEÇALHO ---------------------------------------------------------------- */
+
+/* CIDADES DISPONÍVEIS ------------------------------------------------------ */
+.parallax {
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.filter-opacity {
+    /*-webkit-filter: opacity(.4);*/
+    filter: grayscale(30%) invert(.2);
+    /*filter: grayscale(50%) opacity(60%);*/
+}
+.regiao_section .parallax{
+/*  The image used */
+    background-image: url("/view/img/BS.jpg");
+    min-height: 300px;
+}
+.regiao_section{
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+    margin-bottom: 50px;
+    background-color: black;
+    /*background-color: #ef914c;*/
+}
+.regiao_section .titulo{
+    text-transform: uppercase;
+    margin-top: 60px;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    /*text-align: center;*/
+    width: 100%;
+    color: white;
+}
+.sub_titulo h3{
+    margin-top: 10px;
+    font-weight: 200;
+    margin-left: 5px;
+    font-size: 20px;
+}
+.regiao_section .sub_titulo{
+    color: white;
+    text-transform: uppercase;
+}
+.regiao_section .titulo h2{
+    color: white;
+    font-weight: 800;
+    font-size: 120px;
+    margin-top: 0px;
+    display: inline-block;
+    padding-right: 50px;
+    background-color: rgba(239, 145, 76, 0.81);
+}
+.regiao_section .titulo h3{
+    font-weight: 100;
+    font-size: 20px;
+    margin-bottom: 0px;
+        display: inline-block;
+    padding: 2px 20px 2px 5px;
+    background-color: rgba(0, 0, 0, 0.76);
+}
+.titulo_de_fora{
+    font-weight: 800;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    /*margin-left: 13px;*/
+}
+.hr_de_fora{
+    margin-left: 0px;
+    width: 15%;
+    margin-top: 10px;
+    border-bottom: 1px solid #444;
+}
+
+/* COMO FUNCIONA ------------------------------------------------------------ */
+

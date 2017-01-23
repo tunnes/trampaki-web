@@ -15,7 +15,10 @@
     
         <!-- Estilos -->
         <link rel="stylesheet" href="view/css/styles.css">
-    
+        
+        <!-- CSS Refatorado-->
+        <link rel="stylesheet" href="view/css/pagina_principal.css">
+        
         <!-- Font -->
         <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,800" rel="stylesheet">
@@ -84,7 +87,7 @@
             </div>
            
             <div class='funciona_passos row'>
-                <div class="col-md-4">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                     <img class='img-responsive' src='view/img/profile.svg'>
                     <h3>1. OBTENHA UM PERFIL</h3>
                     <p>
@@ -92,7 +95,7 @@
                         ou apenas sua necessidade já é possivel começar! 
                     </p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                     <img class='img-responsive' src='view/img/map.svg'>
                     <h3>2. VISUALIZE ANUNCIOS E PROFISSIONAIS</h3>
                     
@@ -101,10 +104,10 @@
                         de anuncios e profissionais mais proximos de voce.
                     </p>
                 </div>            
-                <div class="col-md-4">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                     <img class='img-responsive' src='view/img/chat.svg'>
                     
-                    <h3>3.NEGOCIE DESPREOCUPADO</h3>
+                    <h3>3. NEGOCIE DESPREOCUPADO</h3>
                     <p>
                         Nos não gostamos de interferir em seus negocios, então negocie valores datas e 
                         tudo mais despreocupado tudo isso em nosso chat.
@@ -123,14 +126,14 @@
                         Caso tenha um serviço a oferecer e deixar a disposição dos anunciantes, divulgue seus serviços. 
                     </p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <a href="/novo-anunciante">                    
                         <div class='button'>
                             Cadastre <br> um serviço
                         </div>
                     </a>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <a href="/novo-prestador">
                         <div class=' button'>
                             Divulgue <br> seus serviços
@@ -157,10 +160,10 @@
         <!-- INFORMAÇÕES ------------------------------------------------------------------------------------------------------------------------------------ -->
         <div class="container-fluid sobre_dados">
             <div class="texto">
-                <div class="col-md-3"><span class="num">121 </span> <span class="nom"> COMMITS EFETUADOS   </span></div>
-                <div class="col-md-3"><span class="num">193 </span> <span class="nom"> CAFÉS TOMADOS       </span></div>
-                <div class="col-md-3"><span class="num">74 </span> <span class="nom"> ANUNCIOS EFETUADOS  </span></div>
-                <div class="col-md-3"><span class="num">38 </span> <span class="nom"> NOITES DESENVOLVEDO </span></div>
+                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3"><span class="num">121 </span> <span class="nom"> COMMITS EFETUADOS   </span></div>
+                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3"><span class="num">193 </span> <span class="nom"> CAFÉS TOMADOS       </span></div>
+                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3"><span class="num">74 </span> <span class="nom"> ANUNCIOS EFETUADOS  </span></div>
+                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3"><span class="num">38 </span> <span class="nom"> NOITES DESENVOLVEDO </span></div>
 
             </div>
             <div class="filter-opacity parallax" id="about"></div>
@@ -175,7 +178,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class='col-md-6'>
+                <div class='col-xs-12 col-sm-12 col-md-6 col-lg-6 '>
                     <form class="form-horizontal">
                     <div class="control-group">
                         <label class="control-label input-large" for="inputNome">Nome</label>
@@ -202,20 +205,21 @@
                     </div>
                 </form>
                 </div>
-                <div class='col-md-6 contato_links'>
-                    <div class="col-md-4">
+                <div class='col-xs-12 col-sm-12 col-md-6 col-lg-6 contato_links'>
+                    
+                    <div class="col-xs-4 col-sm-3 col-sm-offset-1 col-md-4 col-md-offset-0 col-lg-4 col-lg-offset-0">
                         <a href="https://github.com/tunnes/trampaki" target="_blank">                        
                             <img src="view/img/github-sign.svg" class="img-responsive">
                             <h3>Acompanhe o projeto no GitHub!</h3>
                         </a>                            
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-xs-4 col-sm-3 col-sm-offset-1 col-md-4 col-md-offset-0 col-lg-4 col-lg-offset-0">
                         <a href="/docs" target="_blank">
                             <img src="view/img/coding.svg" class="img-responsive">
                             <h3>Conheça e utilize nossa API!</h3>
                         </a>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-xs-4 col-sm-3 col-sm-offset-1 col-md-4 col-md-offset-0 col-lg-4 col-lg-offset-0">
                         <img src="view/img/facebook-logo.svg" class="img-responsive">
                         <h3>Ou curta nossa fanpage ^^</h3>
                     </div>
@@ -238,9 +242,7 @@
                 <p class="text-right">© 2016</p>
             </div>
         </footer>
-    
-    
-    
+
         <div class="scroll-up">
             <a href="#home"><i class="fa fa-angle-up"></i></a>
         </div>
