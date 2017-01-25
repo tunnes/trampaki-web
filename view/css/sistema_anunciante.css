@@ -1,0 +1,38 @@
+/* CADASTRO DE ANUNCIOS */
+#wrapper_cadastrar_anuncio .novo_prestador{
+    margin-top: 5%;
+}
+
+#wrapper_cadastrar_anuncio .novo_prestador button{
+    text-transform: uppercase;
+    margin-top: 35px;
+    float: right;
+    border-color: #101010;
+    font-size: 12px;
+    border-radius: 0px;
+    margin-left: 8px;
+    background-color: white;
+    border-width: 1px;
+    padding: 8px 15px 8px 15px;
+}
+
+
+#wrapper-chat {
+    height: calc(100% - 35px);
+    overflow-y: auto;
+}
+
+#wrapper-chat input, #wrapper-chat button {
+    position: fixed;
+    bottom: 0;
+}
+#wrapper-chat #messagebox {
+    width: 100%;
+    margin-left: -95px;
+}
+#wrapper-chat #sendbox {
+    right: 180px;
+}
+#wrapper-chat #mapa-retornar {
+    right: 0px;
+}

@@ -1,0 +1,111 @@
+/* GENERICO */
+/*#wrapper-anuncio h1{*/
+/*    font-size: 35px;*/
+/*    font-weight: 800;*/
+/*    text-transform: uppercase;*/
+/*}*/
+.wrapper_janela h1{
+    font-size: 42px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.wrapper_janela hr{
+    border-width: 0px 0px 1px 0px; 
+    border-bottom-color: #a09f9f;
+    border-style: solid;
+}
+.fiter_tags button{
+    background-color: white;
+    border: 1px solid #101010;
+}
+.fiter_tags span{
+    margin-right: 4px;
+    font-weight: 800;
+    cursor: pointer;
+    color: gray;
+}
+.fiter_tags .ativada{
+    color: black;
+    border-bottom: 3px solid black;
+}
+
+.buttons_bugados{
+    position: absolute;
+    right: 0px;
+    bottom: 24px;
+    
+    
+}
+.buttons_bugados button{
+     margin-top: 35px;
+    float: right;
+    border-color: #101010;
+    font-size: 12px;
+    border-radius: 0px;
+    margin-left: 8px;
+    background-color: white;
+    border-width: 1px;
+    padding: 8px 15px 8px 15px;
+
+}
+
+.wrapper_janela h2{
+    width: 100%;
+    margin-top: 25px;
+    font-size: 15px;
+    font-weight: 800;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #b0b0b0;
+}
+.wrapper_janela{
+    padding-right: 8% !important;
+}
+
+/* teste remove */
+.gmnoprint:not(.gm-bundled-control) {
+    display: none;
+}
+
+.gm-bundled-control .gmnoprint {
+    display: block;
+}
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+a[href^="https://www.google.com/maps"]{display:none !important}
+
+
+/* Painel administrado ---------------------------- */
+.soli_generic:hover{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+.soli_generic{
+    
+    margin-right: 5px;
+    text-decoration: none;
+    font-weight: 500 !important;
+    border: 1px solid black;
+    color: white !important;
+    font-size: 10px !important;
+    padding: 3px 12px 3px 12px;   
+}
+
+.soli_recusar{
+    background-color: #ff2f2f;
+}
+.soli_aceitar{
+    background-color: #55ab55;
+}
+
+#suprise *{
+    text-transform: uppercase;
+    color: black;
+    font-size: 12px;
+    font-weight: 100;
+}
+
+.table > thead > tr > th{
+    font-size: 12px;
+    font-weight: 400;    
+}

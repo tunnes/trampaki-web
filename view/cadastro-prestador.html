@@ -14,12 +14,11 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet">
     
         <!-- Estilos -->
-        <link rel="stylesheet" href="view/css/styles.css">
+        <link rel="stylesheet" href="view/css/pagina_generica.css" type="text/css"/>
         <link rel="stylesheet" href="view/css/pagina_cadastro.css" type="text/css"/>
         <link rel="stylesheet" href="view/css/modal.css" type="text/css"/>
                 
         <!-- Font -->
-        <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,800" rel="stylesheet">
             
         <!-- jQuery e JavaScript -->
@@ -68,10 +67,10 @@
         </nav>
     
         <!-- FORMULARIO DE CADASTRO ------------------------------------------------------------------------------------------------------------------------- -->
-        <div class="novo_prestador container">
+        <div class="novo_usuario container">
             <div class="row">
                 <div class="col-md-12">   
-                    <h1>Novo<br><span class='seilaMano'>Prestador</span></h1>
+                    <h1>Novo<br><span class='titulo'>Prestador</span></h1>
                 </div>
             </div>
             <div class="row">
@@ -81,35 +80,31 @@
 				        <h2>Dados Pessoais</h2>
 				        <hr>
 						<div class="row">
-							<div class="col-sm-6 form-group">
+							<div class="col-xs-12 col-sm-6 form-group">
 								<label>Nome</label>
 								<input required name="usuario_nome" type="text" placeholder="Digite seu nome.." class="form-control">
 							</div>
-    					    <div class="col-sm-3 form-group">
+    					    <div class="col-xs-6 col-sm-3 form-group">
     							<label>Login</label>
     							<input required name="usuario_login" type="text" placeholder="Digite seu login.." class="form-control">
     						</div>
-    					    <div class="col-sm-3 form-group">
+    					    <div class="col-xs-6 col-sm-3 form-group">
     							<label>Senha</label>
     							<input required name="usuario_senha" type="password" placeholder="Digite uma senha.." class="form-control">
     						</div>    						
 						</div>
 						<div class='row'>
-    						<div class="col-sm-4 form-group">
+    						<div class="col-xs-6 col-sm-4 form-group">
         						<label>Email</label>
         						<input required name="usuario_email" type="email" placeholder="Endereço de Email.." class="form-control">
     					    </div>
-    					    <div class="col-sm-4 form-group">
+    					    <div class="col-xs-6 col-sm-4 form-group">
 						        <label>telefone</label>
 						        <input required maxlength="15" onfocus="mascaraTelefone()" id="usuario_telefone" name="usuario_telefone" type="text" placeholder="Numero de telefone.." class="form-control">
 					        </div>	
-    					    <div class="col-sm-4 form-group">
+    					    <div class="col-xs-12 col-sm-4 form-group">
 						        <label>Imagem</label>
                                 <input required name="imagem_perfil" type="file" name="pic" accept="image/*">
-                                <!--<label class="myLabel">-->
-                                <!--    <input required name="imagem_perfil" type="file" name="pic" accept="image/*">-->
-                                <!--    <span>Selecionar Imagem...</span>-->
-                                <!--</label>-->
 					        </div>						        
     					</div>
     					
@@ -117,11 +112,11 @@
 				        <h2>Localização</h2>
 				        <hr>
 				        <div class="row">
-				            <div class="col-sm-4 form-group">
+				            <div class="col-xs-7 col-sm-4 form-group">
 								<label>CIDADE</label>
 								<input required name="nome_cidade" type="text" placeholder="Digite sua Cidade.." class="form-control">
 							</div>
-							<div class="col-sm-2 form-group">
+							<div class="col-xs-5 col-sm-2 form-group">
 								<label>ESTADO</label>
                                 <select name="sigla_estado">
                                 	<option value="">Selecione</option>
@@ -154,11 +149,11 @@
                                 	<option value="TO">Tocantins</option>
                                 </select>
 							</div>
-							<div class="col-sm-3 form-group">
+							<div class="col-xs-4 col-sm-3 form-group">
 								<label>Nº RESIDENCIAL</label>
 								<input required name="numero_residencial" type="number" placeholder="Digite seu numero residencial.." class="form-control">
 							</div>
-                            <div class="col-sm-3 form-group">
+                            <div class="col-xs-8 col-sm-3 form-group">
 								<label>CEP</label>
 								<input required maxlength="11" name="codigo_postal" id="codigo_postal" type="text" placeholder="Entre com seu CEP.." class="form-control">
 							</div>							
@@ -218,7 +213,7 @@
             <div class="container">
                 <h4>Mapa do site</h4>
                 <ul class="nav">
-                    <li><a href="#home">COMO FUNCIONA?</a></li>
+                    <li><a href="/#como-funciona">COMO FUNCIONA?</a></li>
                     <li><a href="#work">REGISTRAR-SE</a></li>
                     <li><a href="#freelance">SOBRE</a></li>
                     <li><a href="#contato">CONTATO</a></li>

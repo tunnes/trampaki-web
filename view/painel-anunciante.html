@@ -8,7 +8,11 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,800" rel="stylesheet">
         <link rel="shortcut icon" type="image/png" href="view/img/fav_logo.png"/>
         
-        <link rel="stylesheet" href="view/css/mapEngine.css" type="text/css"/>
+        <!-- Estilos -->
+        <link rel="stylesheet" href="view/css/sistema_generico.css"  type="text/css"/>
+        <link rel="stylesheet" href="view/css/sistema_principal.css" type="text/css"/>        
+        <link rel="stylesheet" href="view/css/sistema_anunciante.css" type="text/css"/>
+        
         <link rel="stylesheet" href="view/css/modal.css" type="text/css"/>
         <link rel="stylesheet" href="view/css/styles.css" type="text/css"/>
 
@@ -20,12 +24,12 @@
 
         <script src="view/js/painel-anunciante.js"></script>        
         
-        <!--<script type="text/javascript" src="view/js/cadastro-prestador.js"></script>-->
-        <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
                 
     </head>
     <body>
@@ -86,6 +90,27 @@
                 </div>
             </div>
         </div>
+        <div id="hideshow" class="controle-lateral" >
+            <!--<span class="icon-bar"></span>-->
+            <!--<span class="icon-bar"></span>-->
+            <!--<span class="icon-bar"></span>-->
+        </div>
+        <script type="text/javascript">
+            $('#hideshow').click(function(){
+                
+                if(document.getElementById('hideshow').style.left == '180px'){
+                    $('#hideshow').css('left','0%');
+                    $('#barraLateral').css('left','-180px');
+                    // $('#barraLateral').toggle('show');
+                }else{
+                    $('#hideshow').css('left','180px');
+                    $('#barraLateral').css('left','0px');
+                    // $('#barraLateral').toggle('hide');
+                }
+            });
+
+            
+        </script>
         <!-- ============================================================================================== -->
         <div id="janela"></div>
         <!-- Elemento que recebe o mapa e as informações ================================================== -->

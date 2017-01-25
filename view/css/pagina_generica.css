@@ -1,0 +1,84 @@
+
+/* GLOBAL ------------------------------------------------------------------- */
+body::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+body::-webkit-scrollbar-thumb {
+    background: #ef914c;
+}
+body::-webkit-scrollbar {
+    width: 6px;
+    background: #F4F4F4;
+}
+
+/* MENU --------------------------------------------------------------------- */
+.icon-bar {
+    background-color: #000;
+}
+.navbar-trans {
+    background-color: #fff;
+    color: #cdcdcd;
+    border-width: 0;
+}
+.navbar-trans .navbar-brand,
+.navbar-trans >.container-fluid .navbar-brand {
+    padding: 14px;
+    color: #000;
+}
+.navbar-trans li>a:focus,
+.navbar-trans li.active {
+    background-color: #FF8C00;
+    color: #000;
+    opacity: 0.8;
+}
+.navbar-trans li>a:hover {
+    background-color: #FF8C00;
+    color: #000;
+    opacity: 0.5;
+}
+.navbar-trans a {
+    color: #000;
+    letter-spacing: 1px;
+}
+.navbar-trans .form-control:focus {
+    border-color: #eee;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(100, 100, 100, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(100, 100, 100, 0.6);
+}
+
+
+/* RODAPÉ ------------------------------------------------------------------- */
+footer {
+    border-top: 15px solid #ef914c;
+    text-transform: uppercase;
+    background-color: black;
+    color: white;
+    min-height: 50px;
+    padding-top: 10px;
+}
+footer h4{
+    text-transform: uppercase;
+    font-weight: 800;
+}
+footer a:hover {
+    color: black;
+}
+footer .nav>li>a {
+    padding: 3px;
+    color: white
+}
+footer .nav>li>a:hover {
+    background-color: transparent;
+    color: #fff;
+}
+
+
+/* MEDIAQUERY GLOBAL -------------------------------------------------------- */
+@media (max-width: 800px) {
+    
+    /* FOOTER ------------------- */
+    #footer .container{
+        text-align: left !important;
+    }
+}

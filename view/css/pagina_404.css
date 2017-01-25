@@ -1,0 +1,61 @@
+
+/* CORPO -------------------------------------------------------------------- */
+.ops-wrapper{
+    font-family: 'Open Sans', sans-serif !important;
+    max-width: 330px;
+    padding: 15px;
+    margin-top: 170px;
+    margin-left: 30%;
+}
+.ops-wrapper h1{
+    font-weight: 800;
+    display: inline;
+    padding: 0px 90px 0px 15px;
+    margin-top: 0px;
+    color: white;
+    font-size: 80px;
+    background-color: #ef914c;
+}
+.ops-wrapper h2{
+    font-weight: 300;
+    display: inline;
+    padding-left: 15px;
+    padding-right: 30px;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+}
+
+/* MEDIAQUERY GLOBAL -------------------------------------------------------- */
+@media (max-width: 1000px){
+    .ops-wrapper{
+        margin-left: 25%;
+    }
+}
+@media (max-width: 800px) {
+    .ops-wrapper{
+        margin-left: 15%;
+    }
+}
+@media (max-width: 650px) {
+    .ops-wrapper{
+        margin-left: 10%;
+    }
+}
+@media (max-width: 550px) {
+    .ops-wrapper{
+        margin: 170px auto !important;
+    }
+    .ops-wrapper h2{
+        font-size: 13px;
+        padding-bottom: 20px;
+    }
+    .ops-wrapper h1{
+        font-size: 50px;
+    }    
+}
+@media (max-width: 400px) {
+    .ops-wrapper h1{
+        font-size: 40px;
+    }    
+}
