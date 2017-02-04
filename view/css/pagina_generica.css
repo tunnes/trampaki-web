@@ -1,5 +1,8 @@
 
 /* GLOBAL ------------------------------------------------------------------- */
+body{
+    font-family: 'Open Sans', sans-serif !important;
+}
 body::-webkit-scrollbar-track {
     background-color: #F4F4F4;
 }

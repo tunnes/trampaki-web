@@ -1,8 +1,9 @@
-<div id="wrapper-perfil-prestador" class="wrapper_janela container-fluid">
-	<!-- CATEGORIAS -------------------------------------------------------------- -->
+<div id="wrapper-perfil"  class="wrapper_janela container-fluid">
+
+	<!-- CABEÇALHO -------------------------------------------------------------------------------------------------------------------------------------- -->
 	<div id="header">
 		<div id='imagem_header'></div>
-		<div id='titulo_header'>
+		<div id='titulo_header' class="recuo_responsivo">
 			<h1 id='nm_prestador'>Ayrton Felipe</h1>  
 			<p>
 				<span id='header_cidade'>São Vicente</span>, 
@@ -11,8 +12,9 @@
 			<div id='categorias'></div>
 		</div>
 	</div>
-	<!-- ------------------------------------------------------------------------- -->
-	<div id="profissional">
+
+	<!-- DADOS PROFISSIONAIS ---------------------------------------------------------------------------------------------------------------------------- -->
+	<div id="profissional" class="recuo_responsivo section_informacao">
     	<h2>DESCRIÇÃO PROFISSIONAL</h2>
     	<p id="ds_profissional">
     		Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
@@ -22,28 +24,62 @@
     		ut aliquip ex ea commodo consequat.
     	</p>
     </div>
-    <div id="dados_pessoais">
-		<h2>DADOS PESSOAIS</h2>
-		<span>Nome</span><p id='nome'>Ayrton Felipe Souza Tunes</p>
-		<span>Email</span><p id='ds_email'>ayrton.tunes@outlook.com</p>
-		<span>Telefone</span><p id='cd_telefone'>996201030</p>
+
+	<!-- DADOS PESSOAIS --------------------------------------------------------------------------------------------------------------------------------- -->    
+    <div id="dados_pessoais" class="recuo_responsivo section_informacao">
+		<div class="col-md-12">
+			<h2>DADOS PESSOAIS</h2>
+		</div>
+		
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" >
+			<span>Nome</span><p id='nome'>Ayrton Felipe Souza Tunes</p>
+		</div>
+		
+		<div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+			<span>Email</span><p id='ds_email'>ayrton.tunes@outlook.com</p>
+		</div>
+		<div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+			<span>Telefone</span><p id='cd_telefone'>996201030</p>
+		</div>
 	</div>
-	<div id="dados_endereco">
-		<h2>ENDERECO</h2>
-		<span>Estado</span><p id='sg_estado1'>Ayrton Felipe Souza Tunes</p>
-		<span>Cidade</span><p id='cidade'>Ayrton Felipe Souza Tunes</p>
-		<br>
-		<span>Cep</span><p id='cep'>Ayrton Felipe Souza Tunes</p>
-		<span>Numero </span><p id='numResiden'>Ayrton Felipe Souza Tunes</p>
+	
+	<!-- DADOS ENDEREÇO --------------------------------------------------------------------------------------------------------------------------------- -->
+	<div id="dados_endereco" class="recuo_responsivo section_informacao">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<h2>ENDEREÇO</h2>
+		</div>
+		<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+			<span>Estado</span><p id='sg_estado1'>Ayrton Felipe Souza Tunes</p>
+		</div>
+		<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+			<span>Cidade</span><p id='cidade'>Ayrton Felipe Souza Tunes</p>
+		</div>
+		<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+			<span>Cep</span><p id='cep'>Ayrton Felipe Souza Tunes</p>
+		</div>
+		<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+			<span>Numero </span><p id='numResiden'>Ayrton Felipe Souza Tunes</p>
+		</div>
 	</div>
-	<div id="dados_acesso">
+	
+	<!-- DADOS ACESSO ----------------------------------------------------------------------------------------------------------------------------------- -->
+	<div id="dados_acesso" class="recuo_responsivo section_informacao">
 		<h2>DADOS DE ACESSO</h2>
-			<span>Login</span><p id='login'>Ayrton Felipe Souza Tunes</p>
-			<span>Senha</span><p id='senha'>Ayrton Felipe Souza Tunes</p>
-			<span>token</span><p id='token'>Ayrton Felipe Souza Tunes</p>
+			<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+				<span>Login</span><p id='login'>Ayrton Felipe Souza Tunes</p>
+			</div>
+			<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+				<span>Senha</span><p id='senha'>Ayrton Felipe Souza Tunes</p>
+			</div>
+			<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+				<span>token</span><p id='token'>Ayrton Felipe Souza Tunes</p>
+			</div>
 	</div>
+	
+	<!-- RODAPÉ ----------------------------------------------------------------------------------------------------------------------------------------- -->
 	<div id='buttons'>
 		<button id="mapa-retornar" onclick='retornar()' type="button">RETORNAR AO MAPA</button>
     	<button id="botao_01" type="button" onclick="alert('Já sabe né?')">EDITAR PERFIL</button>
 	</div>
+
 </div>

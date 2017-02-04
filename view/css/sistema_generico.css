@@ -4,35 +4,55 @@
 /*    font-weight: 800;*/
 /*    text-transform: uppercase;*/
 /*}*/
-.wrapper_janela h1{
-    font-size: 42px;
-    font-weight: 800;
-    text-transform: uppercase;
+
+/*#dados_endereco{*/
+/*    display: inline-block;*/
+/*}*/
+/* GLOBAL ------------------------------------------------------------------- */
+body::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
 }
-.wrapper_janela hr{
-    border-width: 0px 0px 1px 0px; 
-    border-bottom-color: #a09f9f;
-    border-style: solid;
+body::-webkit-scrollbar-thumb {
+    background: #ef914c;
 }
-.fiter_tags button{
-    background-color: white;
-    border: 1px solid #101010;
-}
-.fiter_tags span{
-    margin-right: 4px;
-    font-weight: 800;
-    cursor: pointer;
-    color: gray;
-}
-.fiter_tags .ativada{
-    color: black;
-    border-bottom: 3px solid black;
+body::-webkit-scrollbar {
+    width: 6px;
+    background: #F4F4F4;
 }
 
+/* JANELA GLOBAL ------------------------------------------------------------ */
+#janela{
+    position: relative;
+    display: none;
+    margin: 0px 0px 0px 40px;
+    height: 100%;
+    padding-top: 50px;
+}
+#janela img{
+    width: 90px;
+}
+#buttons{
+    margin-top: 40px;
+    display: inline-block;
+    margin-bottom: 40px;
+    float: right;
+}
+#janela button{
+    margin-top: 35px;
+    float: right;
+    border-color: #101010;
+    font-size: 12px;
+    border-radius: 0px;
+    margin-left: 8px;
+    background-color: white;
+    border-width: 1px;
+    padding: 8px 15px 8px 15px;
+}
 .buttons_bugados{
     position: absolute;
     right: 0px;
     bottom: 24px;
+    margin-bottom: 40px
     
     
 }
@@ -48,7 +68,16 @@
     padding: 8px 15px 8px 15px;
 
 }
-
+.wrapper_janela h1{
+    font-size: 42px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.wrapper_janela hr{
+    border-width: 0px 0px 1px 0px; 
+    border-bottom-color: #a09f9f;
+    border-style: solid;
+}
 .wrapper_janela h2{
     width: 100%;
     margin-top: 25px;
@@ -57,15 +86,134 @@
     padding-bottom: 4px;
     border-bottom: 1px solid #b0b0b0;
 }
-.wrapper_janela{
-    padding-right: 8% !important;
+
+
+/* JANELA DE PEFIL ---------------------------------------------------------- */
+#wrapper-perfil [class*='col-']{
+    padding: 0px;
+}
+#wrapper-perfil p{
+    font-size: 11px;
+}
+#wrapper-perfil h1{
+    font-weight: 800;
+    margin-top: 10px;
+    font-size: 44px;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+}
+#wrapper-perfil #header{
+    width: 100%;
+    height: 150px;
+    display: block;
+    margin-bottom: 20px;
+}
+#wrapper-perfil #titulo_header{
+    margin-left: 20px;
+    display: inline-block;
+    height: 140px;
+    float:left;
+}
+#wrapper-perfil #imagem_header{
+    border-style: solid;
+    border-width: 1px 15px 1px 1px;
+    display: inline-block;
+    width: 140px;
+    height: 140px;
+    background-image:url('https://trampaki-web-tunnes.c9users.io/view/img/anunc.jpg');
+    background-repeat:no-repeat;
+    background-size: cover;
+    float:left;
+    
+}
+#wrapper-perfil h2{
+    width: 100%;
+    margin-top: 25px;
+    font-size: 15px;
+    font-weight: 800;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #b0b0b0;
 }
 
-/* teste remove */
+#titulo_header p{
+    font-size: 18px;
+}
+#profissional{
+    display: inline-block;
+}
+#titulo_header .categoria{
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 5px;
+}
+#dados_pessoais span{
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 800;
+    border-right: 1px solid #101010;
+    padding-right: 5px;
+    margin-right: 10px;
+    text-transform: uppercase;
+}
+#dados_pessoais p {
+    margin-right: 10px;
+    /*width: 20%;*/
+    display: inline-block;
+}
+#dados_endereco span{
+    display: inline-block;
+    font-size: 10px;
+        text-align: right;
+    font-weight: 800;
+    border-right: 1px solid #101010;
+    padding-right: 5px;
+    margin-right: 10px;
+    width: 50px;
+    text-transform: uppercase;
+}
+#dados_endereco p {
+    display: inline-block;
+}
+#dados_acesso span{
+    display: inline-block;
+    font-size: 10px;
+        text-align: right;
+    font-weight: 800;
+    border-right: 1px solid #101010;
+    padding-right: 5px;
+    margin-right: 10px;
+    width: 50px;
+    text-transform: uppercase;
+}
+#dados_acesso p {
+    display: inline-block;
+}
+
+.section_informacao{
+    width: 100%;
+}
+.fiter_tags button{
+    background-color: white;
+    border: 1px solid #101010;
+}
+.fiter_tags span{
+    margin-right: 4px;
+    font-weight: 800;
+    cursor: pointer;
+    color: gray;
+}
+.fiter_tags .ativada{
+    color: black;
+    border-bottom: 3px solid black;
+}
+.recuo_responsivo{
+    display: inline-block;
+}
+
+/* GOOGLE MAPS API ---------------------------------------------------------- */
 .gmnoprint:not(.gm-bundled-control) {
     display: none;
 }
-
 .gm-bundled-control .gmnoprint {
     display: block;
 }
@@ -73,39 +221,115 @@ a[href^="http://maps.google.com/maps"]{display:none !important}
 a[href^="https://maps.google.com/maps"]{display:none !important}
 a[href^="https://www.google.com/maps"]{display:none !important}
 
-
-/* Painel administrado ---------------------------- */
-.soli_generic:hover{
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
+/* CHAT --------------------------------------------------------------------- */
+#wrapper-chat {
+    height: calc(100% - 35px);
+    overflow-y: auto;
+    padding: 15px !important;
 }
-.soli_generic{
+.cpm #messagebox {
+    width: 71%;
+}
+.cpm #sendbox {
+    font-size: 10px;
+    float: none;
+}
+.cpm #mapa-retornar {
+    float: none;
+    right: 15px;
+    font-size: 10px;
+}
+.cpm{
+    position: absolute;
+    bottom: 15px;
     
-    margin-right: 5px;
-    text-decoration: none;
-    font-weight: 500 !important;
-    border: 1px solid black;
-    color: white !important;
-    font-size: 10px !important;
-    padding: 3px 12px 3px 12px;   
+    padding-right: 15px;
+    width: 100%;
+}
+@media (max-width: 1020px){
+#wrapper-chat #messagebox{
+        width:50%;
+    }
+}
+@media (max-width: 460px){
+#wrapper-chat #messagebox{
+        width:50%;
+    }
 }
 
-.soli_recusar{
-    background-color: #ff2f2f;
+/* MEDIAQUERY GLOBAL -------------------------------------------------------- */
+@media (min-width: 950px){
+    /* Janela Perfil ------------------------------ */
+    #janela{
+        padding-left:  50px;
+        padding-right: 50px;
+    }
 }
-.soli_aceitar{
-    background-color: #55ab55;
+@media (max-width: 600px){
+    /* Janela Global ------------------------------ */
+    #janela .container-fluid{
+        padding: 0px;
+    }
+    #janela{
+        margin: 0px;
+    }
+    
+    /* Janela Perfil ------------------------------ */
+    #imagem_header{
+        margin-top: -50px;
+        width: 100% !important;
+        height: 350px !important;
+        border-width: 1px 1px 1px 1px !important;
+    }
+    #wrapper-perfil h1{
+        font-size: 50px;
+    }
+    #titulo_header{
+        margin-left: 0px  !important;
+        height: auto  !important;
+    }
+    #wrapper-perfil{
+        margin: 0px;
+    }
+    .recuo_responsivo{
+        padding: 0px 30px 0px 30px;
+        display: inline-block;
+    }
+    #wrapper-perfil #buttons{
+        margin-right: 30px;
+    }
+    
 }
-
-#suprise *{
-    text-transform: uppercase;
-    color: black;
-    font-size: 12px;
-    font-weight: 100;
-}
-
-.table > thead > tr > th{
-    font-size: 12px;
-    font-weight: 400;    
+@media (max-width: 450px){
+    /* Janela Perfil ------------------------------ */
+    #nm_prestador{
+        font-size: 35px !important;
+    }
+    #profissional span {
+        display: block;
+        text-align: left;
+        border-right: 0px;
+        padding-right: 0px;
+    }
+    #dados_pessoais span {
+        display: block;
+        text-align: left;
+        border-right: 0px;
+        padding-right: 0px;
+    }
+    #dados_endereco span {
+        display: block;
+        text-align: left;
+        border-right: 0px;
+        padding-right: 0px;
+    }
+    #dados_acesso span{
+        display: block;
+        text-align: left;
+        border-right: 0px;
+        padding-right: 0px;        
+    }
+    #wrapper-perfil [class*='col-xs'] {
+        margin-bottom: 10px;
+    }
 }

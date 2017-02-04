@@ -17,9 +17,9 @@ function efetuarAutenticacao(){
             },
             200:function(data, textStatus, request){
                 sessionStorage.setItem('authorization', request.getResponseHeader('authorization'));
-                sessionStorage.setItem('trampaki-user', request.getResponseHeader('trampaki-user'));
+                sessionStorage.setItem('trampaki_user', request.getResponseHeader('trampaki_user '));
                 sessionStorage.setItem('trampaki-id', request.getResponseHeader('trampaki-id'));
-                request.getResponseHeader('trampaki-user') == '0' ? direcionarPainelAnunciante() : direcionarPainelPrestador();  
+                request.getResponseHeader('trampaki_user') == '0' ? direcionarPainelAnunciante() : direcionarPainelPrestador();  
             }
         }
     });

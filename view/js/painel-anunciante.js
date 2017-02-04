@@ -122,10 +122,12 @@ function meusAnuncios(){
             var sx = ['ABERTO','ENCERRADO','CANCELADO','SUSPENSO'];
             
             [].slice.call(data).forEach(function(anuncio){
+                var wrapper_item_servico = document.createElement("div");
+                
                 var item_servico = document.createElement("div");
                 var imagem_servico = document.createElement("div");
                     anuncio.cd_imagem_01 != null ? carregarImagem(imagem_servico, anuncio.cd_imagem_01) : null;
-                var info_servico = document.createElement("div");
+                var info_servico = document.createElement("span");
                 var titulo = document.createElement("strong");
                     titulo.innerHTML = anuncio.titulo;
                 var status = document.createElement("p");
@@ -136,29 +138,29 @@ function meusAnuncios(){
                     visualizaMeuAnuncio(anuncio.codigoAnuncio);
                 };
                 
-                item_servico.className = 'item_servico';
-                imagem_servico.className = 'imagem_servico';
-                info_servico.className = 'info_servico';
-
+                item_servico.className = 'item';
+                imagem_servico.className = 'item_imagem';
+                wrapper_item_servico.className = 'wrapper_item col-xs-6 col-sm-6 col-md-6 col-lg-4';
                 info_servico.appendChild(titulo);
                     
                 item_servico.appendChild(imagem_servico);
                 item_servico.appendChild(info_servico);
-                anuncios.appendChild(item_servico);
+                wrapper_item_servico.appendChild(item_servico);
+                anuncios.appendChild(wrapper_item_servico);
             	});
             		
             }
 });    
 }
 
-function visualizarSolicitacoes(){
+function visualizarSolicitacoes1(){
     novaJanela("view/ajax/painel-anunciante/visualizar-solicitacoes.html");
     $.ajax({
         type:"GET",
         url:"https://trampaki-api-tunnes.c9users.io/carregar-solicitacoes",
         headers:{
             "Authorization": sessionStorage.getItem("authorization"),
-            "TrampakiUser":"0"
+            "trampaki_user":"0"
         },
         complete: function(data){
                 data = JSON.parse(data.responseText);
@@ -175,13 +177,95 @@ function visualizarSolicitacoes(){
                                     "<a class='soli_generic soli_recusar' onclick='recusarConexao("+ soli.cd_conexao +")'>RECUSAR</a>"+
                                 "</td>"+
                             "</tr>";
-                            
-                    soli.cd_status == '0' ? table.innerHTML = table.innerHTML + x : null;            
+                    soli.cd_status == '1' ? table.innerHTML = (table.innerHTML + x) : null;            
                 });
                  
                 
         }
     });
-} 
+}
+
+function visualizarSolicitacoes(){
+    novaJanela("view/ajax/painel-anunciante/visualizar-solicitacoes.html");
+    $.ajax({
+        type:"GET",
+        url:"https://trampaki-api-tunnes.c9users.io/carregar-solicitacoes",
+        headers:{
+            "Authorization": sessionStorage.getItem("authorization"),
+            "trampaki_user": "0"
+        },
+        complete: function(data){
+            data = JSON.parse(data.responseText);
+            var solicitacoes = document.getElementById('solicitacoes');
+            [].slice.call(data).forEach(function(soli){
+                    
+                    var wrapper_item_solicitacao = document.createElement("div");
+                    
+                    var wrapper_buttom = document.createElement("div");
+                    
+                    var buttom_aceitar = document.createElement("span");
+                    var buttom_recusar = document.createElement("span");
+                    
+                    var item_solicitacao = document.createElement("div");
+                    var imagem_prestador = document.createElement("div");
+                    
+                    soli.cd_imagem01 != null ? carregarImagem(imagem_prestador, soli.cd_imagem01) : null;
+                    
+                    var info_solicitacao = document.createElement("span");
+                    
+                    var nomePrestador = document.createElement("strong");
+                        nomePrestador.innerHTML = soli.nm_usuario;
+                    
+                    buttom_aceitar.className = 'item_buttons buttom_aceitar';
+                    buttom_recusar.className = 'item_buttons buttom_recusar';
+                    buttom_recusar.innerHTML = 'RECUSAR';
+                    buttom_aceitar.innerHTML = 'ACEITAR';
+                    
+                    buttom_aceitar.onclick = function(){
+                        aceitarConexao(soli.cd_conexao);
+                    };
+                    buttom_recusar.onclick = function(){
+                        recusarConexao(soli.cd_conexao);
+                    };        
+                    
+                    item_solicitacao.className = 'item';
+                    imagem_prestador.className = 'item_imagem';
+                    wrapper_item_solicitacao.className = 'wrapper_item col-xs-6 col-sm-6 col-md-6 col-lg-4';
+                    info_solicitacao.appendChild(nomePrestador);
+                    wrapper_buttom.appendChild(buttom_aceitar);
+                    wrapper_buttom.appendChild(buttom_recusar);
+                    item_solicitacao.appendChild(imagem_prestador);
+                    item_solicitacao.appendChild(info_solicitacao);
+                    item_solicitacao.appendChild(wrapper_buttom);
+                    wrapper_item_solicitacao.appendChild(item_solicitacao);
+                    solicitacoes.appendChild(wrapper_item_solicitacao);
+                });
+        }
+    });
+}
 
 
+
+function enviarSolicitacaoAnunciante(codigoAnuncio){
+	$.ajax({
+        type:"POST",
+        url:"https://trampaki-api-tunnes.c9users.io/nova-conexao-prestador",
+        headers:{
+            "Authorization": sessionStorage.getItem("authorization")
+        },
+        data:{
+        	codigo_anuncio: codigoAnuncio
+        },
+    	statusCode:{
+    	    401: function(){
+    		    modalConectar(400);
+    		},
+    		400: function(){
+    		    modalConectar(400);
+    		},
+    		201: function(){
+    		    modalConectar(201);
+    		}
+    	}
+    });
+}

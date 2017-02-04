@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
     <head>
+        <!-- Configurações -->
         <meta charset="UTF-8">
         <title>Trampaki</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,800" rel="stylesheet">
+        <meta name="description" content="Cliente web Trampaki">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" type="image/png" href="view/img/fav_logo.png"/>
         
+        <!-- Bootstrap -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,800" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+        <!-- GoogleMaps -->
+        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+
         <!-- Estilos -->
         <link rel="stylesheet" href="view/css/sistema_generico.css"  type="text/css"/>
         <link rel="stylesheet" href="view/css/sistema_principal.css" type="text/css"/>        
         <link rel="stylesheet" href="view/css/sistema_anunciante.css" type="text/css"/>
         
+        <!-- *** Provisório *** -->
         <link rel="stylesheet" href="view/css/modal.css" type="text/css"/>
-        <link rel="stylesheet" href="view/css/styles.css" type="text/css"/>
 
+        <!-- Scripts -->
+        <script src="view/js/sistema_generico.js"></script>
+        
+        <!-- *** Provisório *** -->
         <script src="view/js/painel-abstrato.js"></script>
         <script src="view/js/modal.js"></script>
         <script src="view/js/barraLateral.js"></script>
         <script src="view/js/main.js"></script>
         <script src="view/js/chat.js"></script>
-
         <script src="view/js/painel-anunciante.js"></script>        
-        
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        
-        <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
                 
     </head>
     <body>
@@ -84,16 +89,14 @@
                     <span onclick='novoAnuncio()' id='meus_servicos'>NOVO ANUNCIO</span> 
                     <span onclick='meusAnuncios()' id='meus_servicos'>MEUS ANUNCIOS</span>
                     <span onclick='visualizarSolicitacoes()'>SOLICITAÇÕES</span>                  
-                    <span onclick='deslogar()' id='sair'>SAIR</span>
+                    <span onclick='sairDoSistema()' id='sair'>SAIR</span>
                 </div>
                 <div id="chat"> 
                 </div>
             </div>
         </div>
         <div id="hideshow" class="controle-lateral" >
-            <!--<span class="icon-bar"></span>-->
-            <!--<span class="icon-bar"></span>-->
-            <!--<span class="icon-bar"></span>-->
+            <p>MENU</p>
         </div>
         <script type="text/javascript">
             $('#hideshow').click(function(){

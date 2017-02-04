@@ -2,7 +2,16 @@
     function novaJanela(caminho, id){
         document.getElementById('info-moldura').style.opacity = 0;
         document.getElementById('info-moldura').style.height = 1;
+        $("#janela").load(caminho);
+    	$("#janela").fadeIn('slow');
+    	$("#mapa").hide();
+    }
+    function janelaChat(caminho, id, nome){
+        console.log('Caminho:' + caminho);
         $("#janela").load(caminho, function() {
+            var nomeContato = document.getElementById('nomeContato');
+            console.log(nome);
+            nomeContato.innerHTML = nome;
             if (id) {
     	        update(null, id);
     	    }
@@ -13,9 +22,7 @@
         	        document.getElementById("messagebox").value = "";
     	        }
     	    };
-        });
-    	$("#janela").fadeIn('slow');
-    	$("#mapa").hide();
+        });        
     }
     function carregarCategorias(arrayCategorias){
     //  Para esta função funcionar corretamente os elementos receptores de categorias
@@ -75,7 +82,7 @@
     	
     	
     }
-    
+    // Nova solicitação prestador ----> Anuncio. 
     function enviarSolicitacao(codigoAnuncio){
     	$.ajax({
             type:"POST",
@@ -102,13 +109,15 @@
     document.getElementById('menu-painel').style.borderBottom = 'none';
     document.getElementById('chat').style.display = 'block';
     document.getElementById('painel').style.display = 'none';
+      
     // Future code here...
     document.getElementById('chat').innerHTML = "";
     j.forEach(function(v) {
+        console.log('Nome:' + [v['nuu']]);
         let x = document.createElement("span");
         x.innerHTML = v['nuu'];
         x.onclick = function() {
-            novaJanela("view/ajax/chat.html", v['cuu']);
+            janelaChat("view/ajax/chat.html", v['cuu'], v['nuu']);
         }
         document.getElementById('chat').appendChild(x);
         document.getElementById('chat').appendChild(document.createElement("br"));
@@ -394,7 +403,7 @@
             },
             complete: function(data){
                 data = JSON.parse(data.responseText);
-                	console.log(data)
+                // 	console.log(data)
                 // carregarCategorias(data.categorias);
                 var imagem = document.getElementById('imagem_header');
                 	data.codigoImagem != null ? carregarImagem(imagem, data.codigoImagem) : null;

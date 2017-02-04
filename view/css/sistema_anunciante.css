@@ -1,9 +1,66 @@
-/* CADASTRO DE ANUNCIOS */
-#wrapper_cadastrar_anuncio .novo_prestador{
-    margin-top: 5%;
+/* GLOBAL ------------------------------------------------------------------- */
+
+/* MEUS ANUNCIOS E MINHAS SOLICITAÇÕES ------------------ */
+.titulo_janela_anunciante{
+    margin-top: 40px;
+    color: #101010;
+    padding-left: 15px;
+    font-size: 50px;
+}
+.titulo_janela_anunciante span {
+    background-color: #ef914c;
+    padding: 5px 20px 7px 5px;
+    color: white;
+    font-size: 70px;
+    display: inline-block;
 }
 
-#wrapper_cadastrar_anuncio .novo_prestador button{
+.item{
+    height: 92px;
+    width: 100%;
+    border: 1px Solid #101010;
+    border-right-width: 8px;
+    margin-bottom: 5px;
+}
+.item_imagem{
+    border-right: 1px Solid #101010;
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    background-image: url('https://trampaki-web-tunnes.c9users.io/view/img/anunc.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+    margin-right: 5px;
+}
+.item strong{
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.item_info p{
+    font-size: 10px;
+}
+.item_buttons{
+    cursor: pointer;
+    font-size: 12px;
+    border: 1px solid black;
+    position: absolute;
+    padding: 0px 5px;
+    bottom: 10px;
+}
+.buttom_aceitar{
+    right: 30px;
+}
+.buttom_recusar{
+    right: 95px;
+}
+
+/* JANELA DE NOVO ANUNCIO --------------------------------------------------- */
+#wrapper_novo_anuncio .novo_prestador{
+    margin-top: 5%;
+}
+#wrapper_novo_anuncio .novo_prestador button{
     text-transform: uppercase;
     margin-top: 35px;
     float: right;
@@ -15,24 +72,131 @@
     border-width: 1px;
     padding: 8px 15px 8px 15px;
 }
-
-
-#wrapper-chat {
-    height: calc(100% - 35px);
-    overflow-y: auto;
+#wrapper_novo_anuncio #buttons{
+    margin-top: 20px !important;
+    margin-right: 15px;
+}
+#wrapper_novo_anuncio button{
+    margin-top: 20px !important;
 }
 
-#wrapper-chat input, #wrapper-chat button {
-    position: fixed;
-    bottom: 0;
+.novo_anuncio label{
+    font-size: 10px;
+    font-weight: 400;
+    text-align: right;
+    padding-right: 0px;
+    text-transform: uppercase;
 }
-#wrapper-chat #messagebox {
+.novo_anuncio input{
+    font-size: 14px;
     width: 100%;
-    margin-left: -95px;
+    color: #999;
+    border-radius: 0px;
+    border: 1px solid black;
+    font-weight: 400 !important; 
 }
-#wrapper-chat #sendbox {
-    right: 180px;
+.novo_anuncio textarea::-webkit-input-placeholder {
+    font-weight: 400 !important; 
 }
-#wrapper-chat #mapa-retornar {
-    right: 0px;
+.novo_anuncio input::-webkit-input-placeholder {
+    font-weight: 400 !important; 
+}
+.novo_anuncio ::-webkit-file-upload-button {
+    margin: 0px !important;
+    border: none;
+    border-right: 1px solid #444;
+    box-shadow: none;
+    padding: 0px  !important;
+    background: white;
+    color: #444;
+    width: 40%;
+    height: 34px
+}
+.novo_anuncio textarea{
+    resize: none;
+    border: 1px solid black;
+    border-radius: 0px;
+}
+.novo_anuncio input:focus{
+    border-color: rgba(239, 145, 76, 0.68);
+    border-width: 1px;
+}
+.novo_anuncio textarea:focus{
+    border-color: rgba(239, 145, 76, 0.68);
+    border-width: 1px;
+}
+.novo_anuncio select{
+    border: 1px solid black;
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+}
+.form-control-feedback{
+    z-index: 0px;
+}
+
+/* JANELA DE VISUALIZAÇÃO ANUNCIOS ------------------------------------------ */
+#wrapper_meus_anuncios .table-responsive{
+    margin-top: 20px;
+}
+#wrapper_meus_anuncios .botao_visualizar{
+    width: 50px;
+    height: 20px;
+    background-color: red;
+}
+#servicos [class*='col-']{
+    padding-left: 0px;
+}
+#servicos{
+    /*margin-top: 20px;*/
+    display: inline-block;
+}
+#wrapper_meus_anuncios button{
+    position: relative;
+    margin-top: 15%;
+    right: 30px;
+    margin-bottom: 20px;
+}
+
+/* JANELA DE VISUALIZAÇÃO DE SOLICITAÇÕES ----------------------------------- */
+#solicitacoes [class*='col-']{
+    padding-left: 0px;
+}
+
+/* MEDIAQUERY GLOBAL -------------------------------------------------------- */
+@media (max-width: 680px){
+    .wrapper_item{
+        width: 100%;
+    }
+}
+@media (min-width: 600px){
+    .titulo_janela_anunciante{
+        margin-top: 0px;
+    }
+}
+@media (max-width: 600px){
+    #wrapper_novo_anuncio {
+        margin-top: -10px;
+        /*padding-left: 10px !important;*/
+        /*padding-right: 10px !important;*/
+    }
+}
+@media (max-width: 550px){
+    /* GLOBAL ------------------------------ */
+    .titulo_janela_anunciante h1{
+        font-size: 35px;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+    .titulo_janela_anunciante span{
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 45px;
+    }
 }

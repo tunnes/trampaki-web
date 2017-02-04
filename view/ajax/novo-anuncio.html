@@ -1,72 +1,62 @@
-<div id="wrapper_cadastrar_anuncio" class="wrapper_janela container-fluid">
-	<h1>Novo Anuncio</h1>
-	<!-- FORMULARIO ------------------------------------------------------------------------------------------ -->
-	    <form id="form" class="novo_prestador" enctype="multipart/form-data" method="post" accept-charset="utf-8">
-			<div class="row">
-				<div class="col-sm-8 form-group">
-					<label>Titulo</label>
-					<input required name="titulo_anuncio" type="text" placeholder="Digite um titulo.." class="form-control">
-				</div>
-				<div class="col-sm-4 form-group">
-					<div class="form-group has-feedback size-input required-wrapper">
-                        <label>Distancia de Atendimento</label>
-                        <input required name="distancia_alcance"type="number" class="form-control" id="input requiredValidation" placeholder="Quilômetros"/>
-                        <span class="form-control-feedback">Km</span>
-                    </div>
-				</div>				
-			</div>
-			<div class='row'>
-			    <div class="col-sm-4 form-group">
-			        <label>Imagem 01</label>
-                    <input required name="imagem_anuncio_01" type="file" name="pic" accept="image/*">
-		        </div>
-			    <div class="col-sm-4 form-group">
-			        <label>Imagem 02</label>
-                    <input  name="imagem_anuncio_02" type="file" name="pic" accept="image/*">
-		        </div>
-			    <div class="col-sm-4 form-group">
-			        <label>Imagem 03</label>
-                    <input  name="imagem_anuncio_03" type="file" name="pic" accept="image/*">
-		        </div>						        
-			</div>
-			<div class="row">
-				<div class="col-sm-3 form-group">
-				    <label>Categoria 01</label>
-                    <select id='codigo_categoria_01' name='codigo_categoria_01'>
-                        <option value='' selected="selected">Nenhuma Categoria</option>
-                    </select>
-				</div>	
-				<div class="col-sm-3 form-group">
-				    <label>Categoria 02</label>
-                    <select id='codigo_categoria_02' name='codigo_categoria_02'>
-                        <option value='' selected="selected">Nenhuma Categoria</option>
-                    </select>							
-                </div>							
-				<div class="col-sm-3 form-group">
-				    <label>Categoria 03</label>
-                    <select id='codigo_categoria_03' name='codigo_categoria_03'>
-                        <option value='' selected="selected">Nenhuma Categoria</option>
-                    </select>							
-                </div>
-			</div>
-			<div class="row">
-			    <div class="col-sm-12 form-group">
-				    <label>DESCRIÇÃO</label>
-				    <textarea name="descricao_anuncio" placeholder="Nos conte o que houve.." rows="4" class="form-control"></textarea>
-			    </div>
-			</div>
-			
+<div id="wrapper_novo_anuncio" class="wrapper_janela container-fluid">
+	<!-- CABEÇALHO ------------------------------------------------------------------------------------------------------------------------------ -->	
+	<h1 class="titulo_janela_anunciante">Novo <br><span>Anuncio</span></h1>
+	<!-- FORMULARIO ----------------------------------------------------------------------------------------------------------------------------- -->
+    <form id="form" class="novo_anuncio" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+		<div class="col-sm-8 form-group">
+			<label>Titulo</label>
+			<input required name="titulo_anuncio" type="text" placeholder="Digite um titulo.." class="form-control">
+		</div>
+		<div class="col-sm-4 form-group">
+			<div class="form-group has-feedback size-input required-wrapper">
+                <label>Distancia de Atendimento</label>
+                <input required name="distancia_alcance"type="number" class="form-control" id="input requiredValidation" placeholder="Quilômetros"/>
+                <span class="form-control-feedback">Km</span>
+            </div>
+		</div>				
+		<div class="col-xs-12 col-sm-4  col-md-4  col-lg-4  form-group">
+	        <label>Imagem 01</label>
+            <input required name="imagem_anuncio_01" type="file" name="pic" accept="image/*">
+        </div>
+	    <div class="col-xs-6  col-sm-4  col-md-4  col-lg-4  form-group">
+	        <label>Imagem 02</label>
+            <input  name="imagem_anuncio_02" type="file" name="pic" accept="image/*">
+        </div>
+	    <div class="col-xs-6  col-sm-4  col-md-4  col-lg-4  form-group">
+	        <label>Imagem 03</label>
+            <input  name="imagem_anuncio_03" type="file" name="pic" accept="image/*">
+        </div>
+		<div class="col-xs-12 col-sm-4  col-md-4  col-lg-4  form-group">
+		    <label>Categoria 01</label>
+            <select id='codigo_categoria_01' name='codigo_categoria_01'>
+                <option value='' selected="selected">Nenhuma Categoria</option>
+            </select>
+		</div>	
+		<div class="col-xs-6  col-sm-4  col-md-4  col-lg-4  form-group">
+		    <label>Categoria 02</label>
+            <select id='codigo_categoria_02' name='codigo_categoria_02'>
+                <option value='' selected="selected">Nenhuma Categoria</option>
+            </select>							
+        </div>							
+		<div class="col-xs-6  col-sm-4  col-md-4  col-lg-4  form-group">
+		    <label>Categoria 03</label>
+            <select id='codigo_categoria_03' name='codigo_categoria_03'>
+                <option value='' selected="selected">Nenhuma Categoria</option>
+            </select>							
+        </div>
+	    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group">
+		    <label>DESCRIÇÃO</label>
+		    <textarea name="descricao_anuncio" placeholder="Nos conte o que houve.." rows="4" class="form-control"></textarea>
+	    </div>
+	   	<!-- RODAPÉ ----------------------------------------------------------------------------------------------------------------------------- -->
+		<div id='buttons'>
 	    	<button type="button" class="pull-right" onclick="retornar()" >RETORNAR AO MAPA</button>
 			<!--<button type="button" class="pull-right">Limpar</button>-->
 			<button type="submit" class="pull-right">Cadastrar</button>
-	    </form>
-        <script type="text/javascript">
-        		cadastrarAnuncio();
-         		pularCombobox();
-        </script>	
-	
-	<!-- CONTROLES UX ------------------------------------------------------------------------------------ -->
-	<div class='buttons_bugados'>
-		
-	</div>																			 	
+		</div>	
+    </form>
+    <script type="text/javascript">
+    		cadastrarAnuncio();
+     		pularCombobox();
+    </script>	
 </div>

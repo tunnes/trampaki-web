@@ -62,8 +62,7 @@ function mapEngineAnunciante(){
                 type: "GET",
                 url:  "https://trampaki-api-tunnes.c9users.io/carregar-prestadores",
                 headers:{
-                    // "Authorization": sessionStorage.getItem("authorization")
-                    "Authorization": "aHVtUXVlQ29pc2E6MTIzMw=="
+                    "Authorization": sessionStorage.getItem("authorization")
                 },
                 complete: function(data){   
                     carregarMarcadores(data.responseText);
@@ -146,7 +145,7 @@ function mapEngineAnunciante(){
                 ultimo.setAnimation(null);
             });
             $("#momo" ).click(function(){ 
-                enviarSolicitacao(marcador.codigo);
+                enviarSolicitacaoAnunciante(marcador.codigo);
                 document.getElementById('info-moldura').style.opacity = 0;
                 document.getElementById('info-moldura').style.height = 1;
                 ultimo.setAnimation(null);

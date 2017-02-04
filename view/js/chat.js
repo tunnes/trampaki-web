@@ -37,6 +37,7 @@ const list = function() {
     xhr.onreadystatechange = function() {
         if (this.readyState == xhr.DONE) {
             barraLateralMensagens(JSON.parse(xhr.response));
+            
         }
     };
     xhr.send();

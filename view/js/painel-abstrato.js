@@ -1,7 +1,8 @@
 function deslogar(){
+    console.log('teste');
     sessionStorage.removeItem('authorization');
     sessionStorage.removeItem('trampaki-user');
-    window.location.url = "/";
+    window.location.href = "/";
 }
 function novaJanela(caminho){
         document.getElementById('info-moldura').style.opacity = 0;
