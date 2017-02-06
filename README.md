@@ -26,7 +26,7 @@
 - Manipulação de imagens.
 - Totalmente responsivo.
 - Baixo acoplamento.
-- Geolocalização costumizada com Google Maps API.
+- Geolocalização customizada com Google Maps API.
 - SEO On-Page forte.
 
 ---
@@ -54,8 +54,12 @@
     <tr>
         <td><strong><sub>/</sub></strong></td>
         <td><sub>Visitante</sub></td>    
-        <td><sub>Contêm informações sobre o sistema e como utilizá-lo.</sub></sub></td>
-        <td><sub>Completa</sub></sub></td>
+        <td>
+            <sub>
+            Contêm informações sobre o sistema, links de acesso, um resumo do projeto e cidades disponíveis.
+            </sub>
+        </td>
+        <td><sub>Completa</sub></td>
     </tr>
     <tr>
         <td><strong><sub>/login</sub></strong></td>
