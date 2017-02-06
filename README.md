@@ -28,63 +28,69 @@
 - Baixo acoplamento.
 - Geolocalização costumizada com Google Maps API.
 - SEO On-Page forte.
-.
-
-<table>
-    <tr>
-        <th>ROTA</th>
-        <th>USUÁRIO</th>
-        <th>DESCRIÇÃO</th> 
-        <th>SITUAÇÃO</th> 
-    </tr>
-    <tr>
-        <td>**/**</td>
-        <td><sub>Visitante</sub></td>        
-        <td>Contêm informações sobre o sistema e como utilizá-lo.</td>
-        <td>Completa</td>
-    </tr>
-    <tr>
-        <td>**/login**</td>
-        <td>Visitante</td>        
-        <td>Definida para acesso ao sistema.</td>
-        <td>Completa</td>
-    </tr>
-    <tr>
-        <td>/docs</td>
-        <td>Visitante</td>        
-        <td>Definida visualização da documentação da API.</td>
-        <td>Incompleta</td>
-    </tr>
-    <tr>
-        <td>/novo-prestador</td>
-        <td>Visitante</td>        
-        <td>Para cadastro de novos prestadores de serviço.</td>
-        <td>Completa</td>
-    </tr>    
-    <tr>
-        <td>/novo-anunciante</td>
-        <td>Visitante</td>        
-        <td>Para cadastro de novos anunciantes.</td>
-        <td>Completa</td>
-    </tr>        
-    <tr>
-        <td>/painel-prestador</td>
-        <td>Prestador de Serviços</td>        
-        <td>Definida para manipulação de serviços.</td>
-        <td>Incompleta</td>
-    </tr>
-    <tr>
-        <td>/painel-anunciante</td>
-        <td>Anunciante</td>        
-        <td>Definida para cadastro e manipulação de anuncios.</td>
-        <td>Incompleta</td>
-    </tr>      
-</table>
-
 
 ---
 
-## License
->You can check out the full license [here](https://github.com/tunnes/trampaki-web/master/LICENSE)
+## Tecnologias Utilizadas
+- HTML5
+- CSS3
+- JQuery 3.1.1
+- Framework Boostrap 3.3.7
+- Google Maps JavaScript API v3.26
+- PHP 7.0.4
+- API Blueprint
 
-This project is licensed under the terms of the **MIT** license.
+---
+
+## Rotas Disponíveis
+
+<table>
+    <tr>
+        <th><sub>ROTA</sub></th>
+        <th><sub>USUÁRIO</sub></th>
+        <th><sub>DESCRIÇÃO</sub></th> 
+        <th><sub>SITUAÇÃO</sub></th> 
+    </tr>
+    <tr>
+        <td><strong><sub>/</sub></strong></td>
+        <td><sub>Visitante</sub></td>    
+        <td><sub>Contêm informações sobre o sistema e como utilizá-lo.</sub></sub></td>
+        <td><sub>Completa</sub></sub></td>
+    </tr>
+    <tr>
+        <td><strong><sub>/login</sub></strong></td>
+        <td><sub>Visitante</sub></td>    
+        <td><sub>Definida para acesso ao sistema.</sub></sub></td>
+        <td><sub>Completa</sub></sub></td>
+    </tr>
+    <tr>
+        <td><strong><sub>/docs</sub></strong></td>
+        <td><sub>Visitante</sub></td>        
+        <td><sub>Definida visualização da documentação da API.</sub></td>
+        <td><sub>Incompleta</sub></td>
+    </tr>
+    <tr>
+        <td><strong><sub>/novo-prestador</sub></strong></td>
+        <td><sub>Visitante</sub></td>        
+        <td><sub>Para cadastro de novos prestadores de serviço.</sub></td>
+        <td><sub>Completa</sub></td>
+    </tr>    
+    <tr>
+        <td><strong><sub>/novo-anunciante</sub></strong></td>
+        <td><sub>Visitante</sub></td>        
+        <td><sub>Para cadastro de novos anunciantes.</sub></td>
+        <td><sub>Completa</sub></td>
+    </tr>        
+    <tr>
+        <td><strong><sub>/painel-prestador</sub></strong></td>
+        <td><sub>Prestador de Serviços</sub></td>        
+        <td><sub>Definida para manipulação de serviços.</sub></td>
+        <td><sub>Incompleta</sub></td>
+    </tr>
+    <tr>
+        <td><strong><sub>/painel-anunciante</sub></strong></td>
+        <td><sub>Anunciante</sub></td>        
+        <td><sub>Definida para cadastro e manipulação de anuncios.</sub></td>
+        <td><sub>Incompleta</sub></td>
+    </tr>      
+</table>
