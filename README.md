@@ -56,7 +56,7 @@
         <td><sub>Visitante</sub></td>    
         <td>
             <sub>
-            Contêm informações sobre o sistema, links de acesso, um resumo do projeto e cidades disponíveis.
+            Contêm informações sobre o sistema, links de acesso, um resumo e cidades disponíveis.
             </sub>
         </td>
         <td><sub>Completa</sub></td>
@@ -64,8 +64,8 @@
     <tr>
         <td><strong><sub>/login</sub></strong></td>
         <td><sub>Visitante</sub></td>    
-        <td><sub>Definida para acesso ao sistema.</sub></sub></td>
-        <td><sub>Completa</sub></sub></td>
+        <td><sub>Definida para acesso ao sistema.</sub></td>
+        <td><sub>Completa</sub></td>
     </tr>
     <tr>
         <td><strong><sub>/docs</sub></strong></td>
