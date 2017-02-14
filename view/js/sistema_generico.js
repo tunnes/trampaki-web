@@ -52,7 +52,7 @@ function sairDoSistema(){
     window.location.href = "/";
 }
 
-function novaJanela(caminho, id){
+function novaJanela(caminho){
     document.getElementById('info-moldura').style.opacity = 0;
     document.getElementById('info-moldura').style.height = 1;
     $("#janela").load(caminho);
@@ -107,9 +107,6 @@ function carregarCategorias(arrayCategorias){
     });
 }
 
-function carregarImagem(elemento, codigoImagem){
-    elemento.style.backgroundImage = "url(https://trampaki-api-tunnes.c9users.io/carregar-imagem/" + codigoImagem;
-}
 
 function retornar(){
 	$("#janela").hide();
@@ -175,101 +172,6 @@ function aceitarConexao(codigoConexao){
     });
 }
 
-function solicitacoes(){
-    novaJanela("/view/ajax/prestador-solicitacoes.html");
-    $.ajax({
-        type:"GET",
-        url:"https://trampaki-api-tunnes.c9users.io/carregar-solicitacoes",
-        headers:{
-            "Authorization": sessionStorage.getItem("authorization"),
-            "TrampakiUser":"1"
-        },
-        complete: function(data){
-            data = JSON.parse(data.responseText);
-            var soli_enviadDOM = document.getElementById('solicitacoes_enviadas');
-            var soli_recebiDOM = document.getElementById('solicitacoes_recebidas');
-            soli_enviadDOM.innerHTML = ' ';
-            soli_recebiDOM.innerHTML = ' ';
-            [].slice.call(data).forEach(function(solicitacao){
-                var buttons_solicitacao = document.createElement("div");
-                
-                
-                var item_solicitacao = document.createElement("div");
-                var div_image_solicitacao = document.createElement("div");
-                    solicitacao.cd_imagem01 != null ? carregarImagem(div_image_solicitacao, solicitacao.cd_imagem01) : null;
-                    
-                var info_solicitacao = document.createElement("div");
-                var titulo = document.createElement("strong");
-                    titulo.innerHTML = solicitacao.nm_titulo;
-                var cidade = document.createElement("p");
-                    cidade.innerHTML = solicitacao.nm_cidade +', '+ solicitacao.sg_estado;
-
-                div_image_solicitacao.onclick=function(){
-                    visualizaAnuncio(solicitacao.cd_anuncio)
-                }
-                item_solicitacao.className = 'item_solicitacao col-xs-12 col-sm-6 col-md-5';
-                div_image_solicitacao.className = 'col-xs-5 col-sm-5 col-md-5 imagem_solicitacao';
-                info_solicitacao.className = 'col-xs-7 col-sm-7 col-md-7 info_solicitacao';
-                    
-                info_solicitacao.appendChild(titulo);
-                info_solicitacao.appendChild(cidade);
-                       
-                item_solicitacao.appendChild(div_image_solicitacao);
-                
-                
-                if(solicitacao.cd_solicitante == 1){
-                    
-                    var button_cancelar = document.createElement("button");
-                        button_cancelar.innerHTML = 'CANCELAR';
-                        button_cancelar.className = 'item_cancelar pull-right';
-                    
-                    buttons_solicitacao.appendChild(button_cancelar);
-                    info_solicitacao.appendChild(buttons_solicitacao);
-                    item_solicitacao.appendChild(info_solicitacao);
-                    
-                }else if(solicitacao.cd_solicitante == 0){
-                    
-                    var button_aceitar = document.createElement("button");
-                        button_aceitar.innerHTML = 'ACEITAR';
-                    
-
-                    button_aceitar.onclick=function(){
-                        aceitarConexao(solicitacao.cd_conexao);
-                    }
-                        
-                    var button_recusar = document.createElement("button");
-                        button_recusar.innerHTML = 'RECUSAR';
-                    
-                    button_recusar.onclick=function(){
-                        recusarConexao(solicitacao.cd_conexao);
-                    }                        
-                    buttons_solicitacao.appendChild(button_aceitar);
-                    buttons_solicitacao.appendChild(button_recusar);
-                    item_solicitacao.appendChild(buttons_solicitacao);    
-                };    
-                solicitacao.cd_solicitante == 1 ? soli_enviadDOM.appendChild(item_solicitacao) : soli_recebiDOM.appendChild(item_solicitacao);
-            });
-        }
-    });
-}
-
-function soliEnviadas(e){
-    e.style.borderBottom = "3px solid black";
-    e.style.color = 'Black';
-	document.getElementById('span_recebidas').style.borderBottom = "none";
-	document.getElementById('span_recebidas').style.color  =  "gray";
-	$("#solicitacoes_recebidas").hide();
-    $("#solicitacoes_enviadas").fadeIn('slow');
-}
-
-function soliRecebidas(e){
-    e.style.borderBottom = "3px solid black";
-	e.style.color = 'Black';
-	document.getElementById('span_enviadas').style.borderBottom = "none";
-	document.getElementById('span_enviadas').style.color  =  "gray";
-	$("#solicitacoes_recebidas").fadeIn('slow');
-    $("#solicitacoes_enviadas").hide();        
-}
 
 // Funcões indefinidas temporariamente indefinidas:
 
@@ -283,13 +185,6 @@ function barraLateralPainel(){
 
 function verificarToken(){
     sessionStorage.getItem("authorization") == null || sessionStorage.getItem("trampaki-user") != '1' ? window.location.assign("https://trampaki-api-tunnes.c9users.io/login") : null;
-}
-
-function deslogar(){
-    console.log('teste');
-    sessionStorage.removeItem('authorization');
-    sessionStorage.removeItem('trampaki-user');
-    window.location.href = "/";
 }
 
 function modalConectar(status){
@@ -336,4 +231,84 @@ function carregarCategorias(arrayCategorias){
 
 function carregarImagem(elemento, codigoImagem){
     elemento.style.backgroundImage = "url(https://trampaki-api-tunnes.c9users.io/carregar-imagem/" + codigoImagem;
+    return elemento;
 }
+
+/* SOLICITAÇÕES GLOBAIS ----------------------------------------------------- */ 
+function soliEnviadas(e){
+    e.style.borderBottom = "3px solid black";
+    e.style.color = 'Black';
+	document.getElementById('span_recebidas').style.borderBottom = "none";
+	document.getElementById('span_recebidas').style.color  =  "gray";
+	$("#solicitacoes_recebidas").hide();
+    $("#solicitacoes_enviadas").fadeIn('slow');
+}
+function soliRecebidas(e){
+    e.style.borderBottom = "3px solid black";
+	e.style.color = 'Black';
+	document.getElementById('span_enviadas').style.borderBottom = "none";
+	document.getElementById('span_enviadas').style.color  =  "gray";
+	$("#solicitacoes_recebidas").fadeIn('slow');
+    $("#solicitacoes_enviadas").hide();        
+}
+
+//  Prototipação de elementos 'ItemSolicitação' 
+var ItemSolicitacao = function(imagem, titulo, subtitulo, codigo){
+    this.codigo = codigo;
+    
+    this.wrapper_buttom = document.createElement("div");
+    this.info_solicitacao = document.createElement("span");
+    this.item_solicitacao = document.createElement("div");
+    this.item_imagem = document.createElement("div");
+    this.titulo = document.createElement("strong");
+    this.subtitulo = document.createElement("span");
+    this.wrapper_item_solicitacao = document.createElement("div");
+    
+    
+    this.button_cancelar = document.createElement("span");
+    this.buttom_aceitar = document.createElement("span");
+    this.buttom_recusar = document.createElement("span");
+    this.item_imagem = carregarImagem(this.item_imagem, imagem);
+    this.subtitulo.innerHTML = subtitulo;
+    this.titulo.innerHTML = titulo;
+};
+    ItemSolicitacao.prototype.classes = function(){
+        this.item_solicitacao.className = 'item';
+        this.item_imagem.className = 'item_imagem';
+        this.subtitulo.className = 'item_texto';
+        this.button_cancelar.className = 'item_buttons button_cancelar';
+        this.buttom_aceitar.className = 'item_buttons buttom_aceitar';
+        this.buttom_recusar.className = 'item_buttons buttom_recusar';
+        this.wrapper_item_solicitacao.className = 'wrapper_item col-xs-6 col-sm-6 col-md-6 col-lg-4';
+    }
+    ItemSolicitacao.prototype.montar  = function(){
+        this.info_solicitacao.appendChild(this.titulo);                  
+        this.info_solicitacao.appendChild(this.subtitulo);
+        this.item_solicitacao.appendChild(this.item_imagem);
+        this.item_solicitacao.appendChild(this.info_solicitacao);
+    }
+    ItemSolicitacao.prototype.finalizar = function (identificador){
+        this.classes();
+        this.wrapper_item_solicitacao.appendChild(this.item_solicitacao);
+        document.getElementById(identificador).appendChild(this.wrapper_item_solicitacao)
+    }
+    ItemSolicitacao.prototype.enviada = function(){
+        this.button_cancelar.innerHTML = 'CANCELAR';
+        this.montar();
+        this.wrapper_buttom.appendChild(this.button_cancelar);
+        this.item_solicitacao.appendChild(this.wrapper_buttom);
+        this.finalizar('solicitacoes_enviadas');
+    }
+    ItemSolicitacao.prototype.recebida = function(){
+        this.buttom_recusar.innerHTML = 'RECUSAR';
+        this.buttom_aceitar.innerHTML = 'ACEITAR';
+        
+        this.montar();
+        this.buttom_aceitar.onclick = function(){ aceitarConexao(this.codigo); };
+        this.buttom_recusar.onclick = function(){ recusarConexao(this.codigo); };
+            
+        this.wrapper_buttom.appendChild(this.buttom_aceitar);
+        this.wrapper_buttom.appendChild(this.buttom_recusar);
+        this.item_solicitacao.appendChild(this.wrapper_buttom);
+        this.finalizar('solicitacoes_recebidas');      
+    }

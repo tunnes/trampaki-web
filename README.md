@@ -47,54 +47,50 @@
 <table>
     <tr>
         <th><sub>ROTA</sub></th>
-        <th><sub>USUÁRIO</sub></th>
-        <th><sub>DESCRIÇÃO</sub></th> 
-        <th><sub>SITUAÇÃO</sub></th> 
+        <th><sub>USUÁRIO</sub></th>
+        <th><sub>DESCRIÇÃO</sub></th> 
+        <th><sub>SITUAÇÃO</sub></th> 
     </tr>
     <tr>
         <td><strong><sub>/</sub></strong></td>
         <td><sub>Visitante</sub></td>    
-        <td>
-            <sub>
-            Contêm informações sobre o sistema, links de acesso, um resumo e cidades disponíveis.
-            </sub>
-        </td>
+        <td><sub>Contêm informações sobre o sistema, links de acesso, um resumo e cidades disponíveis.</sub></td>
         <td><sub>Completa</sub></td>
     </tr>
     <tr>
         <td><strong><sub>/login</sub></strong></td>
         <td><sub>Visitante</sub></td>    
-        <td><sub>Definida para acesso ao sistema.</sub></td>
+        <td><sub>Definida para acesso ao sistema.</sub></td>
         <td><sub>Completa</sub></td>
     </tr>
     <tr>
         <td><strong><sub>/docs</sub></strong></td>
         <td><sub>Visitante</sub></td>        
-        <td><sub>Definida visualização da documentação da API.</sub></td>
+        <td><sub>Definida visualização da documentação da API.</sub></td>
         <td><sub>Incompleta</sub></td>
     </tr>
     <tr>
         <td><strong><sub>/novo-prestador</sub></strong></td>
         <td><sub>Visitante</sub></td>        
-        <td><sub>Para cadastro de novos prestadores de serviço.</sub></td>
+        <td><sub>Para cadastro de novos prestadores de serviço.</sub></td>
         <td><sub>Completa</sub></td>
     </tr>    
     <tr>
         <td><strong><sub>/novo-anunciante</sub></strong></td>
         <td><sub>Visitante</sub></td>        
-        <td><sub>Para cadastro de novos anunciantes.</sub></td>
+        <td><sub>Para cadastro de novos anunciantes.</sub></td>
         <td><sub>Completa</sub></td>
     </tr>        
     <tr>
         <td><strong><sub>/painel-prestador</sub></strong></td>
         <td><sub>Prestador de Serviços</sub></td>        
-        <td><sub>Definida para manipulação de serviços.</sub></td>
+        <td><sub>Definida para manipulação de serviços.</sub></td>
         <td><sub>Incompleta</sub></td>
     </tr>
     <tr>
         <td><strong><sub>/painel-anunciante</sub></strong></td>
         <td><sub>Anunciante</sub></td>        
-        <td><sub>Definida para cadastro e manipulação de anuncios.</sub></td>
+        <td><sub>Definida para cadastro e manipulação de anuncios.</sub></td>
         <td><sub>Incompleta</sub></td>
     </tr>      
 </table>

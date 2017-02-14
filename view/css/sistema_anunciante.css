@@ -7,7 +7,7 @@
     padding-left: 15px;
     font-size: 50px;
 }
-.titulo_janela_anunciante span {
+.titulo_janela_anunciante span{
     background-color: #ef914c;
     padding: 5px 20px 7px 5px;
     color: white;
@@ -15,46 +15,7 @@
     display: inline-block;
 }
 
-.item{
-    height: 92px;
-    width: 100%;
-    border: 1px Solid #101010;
-    border-right-width: 8px;
-    margin-bottom: 5px;
-}
-.item_imagem{
-    border-right: 1px Solid #101010;
-    display: inline-block;
-    width: 90px;
-    height: 90px;
-    background-image: url('https://trampaki-web-tunnes.c9users.io/view/img/anunc.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    float: left;
-    margin-right: 5px;
-}
-.item strong{
-    font-size: 13px;
-    font-weight: 800;
-    text-transform: uppercase;
-}
-.item_info p{
-    font-size: 10px;
-}
-.item_buttons{
-    cursor: pointer;
-    font-size: 12px;
-    border: 1px solid black;
-    position: absolute;
-    padding: 0px 5px;
-    bottom: 10px;
-}
-.buttom_aceitar{
-    right: 30px;
-}
-.buttom_recusar{
-    right: 95px;
-}
+
 
 /* JANELA DE NOVO ANUNCIO --------------------------------------------------- */
 #wrapper_novo_anuncio .novo_prestador{
@@ -164,17 +125,28 @@
     margin-bottom: 20px;
 }
 
-/* JANELA DE VISUALIZAÇÃO DE SOLICITAÇÕES ----------------------------------- */
-#solicitacoes [class*='col-']{
-    padding-left: 0px;
+.selecionado{
+    display: none;
+    width: 92px;
+    height: 19px;
+    background-color: #0c0601;
+    position: absolute;
+    top: 0px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 11px;
+    right: -77px;
+    color: white;
+    border: 1px solid black;
+    transform: rotate(90deg);
+    transform-origin: left top 0;
+}
+#ativo .selecionado{
+    display: block !important;
 }
 
+
 /* MEDIAQUERY GLOBAL -------------------------------------------------------- */
-@media (max-width: 680px){
-    .wrapper_item{
-        width: 100%;
-    }
-}
 @media (min-width: 600px){
     .titulo_janela_anunciante{
         margin-top: 0px;
@@ -183,8 +155,6 @@
 @media (max-width: 600px){
     #wrapper_novo_anuncio {
         margin-top: -10px;
-        /*padding-left: 10px !important;*/
-        /*padding-right: 10px !important;*/
     }
 }
 @media (max-width: 550px){

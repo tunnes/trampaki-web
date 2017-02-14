@@ -138,18 +138,18 @@ function mapEngineAnunciante(){
                 document.getElementById('info-moldura').style.height = 1;
                 ultimo.setAnimation(null);
             });
-            $("#pain" ).click(function(){ 
+            document.getElementById('pain').onclick=function(){
                 visualizarPrestador(marcador.codigo);
                 document.getElementById('info-moldura').style.opacity = 0;
                 document.getElementById('info-moldura').style.height = 1;
                 ultimo.setAnimation(null);
-            });
-            $("#momo" ).click(function(){ 
+            };
+            document.getElementById('momo').onclick=function(){
                 enviarSolicitacaoAnunciante(marcador.codigo);
                 document.getElementById('info-moldura').style.opacity = 0;
                 document.getElementById('info-moldura').style.height = 1;
                 ultimo.setAnimation(null);
-            });
+            };
         }
     }
 

@@ -19,6 +19,7 @@ function efetuarAutenticacao(){
                 sessionStorage.setItem('authorization', request.getResponseHeader('authorization'));
                 sessionStorage.setItem('trampaki_user', request.getResponseHeader('trampaki_user '));
                 sessionStorage.setItem('trampaki-id', request.getResponseHeader('trampaki-id'));
+                sessionStorage.setItem('anuncio_selecionado', request.getResponseHeader('anuncio_selecionado'));
                 request.getResponseHeader('trampaki_user') == '0' ? direcionarPainelAnunciante() : direcionarPainelPrestador();  
             }
         }
