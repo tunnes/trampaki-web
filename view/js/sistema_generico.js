@@ -159,7 +159,8 @@ function aceitarConexao(codigoConexao){
         type:"PUT",
         url:"https://trampaki-api-tunnes.c9users.io/aceitar-conexao",
         headers:{
-            "Authorization": sessionStorage.getItem("authorization"),
+            "authorization": sessionStorage.getItem("authorization"),
+            "content-type": "application/x-www-form-urlencoded"
         },
         data:{
             cd_conexao: codigoConexao
@@ -171,9 +172,42 @@ function aceitarConexao(codigoConexao){
         }
     });
 }
-
-
-// Funcões indefinidas temporariamente indefinidas:
+function recusarConexao(codigoConexao){
+    $.ajax({
+        type:"PUT",
+        url:"https://trampaki-api-tunnes.c9users.io/recusar-conexao",
+        headers:{
+            "authorization": sessionStorage.getItem("authorization"),
+            "content-type": "application/x-www-form-urlencoded"
+        },
+        data:{
+            cd_conexao: codigoConexao
+        },
+        statusCode:{
+            200:function(){
+                alert('Servico recusado com sucesso.')
+            }
+        }
+    });
+}
+function cancelarConexao(codigoConexao){
+    $.ajax({
+        type:"DELETE",
+        url:"https://trampaki-api-tunnes.c9users.io/cancelar-conexao",
+        headers:{
+            "authorization": sessionStorage.getItem("authorization"),
+            "content-type": "application/x-www-form-urlencoded"
+        },
+        data:{
+            cd_conexao: codigoConexao
+        },
+        statusCode:{
+            200:function(){
+                alert('Servico cancelado com sucesso.')
+            }
+        }
+    });    
+}
 
 function barraLateralPainel(){
     document.getElementById('configuracaoAjax').style.borderBottom = 'none';
@@ -293,19 +327,34 @@ var ItemSolicitacao = function(imagem, titulo, subtitulo, codigo){
         document.getElementById(identificador).appendChild(this.wrapper_item_solicitacao)
     }
     ItemSolicitacao.prototype.enviada = function(){
-        this.button_cancelar.innerHTML = 'CANCELAR';
+        this.button_cancelar.innerHTML = "<i class='glyphicon glyphicon-remove'></i> CANCELAR";
         this.montar();
+        var cd_solicitacao = this.codigo;
+        var elemento = this.wrapper_item_solicitacao;
+        this.button_cancelar.onclick = function(){ 
+            $(elemento).fadeOut( "slow" ); 
+            cancelarConexao(cd_solicitacao);
+        };
         this.wrapper_buttom.appendChild(this.button_cancelar);
         this.item_solicitacao.appendChild(this.wrapper_buttom);
         this.finalizar('solicitacoes_enviadas');
     }
     ItemSolicitacao.prototype.recebida = function(){
-        this.buttom_recusar.innerHTML = 'RECUSAR';
-        this.buttom_aceitar.innerHTML = 'ACEITAR';
+        this.buttom_recusar.innerHTML = "<i class='glyphicon glyphicon-remove'></i> RECUSAR";
+        this.buttom_aceitar.innerHTML = "<i class='glyphicon glyphicon-ok'></i> ACEITAR";
         
         this.montar();
-        this.buttom_aceitar.onclick = function(){ aceitarConexao(this.codigo); };
-        this.buttom_recusar.onclick = function(){ recusarConexao(this.codigo); };
+        var cd_solicitacao = this.codigo;
+        var elemento = this.wrapper_item_solicitacao;
+        
+        this.buttom_aceitar.onclick = function(){ 
+            $(elemento).fadeOut( "slow" ); 
+            aceitarConexao(cd_solicitacao); 
+        };
+        this.buttom_recusar.onclick = function(){
+            $(elemento).fadeOut( "slow" ); 
+            recusarConexao(cd_solicitacao);
+        };
             
         this.wrapper_buttom.appendChild(this.buttom_aceitar);
         this.wrapper_buttom.appendChild(this.buttom_recusar);

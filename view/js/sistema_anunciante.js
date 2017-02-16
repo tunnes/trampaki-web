@@ -271,65 +271,6 @@ function meusAnuncios(){
     });    
 }
 
-function visualizarSolicitacoes1(){
-    novaJanela("view/ajax/visualizar-solicitacoes.html");
-    $.ajax({
-        type:"GET",
-        url:"https://trampaki-api-tunnes.c9users.io/carregar-solicitacoes",
-        headers:{
-            "Authorization": sessionStorage.getItem("authorization"),
-            "trampaki_user": "0"
-        },
-        complete: function(data){
-            data = JSON.parse(data.responseText);
-            var solicitacoes = document.getElementById('solicitacoes');
-            [].slice.call(data).forEach(function(soli){
-                    
-                    var wrapper_item_solicitacao = document.createElement("div");
-                    
-                    var wrapper_buttom = document.createElement("div");
-                    
-                    var buttom_aceitar = document.createElement("span");
-                    var buttom_recusar = document.createElement("span");
-                    
-                    var item_solicitacao = document.createElement("div");
-                    var imagem_prestador = document.createElement("div");
-                    
-                    soli.cd_imagem01 != null ? carregarImagem(imagem_prestador, soli.cd_imagem01) : null;
-                    
-                    var info_solicitacao = document.createElement("span");
-                    
-                    var nomePrestador = document.createElement("strong");
-                        nomePrestador.innerHTML = soli.nm_usuario;
-                    
-                    buttom_aceitar.className = 'item_buttons buttom_aceitar';
-                    buttom_recusar.className = 'item_buttons buttom_recusar';
-                    buttom_recusar.innerHTML = 'RECUSAR';
-                    buttom_aceitar.innerHTML = 'ACEITAR';
-                    
-                    buttom_aceitar.onclick = function(){
-                        aceitarConexao(soli.cd_conexao);
-                    };
-                    buttom_recusar.onclick = function(){
-                        recusarConexao(soli.cd_conexao);
-                    };        
-                    
-                    item_solicitacao.className = 'item';
-                    imagem_prestador.className = 'item_imagem';
-                    wrapper_item_solicitacao.className = 'wrapper_item col-xs-6 col-sm-6 col-md-6 col-lg-4';
-                    info_solicitacao.appendChild(nomePrestador);
-                    wrapper_buttom.appendChild(buttom_aceitar);
-                    wrapper_buttom.appendChild(buttom_recusar);
-                    item_solicitacao.appendChild(imagem_prestador);
-                    item_solicitacao.appendChild(info_solicitacao);
-                    item_solicitacao.appendChild(wrapper_buttom);
-                    wrapper_item_solicitacao.appendChild(item_solicitacao);
-                    solicitacoes.appendChild(wrapper_item_solicitacao);
-                });
-        }
-    });
-}
-
 function visualizarSolicitacoes(){
     novaJanela("view/ajax/visualizar-solicitacoes.html");
     $.ajax({
