@@ -4,7 +4,7 @@
 [![Build Status](https://img.shields.io/badge/Desenvolvimento-68%25-green.svg)](https://travis-ci.org/shama/gaze)
 [![Build Status](https://img.shields.io/badge/Licen%C3%A7a-MIT-blue.svg)](https://travis-ci.org/shama/gaze)
 [![Build Status](https://img.shields.io/badge/Demo-Desativada-red.svg)](https://travis-ci.org/shama/gaze)
-[![Build Status](https://img.shields.io/badge/Linguagem-Portugu%C3%AAs%20BR-brightgreen.svg)](https://travis-ci.org/shama/gaze)
+[![Build Status](https://img.shields.io/badge/Idioma-Portugu%C3%AAs-brightgreen.svg)](https://travis-ci.org/shama/gaze)
 
 <table>
     <tr>
