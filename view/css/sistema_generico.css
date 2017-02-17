@@ -10,6 +10,14 @@ body::-webkit-scrollbar {
     background: #F4F4F4;
 }
 
+.texto_nao_selecionavel{
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
 /* JANELA GLOBAL ------------------------------------------------------------ */
 #janela{
     position: relative;

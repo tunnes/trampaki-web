@@ -205,6 +205,13 @@ html, body{
     margin-top: 4px;
 }
 
+#hideshow{
+    cursor: pointer;
+}
+#hideshow p{
+    cursor: pointer;
+}
+
 @media (min-width: 850px){
     #barraLateral{
         left: 0px !important;

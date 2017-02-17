@@ -216,6 +216,12 @@ function barraLateralPainel(){
     document.getElementById('painel').style.display = 'block';
     // Future code here....
 }
+function hideInfo(){
+    if(window.event.srcElement.id != 'info'){
+        document.getElementById('info').style.display = 'none';
+    }
+}
+
 
 function verificarToken(){
     sessionStorage.getItem("authorization") == null || sessionStorage.getItem("trampaki-user") != '1' ? window.location.assign("https://trampaki-api-tunnes.c9users.io/login") : null;

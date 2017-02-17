@@ -222,8 +222,19 @@ function selecionarAnuncio(elementoDOM, codigoAnuncio){
 }
 
 function meusAnuncios(){
-    novaJanela("/view/ajax/visualizar-anuncios.html");
+    function filtroAnuncio(filtro_pos, wrapper_pos, filtro_neg, wrapper_neg){
+        $(filtro_pos).css('border-bottom','3px solid black');
+        $(filtro_pos).css('color','Black');
+        $(wrapper_pos).fadeIn('slow');
+        
+    	$(filtro_neg).css('border-bottom','none');
+    	$(filtro_neg).css('color','gray');
+    	$(wrapper_neg).hide();
+    }
 
+
+    
+    novaJanela("/view/ajax/visualizar-anuncios.html");
     $.ajax({
         type:"GET",
         url:"https://trampaki-api-tunnes.c9users.io/carregar-meus-anuncios",
@@ -232,7 +243,7 @@ function meusAnuncios(){
         },
         complete: function(data){
         	data = JSON.parse(data.responseText);
-            var sx = ['ABERTO','ENCERRADO','CANCELADO','SUSPENSO'];
+            var ST = ['anuncios_abertos','anuncios_encerrados', 'anuncios_suspensos'];
             
             [].slice.call(data).forEach(function(anuncio){
                 var wrapper_item_servico = document.createElement("div");
@@ -249,7 +260,7 @@ function meusAnuncios(){
                     selecionado.className = 'selecionado';
                     selecionado.innerHTML = 'SELECIONADO';
                     
-                    status.innerHTML = sx[parseInt(anuncio.codigoAnuncio)];
+                    // status.innerHTML = sx[parseInt(anuncio.codigoAnuncio)];
                     
                 anuncio.codigoAnuncio == sessionStorage.getItem("anuncio_selecionado") ? item_servico.setAttribute("id","ativo") : null;
                 item_servico.onclick=function(){
@@ -265,11 +276,35 @@ function meusAnuncios(){
                 item_servico.appendChild(info_servico);
                 item_servico.appendChild(selecionado);
                 wrapper_item_servico.appendChild(item_servico);
-                document.getElementById('anuncios').appendChild(wrapper_item_servico);
+                
+                document.getElementById(ST[parseInt(anuncio.codigoStatus)]).appendChild(wrapper_item_servico);
+                
             });
+            
+            document.getElementById('span_aberto').onclick = function(){
+                filtroAnuncio('#span_aberto', '#anuncios_abertos', '#span_suspenso, #span_encerrado', '#anuncios_suspensos, #anuncios_encerrados');
+            }
+            document.getElementById('span_encerrado').onclick = function(){
+                filtroAnuncio('#span_encerrado', '#anuncios_encerrados', '#span_aberto, #span_suspenso', '#anuncios_suspensos, #anuncios_abertos');
+            }
+            document.getElementById('span_suspenso').onclick = function(){
+                filtroAnuncio('#span_suspenso', '#anuncios_suspensos', '#span_aberto, #span_encerrado', '#anuncios_abertos, #anuncios_encerrados');
+            }
         }
     });    
 }
+
+
+function alternacaoDeAnuncios(e){
+    $(".anuncio_sinalizador").hide();
+    $(".filtro_sinalizador").style.borderBottom = "none";
+    $(".filtro_sinalizador").style.color = "gray";
+    
+    e.style.borderBottom = "3px solid black";
+    e.style.color = 'Black';
+    // $("#solicitacoes_enviadas").fadeIn('slow');
+}
+
 
 function visualizarSolicitacoes(){
     novaJanela("view/ajax/visualizar-solicitacoes.html");
