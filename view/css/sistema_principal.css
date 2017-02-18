@@ -154,6 +154,9 @@ html, body{
     display: block;
     color: white;
 }
+#chat{
+    display: none;
+}
 #barraLateral span{
     cursor: pointer;
 }
@@ -259,9 +262,7 @@ html, body{
     font-size: 15px;
     font-weight: 800;
 }
-#chat{
-    display: none;
-}
+
 #painel span{
     margin-top: 5px;
     font-size: 17px;

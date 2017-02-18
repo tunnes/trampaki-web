@@ -25,6 +25,7 @@ body::-webkit-scrollbar {
     margin: 0px 0px 0px 40px;
     height: 100%;
     padding-top: 50px;
+    overflow-x: hidden;
 }
 #janela img{
     width: 90px;
@@ -289,30 +290,58 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 a[href^="https://www.google.com/maps"]{display:none !important}
 
 /* CHAT --------------------------------------------------------------------- */
-#wrapper-chat {
-    height: calc(100% - 35px);
-    overflow-y: auto;
+#wrapper_chat {
+    height: calc(100% - 55px);
+    overflow-y: hidden;
     padding: 15px !important;
 }
-.cpm #messagebox {
-    width: 71%;
+#messagebox {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    border: none;
+    font-size: 22px;
+    font-weight: 100;
+    color: black;
 }
-.cpm #sendbox {
+#messagebox:focus{
+    outline: none;
+}
+span.namebox{
+    font-size: 11px;
+    font-weight: 600;
+}
+#sendbox{
     font-size: 10px;
-    float: none;
-}
-.cpm #mapa-retornar {
-    float: none;
-    right: 15px;
-    font-size: 10px;
-}
-.cpm{
-    position: absolute;
-    bottom: 15px;
+    display: inline-block;
+    border-top: 0px;
+    height: 36px;
+    border: 1px solid black;
+    background: white;
+    border-top: 0px;
+    width: 90px;
+    text-align: center;
+    padding-top: 10px;
+    border-bottom: 0px;
+    border-right: 0px;
+    cursor: pointer;
     
-    padding-right: 15px;
+}
+#sendbox i{
+    margin-right: 3px;
+}
+
+.modest_mouse{
+    padding-right: 0px;
+    margin-left: 14px;
+    margin-right: 15px;
+    border: 1px solid black;
+    display: inline-block;
     width: 100%;
 }
+.modest_mouse input::-webkit-input-placeholder {
+    font-weight: 100 !important; 
+}
+
 
 /*SOLICITAÇÕES -------------------------------------------------------------- */
 #solicitacoes_recebidas{
@@ -326,12 +355,12 @@ a[href^="https://www.google.com/maps"]{display:none !important}
     }
 }
 @media (max-width: 1020px){
-#wrapper-chat #messagebox{
+    #wrapper-chat #messagebox{
         width:50%;
     }
 }
 @media (max-width: 460px){
-#wrapper-chat #messagebox{
+    #wrapper-chat #messagebox{
         width:50%;
     }
 }
@@ -342,6 +371,14 @@ a[href^="https://www.google.com/maps"]{display:none !important}
     #janela{
         padding-left:  50px;
         padding-right: 50px;
+    }
+    .modest_mouse{
+        width: 96% !important;
+    }
+}
+@media (max-width: 950px){
+    .modest_mouse{
+        width: 96% !important;
     }
 }
 @media (max-width: 600px){

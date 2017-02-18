@@ -74,7 +74,7 @@
         <!-- Barra latereal para chat e configurações do sistema ========================================== -->
         <div id="barraLateral">
             <div class="nav">
-                <span id="configuracaoAjax" href="#" onclick="list()">MENSAGENS</span>
+                <span id="mensagens-painel" href="#" onclick="list()">MENSAGENS</span>
                 <span id="menu-painel" href="#" onclick="barraLateralPainel()">PAINEL</span>
             </div>
             <div class="main">
@@ -82,6 +82,7 @@
                     <span id="meu_perfil" onclick='meuPerfil()'>MEU PERFIL</span>
                     <span onclick='solicitacoes()'>SOLICITAÇÕES</span>
                     <span onclick='meusServicos()' id='meus_servicos'>MEUS SERVIÇOS</span>
+                    <span onclick='retornar()' >VER MAPA</span>                    
                     <span onclick='deslogar()' id='sair'>SAIR</span>
                      
                 </div>
@@ -89,25 +90,10 @@
                 </div>
             </div>
         </div>
-        <div id="hideshow" class="controle-lateral" >
-            <p>MENU</p>
+        <div id="hideshow" onclick="x()" class="controle-lateral" >
+            <p id="hideshow_text" onclick="x()" >MENU</p>
         </div>
-        <script type="text/javascript">
-            $('#hideshow').click(function(){
-                
-                if(document.getElementById('hideshow').style.left == '180px'){
-                    $('#hideshow').css('left','0%');
-                    $('#barraLateral').css('left','-180px');
-                    // $('#barraLateral').toggle('show');
-                }else{
-                    $('#hideshow').css('left','180px');
-                    $('#barraLateral').css('left','0px');
-                    // $('#barraLateral').toggle('hide');
-                }
-            });
 
-            
-        </script>
         <!-- ============================================================================================== -->
         <div id="janela"></div>
         <!-- Elemento que recebe o mapa e as informações ================================================== -->

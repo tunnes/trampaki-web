@@ -5,15 +5,15 @@ const update = function(ts, ud) {
     xhr.onreadystatechange = function() {
         if (this.readyState == xhr.DONE && xhr.status == 200) {
             var res = JSON.parse(xhr.response);
-            [].slice.call(document.getElementById("wrapper-chat").getElementsByTagName("p")).forEach(function(e) {
+            [].slice.call(document.getElementById("wrapper_chat").getElementsByTagName("p")).forEach(function(e) {
                 e.parentNode.removeChild(e);
             });
             res['history'].forEach(function(v) {
                 let p = document.createElement("p");
                 p.innerHTML = v;
-                document.getElementById("wrapper-chat").appendChild(p);
+                document.getElementById("wrapper_chat").appendChild(p);
             });
-            document.getElementById("wrapper-chat").scrollTop = document.getElementById("wrapper-chat").scrollHeight;
+            document.getElementById("wrapper_chat").scrollTop = document.getElementById("wrapper_chat").scrollHeight;
             update(res['timestamp'], ud);
         }
     };
@@ -34,11 +34,10 @@ const send = function(msg, ud) {
 const list = function() {
     const xhr = new XMLHttpRequest();
     xhr.open("GET", "https://trampaki-api-tunnes.c9users.io/chat/" + sessionStorage.getItem("trampaki-id"));
-    xhr.setRequestHeader("trampaki_user", sessionStorage.getItem('trampaki-user'));
+    xhr.setRequestHeader("trampaki_user", sessionStorage.getItem('trampaki_user'));
     xhr.onreadystatechange = function() {
         if (this.readyState == xhr.DONE) {
             barraLateralMensagens(JSON.parse(xhr.response));
-            
         }
     };
     xhr.send();
@@ -79,7 +78,7 @@ function janelaChat(caminho, id, nome){
 }
 
 function barraLateralMensagens(j){
-document.getElementById('configuracaoAjax').style.borderBottom = '2px solid white';
+document.getElementById('mensagens-painel').style.borderBottom = '2px solid white';
 document.getElementById('menu-painel').style.borderBottom = 'none';
 document.getElementById('chat').style.display = 'block';
 document.getElementById('painel').style.display = 'none';
@@ -210,7 +209,7 @@ function cancelarConexao(codigoConexao){
 }
 
 function barraLateralPainel(){
-    document.getElementById('configuracaoAjax').style.borderBottom = 'none';
+    document.getElementById('mensagens-painel').style.borderBottom = 'none';
     document.getElementById('menu-painel').style.borderBottom ='2px solid white';
     document.getElementById('chat').style.display = 'none';
     document.getElementById('painel').style.display = 'block';
@@ -367,3 +366,25 @@ var ItemSolicitacao = function(imagem, titulo, subtitulo, codigo){
         this.item_solicitacao.appendChild(this.wrapper_buttom);
         this.finalizar('solicitacoes_recebidas');      
     }
+    
+
+/* BARRA LATERAL ------------------------------------------------------------ */
+
+function x(){
+    if(document.getElementById('hideshow').style.left == '180px'){
+        $('#hideshow').css('left','0%');
+        $('#barraLateral').css('left','-180px');
+    }else{
+        $('#hideshow').css('left','180px');
+        $('#barraLateral').css('left','0px');
+    }
+}
+function hideInfo(){
+    if(window.event.srcElement.id != 'hideshow' && window.event.srcElement.id != 'mensagens-painel' && window.event.srcElement.id != 'menu-painel'){
+        $('#hideshow').css('left','0%');
+        $('#barraLateral').css('left','-180px');
+        // document.getElementById('info').style.display = 'none';
+        
+    }
+}
+document.onclick = hideInfo;    

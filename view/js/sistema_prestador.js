@@ -1,4 +1,10 @@
-/* global carregarImagem, ItemSolicitacao */
+/*  
+    global $
+    novaJanela,
+    carregarImagem, 
+    ItemSolicitacao, 
+    carregarCategorias 
+*/
 
 function meuPerfil(){
         novaJanela("/view/ajax/prestador-perfil.html")
@@ -11,8 +17,6 @@ function meuPerfil(){
             complete: function(data){
                 
                 data = JSON.parse(data.responseText);
-                console.log(data.responseText);
-                console.log(data);	
                 carregarCategorias(data.categorias);
                 var imagem = document.getElementById('imagem_header');
                 	data.codigoImagem != null ? carregarImagem(imagem, data.codigoImagem) : null;
@@ -52,50 +56,50 @@ function meuPerfil(){
 function meusServicos(){
         novaJanela("/view/ajax/prestador-servicos.html");
 	    
-	    $.ajax({
-            type:"GET",
-            url:"https://trampaki-api-tunnes.c9users.io/meus-servicos",
-            headers:{ 
-                "Authorization": sessionStorage.getItem("authorization")
-            },
-            complete: function(data){
-            	data = JSON.parse(data.responseText);
-                var servicos = document.getElementById('servicos');
-                	servicos.innerHTML = ' ';
-                var sx = ['ABERTO','ENCERRADO','CANCELADO','SUSPENSO'];
-                [].slice.call(data).forEach(function(servico){
-                    var item_servico = document.createElement("div");
-                    var imagem_servico = document.createElement("div");
-                        servico.cd_imagem01 != null ? carregarImagem(imagem_servico, servico.cd_imagem01) : null;
-                    var info_servico = document.createElement("div");
-                    var titulo = document.createElement("strong");
-                        titulo.innerHTML = servico.nm_titulo;
-                    var cidade = document.createElement("p");
-                        cidade.innerHTML = servico.nm_cidade;
-                    var status = document.createElement("p");
+	   // $.ajax({
+    //         type:"GET",
+    //         url:"https://trampaki-api-tunnes.c9users.io/meus-servicos",
+    //         headers:{ 
+    //             "Authorization": sessionStorage.getItem("authorization")
+    //         },
+    //         complete: function(data){
+    //         	data = JSON.parse(data.responseText);
+    //             var servicos = document.getElementById('servicos');
+    //             	servicos.innerHTML = ' ';
+    //             var sx = ['ABERTO','ENCERRADO','CANCELADO','SUSPENSO'];
+    //             [].slice.call(data).forEach(function(servico){
+    //                 var item_servico = document.createElement("div");
+    //                 var imagem_servico = document.createElement("div");
+    //                     servico.cd_imagem01 != null ? carregarImagem(imagem_servico, servico.cd_imagem01) : null;
+    //                 var info_servico = document.createElement("div");
+    //                 var titulo = document.createElement("strong");
+    //                     titulo.innerHTML = servico.nm_titulo;
+    //                 var cidade = document.createElement("p");
+    //                     cidade.innerHTML = servico.nm_cidade;
+    //                 var status = document.createElement("p");
                         
-                        status.innerHTML = sx[parseInt(servico.cd_status)];
+    //                     status.innerHTML = sx[parseInt(servico.cd_status)];
                         
-                    item_servico.onclick=function(){
-                        visualizaAnuncio(servico.cd_anuncio);
-                    };
-                    item_servico.className = 'item_servico';
-                    imagem_servico.className = 'imagem_servico';
-                    info_servico.className = 'info_servico';
+    //                 item_servico.onclick=function(){
+    //                     visualizaAnuncio(servico.cd_anuncio);
+    //                 };
+    //                 item_servico.className = 'item_servico';
+    //                 imagem_servico.className = 'imagem_servico';
+    //                 info_servico.className = 'info_servico';
 
-                    info_servico.appendChild(titulo);
-                    info_servico.appendChild(cidade);
-                    info_servico.appendChild(cidade); 
-                    info_servico.appendChild(status);
+    //                 info_servico.appendChild(titulo);
+    //                 info_servico.appendChild(cidade);
+    //                 info_servico.appendChild(cidade); 
+    //                 info_servico.appendChild(status);
                         
                         
-                    item_servico.appendChild(imagem_servico);
-                    item_servico.appendChild(info_servico);
-                    servicos.appendChild(item_servico);
-                	});
+    //                 item_servico.appendChild(imagem_servico);
+    //                 item_servico.appendChild(info_servico);
+    //                 servicos.appendChild(item_servico);
+    //             	});
                 		
-                }
-    });
+    //             }
+    // });
 	    
     }
 function solicitacoes(){
@@ -119,8 +123,8 @@ function solicitacoes(){
                     return new ItemSolicitacao(solicitacao.cd_imagem01, titulo, subtitulo, solicitacao.cd_conexao);
                 }
                 var solicitacao_recebida = function(){
-                    var subtitulo = "Publicado por <a onclick='visualizaMeuAnuncio("+ solicitacao.cd_anuncio+")'>"+ solicitacao.nm_titulo +"</a>.";
-                    return new ItemSolicitacao(solicitacao.cd_imagem, titulo, subtitulo, solicitacao.cd_conexao);
+                    var subtitulo = "Anunciado por <a onclick='visualizaMeuAnuncio("+ solicitacao.cd_anuncio+")'>"+ solicitacao.nm_titulo +"</a>.";
+                    return new ItemSolicitacao(solicitacao.cd_imagem01, titulo, subtitulo, solicitacao.cd_conexao);
                 }
                 solicitacao.cd_solicitante == 1 ? solicitacao_enviada().enviada() : solicitacao_recebida().recebida();
             });

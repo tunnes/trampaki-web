@@ -1,16 +1,16 @@
 <div id="wrapper-meus-servicos" class="wrapper_janela container-fluid">
-	<h1>Meus Serviços</h1>
+	<h1 class="titulo_janela_prestador">MEUS<br><span>SERVIÇOS</span></h1>
 	<!-- FILTRO ------------------------------------------------------------------------------------------ -->
-	<div class='fiter_tags'>
-		<span class='ativada'>ABERTO</span>
-		<span>ENCERRADO</span>
-		<span>SUSPENSO</span>
+	<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 filter_tags'>
+		<span id="span_aberto" class='ativada'>ABERTO</span>
+		<span id="span_encerrado" >ENCERRADOS</span>
+		<span id="span_suspenso" >SUSPENSOS</span>
 	</div>
-	<hr>
+	
 	<!-- RESULTADOS -------------------------------------------------------------------------------------- -->
-	<div id='servicos'></div>
-	<!-- CONTROLES UX ------------------------------------------------------------------------------------ -->
-	<div class='buttons_bugados'>
-		<button onclick="retornar()" >RETORNAR AO MAPA</button>
-	</div>																			 	
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><hr></div>
+	<!-- RESULTADOS -------------------------------------------------------------------------------------- -->
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id='anuncios_abertos'></div>
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id='anuncios_encerrados'></div>
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id='anuncios_suspensos'></div>		
 </div>
