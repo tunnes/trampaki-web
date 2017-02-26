@@ -1,12 +1,14 @@
 /*  
-    global $
+    global $,
     novaJanela,
     carregarImagem, 
     ItemSolicitacao, 
-    carregarCategorias 
+    carregarCategorias
+    
 */
 
-function meuPerfil(){
+//  VISUALIZAR MEU PERFIL ------------------------------------------------------
+    function meuPerfil(){
         novaJanela("/view/ajax/prestador-perfil.html")
         $.ajax({
             type:"GET",
@@ -53,7 +55,8 @@ function meuPerfil(){
     });
     }
 
-function meusServicos(){
+//  VISUALIZAR TODOS OS MEUS SERVIÇOS ------------------------------------------
+    function meusServicos(){
         novaJanela("/view/ajax/prestador-servicos.html");
 	    
 	   // $.ajax({
@@ -102,7 +105,9 @@ function meusServicos(){
     // });
 	    
     }
-function solicitacoes(){
+
+//  VISUALIZAR SOLICITAÇÕES ----------------------------------------------------
+    function solicitacoes(){
     novaJanela("/view/ajax/prestador-solicitacoes.html");
     $.ajax({
         type:"GET",
@@ -132,10 +137,8 @@ function solicitacoes(){
     });
 }
 
- 
-    
-// Nova solicitação prestador ----> Anuncio. 
-function enviarSolicitacao(codigoAnuncio){
+//  SOLICITAR CONEXÃO PARA UM ANUNCIO ------------------------------------------    
+    function enviarSolicitacao(codigoAnuncio){
 	$.ajax({
         type:"POST",
         url:"https://trampaki-api-tunnes.c9users.io/nova-conexao-prestador",

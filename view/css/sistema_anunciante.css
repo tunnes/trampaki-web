@@ -1,5 +1,5 @@
 /* GLOBAL ------------------------------------------------------------------- */
-
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 /* MEUS ANUNCIOS E MINHAS SOLICITAÇÕES ------------------ */
 .titulo_janela_anunciante{
     margin-top: 40px;
@@ -14,8 +14,6 @@
     font-size: 70px;
     display: inline-block;
 }
-
-
 
 /* JANELA DE NOVO ANUNCIO --------------------------------------------------- */
 #wrapper_novo_anuncio .novo_prestador{
@@ -124,7 +122,25 @@
     right: 30px;
     margin-bottom: 20px;
 }
-
+.buttom_encerrar{
+    font-size: 11px;
+    right: 136px;
+    border-color: #fd6e6e;
+    color: #fd6e6e
+}
+.buttom_visualizar{
+    font-size: 11px;
+    border-color: #00b946;
+    color: #00b946;
+    right: 37px;
+    
+}
+.wrapper_buttom{
+    display: none;
+}
+#wrapper_buttom_ativo{
+    display: block;
+}
 .selecionado{
     display: none;
     width: 92px;
@@ -144,6 +160,101 @@
 #ativo .selecionado{
     display: block !important;
 }
+.buttom_modal{
+    cursor: pointer;
+    border: 1px solid black;
+    padding: 17px 63px;
+    font-weight: 800;
+    font-size: 13px;    
+}
+.buttom_modal_encerrar{
+    margin-right: 17px;
+}
+/* JANELA DE ENCERRAMENTO DE ANUNCIO ---------------------------------------- */
+#wrapper_encerrar_anuncio .titulo{
+
+}
+#wrapper_encerrar_anuncio h3{
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+#avaliacao_descricao{
+    padding-left: 0px;
+}
+#avaliacao_descricao textarea{
+    width: 100%;
+}
+#wrapper_encerrar_anuncio #prestadores_envolvidos{
+    padding-left: 0px;
+    margin-bottom: 18px;
+}
+.avaliacao_valor, .avaliacao_servico{
+    padding-left: 0px;
+    margin-bottom: 18px;
+}
+/* MODIFICAÇÕES NOS "ITEMS CANDITADOS" */
+#wrapper_encerrar_anuncio .item_imagem{
+    height: 48px !important;
+}
+#wrapper_encerrar_anuncio .item{
+    border-right-width: 1px !important;
+    height: 50px !important;
+}
+#wrapper_encerrar_anuncio .item span{
+    text-align: center;
+    margin-top: 8px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 50%;
+}
+#wrapper_encerrar_anuncio .item strong{
+    font-size: 22px;
+}
+#wrapper_encerrar_anuncio .selecionado{
+    width: 50px;
+    right: -35px;
+}
+#wrapper_encerrar_anuncio #buttons{
+    margin-top: 0px;
+}
+
+
+fieldset, label { 
+    margin: 0; padding: 0; 
+}
+.rating { 
+  border: none;
+  float: left;
+}
+.rating > input { 
+    display: none; 
+}
+.rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+.rating > input:checked ~ label, .rating:not(:checked) > label:hover,  .rating:not(:checked) > label:hover ~ label { 
+    color: #FFD700;  
+}
+.rating > input:checked + label:hover, .rating > input:checked ~ label:hover, .rating > label:hover ~ input:checked ~ label, .rating > input:checked ~ label:hover ~ label { 
+    color: #FFED85;  
+    
+} 
 
 
 /* MEDIAQUERY GLOBAL -------------------------------------------------------- */
@@ -152,9 +263,40 @@
         margin-top: 0px;
     }
 }
+@media (max-width: 1000px){
+    .buttom_encerrar{
+        width: 95px;
+        bottom: 30px;
+        right: 37px;
+    }
+    .buttom_visualizar{
+        font-size: 11px;
+        border-color: #00b946;
+        color: #00b946;
+        right: 37px;
+        
+    }
+}
+@media (max-width: 680px){
+    .buttom_encerrar{
+        width: auto;
+        bottom: 10px;
+        right: 136px;
+    }
+}
 @media (max-width: 600px){
     #wrapper_novo_anuncio {
         margin-top: -10px;
+    }
+}
+@media (max-width: 400px){
+    .buttom_encerrar{
+        width: 95px;
+        bottom: 30px;
+        right: 37px;
+    }
+    .modal-header h2{    
+        font-size: 18px;
     }
 }
 @media (max-width: 550px){
@@ -168,5 +310,17 @@
         padding-left: 10px;
         padding-right: 10px;
         font-size: 45px;
+    }
+    /*ENCERRAR ANUNCIO --------------------- */
+    .modal-header h2{
+        font-size: 25px;
+    }
+    .buttom_modal{
+        padding: 20px 40px;
+        display: block;
+    }
+    .buttom_modal_encerrar {
+        margin-right: 0px;
+        margin-bottom: 10px;
     }
 }

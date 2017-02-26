@@ -18,11 +18,11 @@
 	        <label>Imagem 01</label>
             <input required name="imagem_anuncio_01" type="file" name="pic" accept="image/*">
         </div>
-	    <div class="col-xs-6  col-sm-4  col-md-4  col-lg-4  form-group">
+	    <div class="col-xs-12 col-sm-4  col-md-4  col-lg-4  form-group">
 	        <label>Imagem 02</label>
             <input  name="imagem_anuncio_02" type="file" name="pic" accept="image/*">
         </div>
-	    <div class="col-xs-6  col-sm-4  col-md-4  col-lg-4  form-group">
+	    <div class="col-xs-12 col-sm-4  col-md-4  col-lg-4  form-group">
 	        <label>Imagem 03</label>
             <input  name="imagem_anuncio_03" type="file" name="pic" accept="image/*">
         </div>
@@ -32,13 +32,13 @@
                 <option value='' selected="selected">Nenhuma Categoria</option>
             </select>
 		</div>	
-		<div class="col-xs-6  col-sm-4  col-md-4  col-lg-4  form-group">
+		<div class="col-xs-12 col-sm-4  col-md-4  col-lg-4  form-group">
 		    <label>Categoria 02</label>
             <select id='codigo_categoria_02' name='codigo_categoria_02'>
                 <option value='' selected="selected">Nenhuma Categoria</option>
             </select>							
         </div>							
-		<div class="col-xs-6  col-sm-4  col-md-4  col-lg-4  form-group">
+		<div class="col-xs-12 col-sm-4  col-md-4  col-lg-4  form-group">
 		    <label>Categoria 03</label>
             <select id='codigo_categoria_03' name='codigo_categoria_03'>
                 <option value='' selected="selected">Nenhuma Categoria</option>
@@ -54,7 +54,8 @@
 		</div>	
     </form>
     <script type="text/javascript">
+    		/* global cadastrarAnuncio, popularCombobox */
     		cadastrarAnuncio();
-     		pularCombobox();
+     		popularCombobox();
     </script>	
 </div>

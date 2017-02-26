@@ -1,0 +1,43 @@
+<div id="wrapper_encerrar_anuncio" class="wrapper_janela container-fluid">
+	<h1 class="titulo_janela_anunciante">Encerrar<br><span>Anuncio</span></h1>
+	<!-- CORPO ------------------------------------------------------------------------------------------ -->
+	<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 '>
+		
+		<h3 class="titulo" >01. Selecione abaixo quem executou seu servico.</h3>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id='prestadores_envolvidos'></div>
+		
+		<h3 class="sub_titulo" >02. Avalie o serviço prestado.</h3>
+		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 avaliacao_servico">		
+			<fieldset class="rating" name="nota_servico">
+			    <input type="radio" id="S15" name="nota_servico" value="5" /><label class = "full" for="S15"></label>
+			    <input type="radio" id="S14" name="nota_servico" value="4" /><label class = "full" for="S14"></label>
+			    <input type="radio" id="S13" name="nota_servico" value="3" /><label class = "full" for="S13"></label>
+			    <input type="radio" id="S12" name="nota_servico" value="2" /><label class = "full" for="S12"></label>
+			    <input type="radio" id="S11" name="nota_servico" value="1" /><label class = "full" for="S11"></label>
+			</fieldset>
+		</div>
+		
+		<h3 class="sub_titulo" >03. Avalie também o valor cobrado pelo servico.</h3>
+		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 avaliacao_valor">		
+			<fieldset class="rating" name="nota_valor">
+			    <input type="radio" id="S25" name="nota_valor" value="5" /><label class = "full" for="S25"></label>
+			    <input type="radio" id="S24" name="nota_valor" value="4" /><label class = "full" for="S24"></label>
+			    <input type="radio" id="S23" name="nota_valor" value="3" /><label class = "full" for="S23"></label>
+			    <input type="radio" id="S22" name="nota_valor" value="2" /><label class = "full" for="S22"></label>
+			    <input type="radio" id="S21" name="nota_valor" value="1" /><label class = "full" for="S21"></label>
+			</fieldset>			
+		</div>
+		
+		<h3 class="sub_titulo" >04. Descreva sua experiência.</h3>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id='avaliacao_descricao'>
+			<textarea id="texto_descricao" rows="6"></textarea>
+		</div>
+		
+	</div>
+	<!-- RODAPÉ ----------------------------------------------------------------------------------------- -->
+	<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 '>
+		<div id='buttons'>
+			<button onclick="enviarAvaliacao()" class="pull-right">ENCERRAR</button>
+		</div>	
+	</div>	
+</div>

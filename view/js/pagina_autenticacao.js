@@ -25,9 +25,11 @@ function efetuarAutenticacao(){
         }
     });
 }
+
 function direcionarPainelAnunciante(){ 
     return window.location.href = "/painel-anunciante";
 }
+
 function direcionarPainelPrestador(){ 
     return window.location.href = "/painel-prestador";
 }
