@@ -273,7 +273,9 @@ html, body{
 
 
 /* JANELA-ANUNCIO -------------------------------------------------------------- */
-
+#tituloAnuncioDOM{
+    padding-left: 15px;   
+}
 
 #wrapper-anuncio button{
     float: right;
@@ -321,7 +323,7 @@ html, body{
 
 #wrapper-imagens-anuncio{
     width: 100%;
-    height: 180px;
+    /*height: 180px;*/
 }
 #wrapper-imagens-anuncio div{
     width: 31%;
@@ -344,3 +346,19 @@ html, body{
     background-image:url('https://trampaki-web-tunnes.c9users.io/view/img/no_image.jpeg');
 }
 
+@media (max-width: 400px){
+    #wrapper-imagens-anuncio div {
+        width: 100%;
+        height: 200px !important;
+    }
+}
+@media (max-width: 600px){
+    #wrapper-anuncio{
+         padding: 15px;
+    }
+    
+    #wrapper-imagens-anuncio div{
+        height: 115px;
+    }
+    
+}
