@@ -186,9 +186,10 @@
 
 //  RETORNAR AO MAPA -----------------------------------------------------------
     function retornar(){
-	$("#janela").hide();
-	$("#mapa").show();
-}
+    	$("#janela").hide();
+    	$("#mapa").show();
+    	mapEngineAnunciante();
+    }
 
 //  OPERAÇÕES COM ANÚNCIOS ----------------------------------------------------- 
     function visualizaAnuncio(codigoAnuncio){

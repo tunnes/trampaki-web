@@ -118,7 +118,18 @@ a:hover{
     color: white;
     background-color: #ef914c;
 }
-
+.btn:focus{
+    border-color: black;
+    color: white;
+    background-color: #ef914c;
+} 
+.buttom_modal {
+    cursor: pointer;
+    border: 1px solid black;
+    padding: 17px 63px;
+    font-weight: 800;
+    font-size: 13px;
+}
 /* CORREÇÃO DE BUG DO BOOSTRAP -------------------------------------------------------  */
 input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio]{
     position: absolute;

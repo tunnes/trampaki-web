@@ -28,7 +28,6 @@ function mapEngineAnunciante(){
             center: posicaoAtual,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             disableDefaultUI: true,
-
             mapTypeControlOptions: {
                 mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
             }
@@ -776,6 +775,12 @@ function mapEngineAnunciante(){
     //  Alcance do Usuario --------------------------------------------------------------------------------------------------
         mapa = new google.maps.Map(document.getElementById("mapa"), configuracoes);
         mapa.setOptions({styles: noFeatures});
+        
+    //  Correção mapa cinza:
+    window.addEventListener('resize', function(event){
+        google.maps.event.trigger(mapa, 'resize');
+    });
+        
         estiloDoMapa();
     }
 

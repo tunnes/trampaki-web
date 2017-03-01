@@ -1,6 +1,11 @@
 /*
     global $ 
 */    
+function paginaAutenticacao(){
+    $(document).keypress(function(e){ 
+        e.which == 13 ? efetuarAutenticacao() : null; 
+    });
+}
 
 function efetuarAutenticacao(){
     $.ajax({
@@ -12,8 +17,7 @@ function efetuarAutenticacao(){
         },
         statusCode: {
             401:function() {
- 
-                console.log('INVALIDO');
+                autenticacaoErro();
             },
             200:function(data, textStatus, request){
                 sessionStorage.setItem('authorization', request.getResponseHeader('authorization'));
@@ -32,4 +36,21 @@ function direcionarPainelAnunciante(){
 
 function direcionarPainelPrestador(){ 
     return window.location.href = "/painel-prestador";
+}
+
+function autenticacaoErro(){
+    document.getElementById('modal_titulo').innerHTML = "LOGIN E SENHA INVÁLIDOS, POR FAVOR TENTE NOVAMENTE.";
+    document.getElementById("corpo-modal").innerHTML = null;
+    var s = document.createElement('span');
+        s.innerHTML = "OK";
+        s.className = "buttom_modal";
+        s.onclick = function (){
+            modal.style.display = "none";
+        }
+    document.getElementById("corpo-modal").appendChild(s);
+    var modal = document.getElementById('modal_principal');
+        modal.style.display = "block";
+    window.onclick = function(event) { 
+        event.target == modal ? modal.style.display = "none" : null; 
+    }
 }

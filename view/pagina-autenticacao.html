@@ -20,22 +20,36 @@
     <script type="text/javascript" src="view/js/pagina_autenticacao.js"></script>
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,800" rel="stylesheet">
+    
+    <!-- *** Provisório *** -->
+    <link rel="stylesheet" href="view/css/modal.css" type="text/css"/>    
 </head>
 
 <body>
+    <!-- Modal ======================================================================================== -->
+    <div id="modal_principal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header"><h2 id='modal_titulo'>Solicitacao Efetuada</h2></div>
+            <div id="corpo-modal" class="modal-body"><p id='modal_descricao'></p></div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+    
+    <!-- Formulário =================================================================================== -->
     <div class="container">
         <div class="row">
             <div class="form_bg">
-                <form class="form-signin">
+                <form id="form_autenticacao" class="form-signin">
                     <h3>PÁGINA DE</h3>
                     <h2 class="form-signin-heading">AUTENTICAÇÃO</h2>
     				    <label>LOGIN</label>
-    					<input id="login" name="usuario_nome" type="text" placeholder="Digite seu login.." class="form-control">
+    					<input id="login" onfocus="paginaAutenticacao()" name="usuario_nome" type="text" placeholder="Digite seu login.." class="form-control">
     					
     					<label>SENHA</label>
-    					<input id="senha" name="usuario_nome" type="password" placeholder="Digite sua senha.." class="form-control">
+    					<input id="senha" onfocus="paginaAutenticacao()" name="usuario_nome" type="password" placeholder="Digite sua senha.." class="form-control">
                         <label class="checkbox-inline"><input class="fix-checkbox" type="checkbox" value="">LEMBRAR MINHA SENHA</label>
-                        <button onclick="efetuarAutenticacao()" type="button" class="btn btn-lg btn-primary btn-block">Acessar</button>
+                        <button onfocus="paginaAutenticacao()" onclick="efetuarAutenticacao()" type="button" type="submit" form="form_autenticacao" class="btn btn-lg btn-primary btn-block">Acessar</button>
 
                     <label class="control-label">
                         <a href="/#cadastro">Cadastre-se <i class="fa fa-pencil"></i></a> | 
