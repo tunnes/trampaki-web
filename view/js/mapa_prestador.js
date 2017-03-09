@@ -77,28 +77,36 @@ function mapEngine(){
                 data = JSON.parse(data);
             var arrayResponse = [].slice.call(data);
                 var arrayMarcadores = [];
-                arrayResponse.forEach(function(anuncio){
-                    
+                
+                // Tratamento de divisão por anunciante:
+                function groupBy(array, property) {
+                    var hash = {};
+                    for (var i = 0; i < array.length; i++) {
+                        if (!hash[array[i][property]]) hash[array[i][property]] = [];
+                        hash[array[i][property]].push(array[i]);
+                    }
+                    return hash;
+                }
+                var agrupadoAnunciante = groupBy(arrayResponse,'cd_usuario');
+                for (var indexAnunciante in agrupadoAnunciante){
+                    gerarMarcador((agrupadoAnunciante[indexAnunciante][0]), agrupadoAnunciante[indexAnunciante]);
+                }
+                function gerarMarcador(anunciante, anuncios){
                     var marcador = new google.maps.Marker({
-                        position: new google.maps.LatLng(anuncio.cd_latitude, anuncio.cd_longitude),
-                        title: anuncio.titulo,
+                        position: new google.maps.LatLng(anunciante.cd_latitude, anunciante.cd_longitude),
+                        title: anunciante.nm_usuario,
                         icon: "view/img/blackHoleSun.png",
-                        // icon: "view/img/more_marker.png",
-                        // icon: "view/img/blackHoleSun.png",
                         map: mapa,
                         animation: google.maps.Animation.DROP,
-                        imagem: API + '/carregar-imagem/' + anuncio.cd_imagem01+'',
-                        descricaoSimples: anuncio.ds_anuncio,
-                        estrelas: anuncio.estrelas,
-                        titulo: anuncio.nm_titulo,
-                        codigo: anuncio.cd_anuncio
+                        imagem: API + '/carregar-imagem/' + anunciante.cd_imagem+'',
+                        anuncios: anuncios
                     });
                     marcador.addListener('click', function(){
                         ultimo.getAnimation() != null ? ultimo.setAnimation(null) : null;
                         carregarVisualizacao(marcador);
                     });
                     arrayMarcadores.push(marcador);
-                });
+                }
                 
                 var clusterStyles = [
                   {
@@ -132,27 +140,50 @@ function mapEngine(){
         
         
         function carregarVisualizacao(marcador){
-            document.getElementById('titulo').textContent = marcador.titulo;
+            document.getElementById('titulo').innerHTML = marcador.title;
             document.getElementById('info-moldura').style.opacity = 1;
             document.getElementById('info-moldura').style.height = "auto";
             document.getElementById('info-fundo-imagem').style.backgroundImage = "url(" +marcador.imagem+")";
-            document.getElementById('descricao').textContent = marcador.descricaoSimples;
-           
+            document.getElementById("anuncios").innerHTML = null;
+            marcador.anuncios.forEach(function(anuncio){
+                var wrapper_anuncio = document.createElement('div');
+                    wrapper_anuncio.className = "anuncio";
+                var anuncio_foto = document.createElement('div');
+                    anuncio_foto.style.backgroundImage = "url(" + API + "/carregar-imagem/" + anuncio.cd_imagem01+")";
+                    anuncio_foto.className = "foto-anuncio";
+                var anuncio_titulo = document.createElement('div');
+                    anuncio_titulo.innerHTML = anuncio.nm_titulo;
+                    anuncio_titulo.className = "titulo-anuncio";
+                var anuncio_botoes = document.createElement('div');
+                    anuncio_botoes.className = 'marcador_botao';
+                
+                var anuncio_visualizar = document.createElement('span');
+                    anuncio_visualizar.innerHTML = 'VISUALIZAR';
+                    anuncio_visualizar.onclick = function(){
+                        visualizaAnuncio(anuncio.cd_anuncio);
+                        document.getElementById('info-moldura').style.opacity = 0;
+                        document.getElementById('info-moldura').style.height = 1;
+                        ultimo.setAnimation(null);                       
+                    };
+                var anuncio_conectar   = document.createElement('span');
+                    anuncio_conectar.innerHTML = 'CONECTAR';
+                    anuncio_conectar.onclick = function(){
+                        enviarSolicitacao(anuncio.cd_anuncio);
+                        document.getElementById('info-moldura').style.opacity = 0;
+                        document.getElementById('info-moldura').style.height = 1;
+                        ultimo.setAnimation(null);              
+                    };                    
+                    wrapper_anuncio.appendChild(anuncio_foto);
+                    wrapper_anuncio.appendChild(anuncio_titulo);
+                    anuncio_botoes.appendChild(anuncio_visualizar);
+                    anuncio_botoes.appendChild(anuncio_conectar);
+                    wrapper_anuncio.appendChild(anuncio_botoes);
+                    document.getElementById("anuncios").appendChild(wrapper_anuncio);
+            });
+            
             marcador.setAnimation(google.maps.Animation.BOUNCE);
             ultimo = marcador;
             mapa.addListener('click', function(){
-                document.getElementById('info-moldura').style.opacity = 0;
-                document.getElementById('info-moldura').style.height = 1;
-                ultimo.setAnimation(null);
-            });
-            $("#pain" ).click(function(){ 
-                visualizaAnuncio(marcador.codigo);
-                document.getElementById('info-moldura').style.opacity = 0;
-                document.getElementById('info-moldura').style.height = 1;
-                ultimo.setAnimation(null);
-            });
-            $("#momo" ).click(function(){ 
-                enviarSolicitacao(marcador.codigo);
                 document.getElementById('info-moldura').style.opacity = 0;
                 document.getElementById('info-moldura').style.height = 1;
                 ultimo.setAnimation(null);
