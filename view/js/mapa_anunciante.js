@@ -788,7 +788,7 @@ function mapEngineAnunciante(){
     function marcadores(){
             $.ajax({
                 type: "GET",
-                url:  "https://trampaki-api-tunnes.c9users.io/carregar-prestadores",
+                url:   API + "/carregar-prestadores",
                 headers:{
                     "Authorization": sessionStorage.getItem("authorization")
                 },
@@ -808,7 +808,7 @@ function mapEngineAnunciante(){
                         icon: "view/img/blackHoleSun.png",
                         map: mapa,
                         animation: google.maps.Animation.DROP,
-                        imagem: 'https://trampaki-api-tunnes.c9users.io/carregar-imagem/'+prestador.cd_imagem,
+                        imagem: API + '/carregar-imagem/'+prestador.cd_imagem,
                         descricaoSimples: prestador.ds_perfilProfissional,
                         estrelas: prestador.estrelas,
                         titulo: prestador.nm_usuario,

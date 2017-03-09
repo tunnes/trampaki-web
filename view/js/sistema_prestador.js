@@ -12,7 +12,7 @@
         novaJanela("/view/ajax/prestador-perfil.html")
         $.ajax({
             type:"GET",
-            url:"https://trampaki-api-tunnes.c9users.io/carregar-dados-prestador",
+            url: API + "/carregar-dados-prestador",
             headers:{
                 "Authorization": sessionStorage.getItem("authorization")
             },
@@ -61,7 +61,7 @@
 	    
 	   // $.ajax({
     //         type:"GET",
-    //         url:"https://trampaki-api-tunnes.c9users.io/meus-servicos",
+    //         url: API + "/meus-servicos",
     //         headers:{ 
     //             "Authorization": sessionStorage.getItem("authorization")
     //         },
@@ -111,7 +111,7 @@
     novaJanela("/view/ajax/prestador-solicitacoes.html");
     $.ajax({
         type:"GET",
-        url:"https://trampaki-api-tunnes.c9users.io/carregar-solicitacoes",
+        url: API + "/carregar-solicitacoes",
         headers:{
             "Authorization": sessionStorage.getItem("authorization"),
             "trampaki_user": "1"
@@ -141,7 +141,7 @@
     function enviarSolicitacao(codigoAnuncio){
 	$.ajax({
         type:"POST",
-        url:"https://trampaki-api-tunnes.c9users.io/nova-conexao-prestador",
+        url: API + "/nova-conexao-prestador",
         headers:{
             "Authorization": sessionStorage.getItem("authorization")
         },

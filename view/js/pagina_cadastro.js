@@ -27,7 +27,7 @@
     function carregarCategorias(){
         $.ajax({
             type: "GET",
-            url:'https://trampaki-api-tunnes.c9users.io/carregar-categorias',
+            url: API + '/carregar-categorias',
             complete: function(data){   
                 data = data.responseText;
                 data = JSON.parse(data);
@@ -102,7 +102,7 @@
     $("form").submit(function(){
         var formData = new FormData($(this)[0]);
             $.ajax({
-                url: 'https://trampaki-api-tunnes.c9users.io/novo-anunciante',
+                url: API + '/novo-anunciante',
                 type: 'POST',
                 data: formData,
                 async: true,
@@ -132,7 +132,7 @@
         $("form").submit(function(){
             var formData = new FormData($(this)[0]);
                 $.ajax({
-                    url: 'https://trampaki-api-tunnes.c9users.io/novo-prestador',
+                    url: API + '/novo-prestador',
                     type: 'POST',
                     data: formData,
                     async: true,

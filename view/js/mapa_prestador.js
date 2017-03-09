@@ -65,7 +65,7 @@ function mapEngine(){
     function marcadores(){
             $.ajax({
                 type: "GET",
-                url:  "https://trampaki-api-tunnes.c9users.io/carregar-anuncios",
+                url:  API + "/carregar-anuncios",
                 headers:{
                     "Authorization": sessionStorage.getItem("authorization")
                 },
@@ -87,7 +87,7 @@ function mapEngine(){
                         // icon: "view/img/blackHoleSun.png",
                         map: mapa,
                         animation: google.maps.Animation.DROP,
-                        imagem: 'https://trampaki-api-tunnes.c9users.io/carregar-imagem/'+anuncio.cd_imagem01+'',
+                        imagem: API + '/carregar-imagem/' + anuncio.cd_imagem01+'',
                         descricaoSimples: anuncio.ds_anuncio,
                         estrelas: anuncio.estrelas,
                         titulo: anuncio.nm_titulo,

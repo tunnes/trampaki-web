@@ -1,7 +1,9 @@
 
+
+
 //  FUNÇÕES AUXILIARES E ELEMENTOS GENÉRICOS ----------------------------------- 
     function carregarImagem(elemento, codigoImagem){
-        elemento.style.backgroundImage = "url(https://trampaki-api-tunnes.c9users.io/carregar-imagem/" + codigoImagem;
+        elemento.style.backgroundImage = "url(" + API + "/carregar-imagem/" + codigoImagem;
         return elemento;
     }
     function carregarCategorias(arrayCategorias){
@@ -137,7 +139,7 @@
     }
     const update = function(ts, ud){
         const xhr = new XMLHttpRequest();
-        xhr.open("GET", "https://trampaki-api-tunnes.c9users.io/chat/" + sessionStorage.getItem("trampaki-id") + "/" + ud + "/" + ts);
+        xhr.open("GET",  API + "/chat/" + sessionStorage.getItem("trampaki-id") + "/" + ud + "/" + ts);
         xhr.onreadystatechange = function() {
             if (this.readyState == xhr.DONE && xhr.status == 200) {
                 var res = JSON.parse(xhr.response);
@@ -157,7 +159,7 @@
     };
     const send = function(msg, ud){
         const xhr = new XMLHttpRequest();
-        xhr.open("POST", "https://trampaki-api-tunnes.c9users.io/chat/" + sessionStorage.getItem("trampaki-id") + "/" + ud);
+        xhr.open("POST",  API + "/chat/" + sessionStorage.getItem("trampaki-id") + "/" + ud);
         xhr.onreadystatechange = function() {
             if (this.readyState == xhr.DONE) {
                 console.log(xhr.status);
@@ -167,7 +169,7 @@
     };
     const list = function(){
         const xhr = new XMLHttpRequest();
-        xhr.open("GET", "https://trampaki-api-tunnes.c9users.io/chat/" + sessionStorage.getItem("trampaki-id"));
+        xhr.open("GET",  API + "/chat/" + sessionStorage.getItem("trampaki-id"));
         xhr.setRequestHeader("trampaki_user", sessionStorage.getItem('trampaki_user'));
         xhr.onreadystatechange = function() {
             if (this.readyState == xhr.DONE) {
@@ -196,7 +198,7 @@
         novaJanela("view/ajax/prestador-anuncio.html");
     	$.ajax({
             type:"GET",
-            url:"https://trampaki-api-tunnes.c9users.io/carregar-anuncio/" + codigoAnuncio,
+            url: API + "/carregar-anuncio/" + codigoAnuncio,
             headers:{
                 "Authorization": sessionStorage.getItem("authorization")
             },
@@ -211,7 +213,7 @@
     			var tituloAnuncioDOM = document.getElementById('tituloAnuncioDOM');
                     tituloAnuncioDOM.innerHTML = data.titulo;
                     
-                var caminhoImagem = "url(https://trampaki-api-tunnes.c9users.io/carregar-imagem/"   
+                var caminhoImagem = "url(" + API + "/carregar-imagem/"   
                     
                 var imagem01 = document.getElementById('imagem01');
                     data.cd_imagem_01 != null ? imagem01.style.backgroundImage = caminhoImagem + data.cd_imagem_01 : null;
@@ -234,7 +236,7 @@
     function aceitarConexao(codigoConexao){
     $.ajax({
         type:"PUT",
-        url:"https://trampaki-api-tunnes.c9users.io/aceitar-conexao",
+        url: API + "/aceitar-conexao",
         headers:{
             "authorization": sessionStorage.getItem("authorization"),
             "content-type": "application/x-www-form-urlencoded"
@@ -252,7 +254,7 @@
     function recusarConexao(codigoConexao){
     $.ajax({
         type:"PUT",
-        url:"https://trampaki-api-tunnes.c9users.io/recusar-conexao",
+        url: API + "/recusar-conexao",
         headers:{
             "authorization": sessionStorage.getItem("authorization"),
             "content-type": "application/x-www-form-urlencoded"
@@ -270,7 +272,7 @@
     function cancelarConexao(codigoConexao){
     $.ajax({
         type:"DELETE",
-        url:"https://trampaki-api-tunnes.c9users.io/cancelar-conexao",
+        url: API + "/cancelar-conexao",
         headers:{
             "authorization": sessionStorage.getItem("authorization"),
             "content-type": "application/x-www-form-urlencoded"

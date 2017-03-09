@@ -11,7 +11,7 @@
         novaJanela("/view/ajax/prestador-perfil.html")
         $.ajax({
             type:"GET",
-            url:"https://trampaki-api-tunnes.c9users.io/carregar-dados-anunciante",
+            url:API + "/carregar-dados-anunciante",
             headers:{
                 "Authorization": sessionStorage.getItem("authorization")
             },
@@ -62,7 +62,7 @@
     novaJanela("/view/ajax/prestador-perfil.html");
     $.ajax({
         type:"GET",
-        url:"https://trampaki-api-tunnes.c9users.io/carregar-perfil-prestador/" + codigo,
+        url:API + "/carregar-perfil-prestador/" + codigo,
         complete: function(data){
             data = JSON.parse(data.responseText);
             	
@@ -106,7 +106,7 @@
         $("form").submit(function(){
             var formData = new FormData($(this)[0]);
                 $.ajax({
-                    url: 'https://trampaki-api-tunnes.c9users.io/novo-anuncio',
+                    url: API + '/novo-anuncio',
                     headers:{ "Authorization": sessionStorage.getItem("authorization")  },
                     type: 'POST',
                     data: formData,
@@ -130,7 +130,7 @@
     function popularCombobox(){
         $.ajax({
             type: "GET",
-            url:'https://trampaki-api-tunnes.c9users.io/carregar-categorias',
+            url:API + '/carregar-categorias',
             complete: function(data){   
                 data = data.responseText;
                 data = JSON.parse(data);
@@ -163,7 +163,7 @@
             novaJanela("view/ajax/visualizar-anuncio.html");
         	$.ajax({
                 type:"GET",
-                url:"https://trampaki-api-tunnes.c9users.io/carregar-anuncio/" + codigoAnuncio,
+                url:API + "/carregar-anuncio/" + codigoAnuncio,
                 headers:{
                     "Authorization": sessionStorage.getItem("authorization")
                 },
@@ -178,7 +178,7 @@
         			var tituloAnuncioDOM = document.getElementById('tituloAnuncioDOM');
                         tituloAnuncioDOM.innerHTML = data.titulo;
                         
-                    var caminhoImagem = "url(https://trampaki-api-tunnes.c9users.io/carregar-imagem/"   
+                    var caminhoImagem = "url(" + API + "/carregar-imagem/"   
                         
                     var imagem01 = document.getElementById('imagem01');
                         data.cd_imagem_01 != null ? imagem01.style.backgroundImage = caminhoImagem + data.cd_imagem_01 : null;
@@ -203,7 +203,7 @@
     function selecionarAnuncio(elementoDOM, codigoAnuncio, wrapper_buttom){
     $.ajax({
         type:"POST",
-        url:"https://trampaki-api-tunnes.c9users.io/selecionar-anuncio",
+        url:API + "/selecionar-anuncio",
         headers:{ 
             "Authorization": sessionStorage.getItem("authorization")
         },
@@ -316,7 +316,7 @@
         novaJanela("/view/ajax/visualizar-anuncios.html");
         $.ajax({
             type:"GET",
-            url:"https://trampaki-api-tunnes.c9users.io/carregar-meus-anuncios",
+            url:API + "/carregar-meus-anuncios",
             headers:{ 
                 "Authorization": sessionStorage.getItem("authorization")
             },
@@ -347,7 +347,7 @@
     novaJanela("view/ajax/visualizar-solicitacoes.html");
     $.ajax({
         type:"GET",
-        url:"https://trampaki-api-tunnes.c9users.io/carregar-solicitacoes",
+        url:API + "/carregar-solicitacoes",
         headers:{
             "authorization": sessionStorage.getItem("authorization"),
             "trampaki_user": "0"
@@ -375,7 +375,7 @@
     function enviarSolicitacaoAnunciante(codigoPrestrador){
 	$.ajax({
         type:"POST",
-        url:"https://trampaki-api-tunnes.c9users.io/nova-conexao-anunciante",
+        url:API + "/nova-conexao-anunciante",
         headers:{
             "Authorization": sessionStorage.getItem("authorization")
         },
@@ -474,7 +474,7 @@
 
         $.ajax({
             type:"GET", 
-            url:"https://trampaki-api-tunnes.c9users.io/carregar-envolvidos/" + codigoAnuncio,
+            url:API + "/carregar-envolvidos/" + codigoAnuncio,
             headers:{
                 "Authorization": sessionStorage.getItem('authorization') 
             },
@@ -495,7 +495,7 @@
         var nota_servico = document.querySelector('input[name="nota_servico"]:checked').value;
         var descricao = document.getElementById('texto_descricao').value
         $.ajax({
-            url: 'https://trampaki-api-tunnes.c9users.io/nova-avaliacao',
+            url: API + '/nova-avaliacao',
             headers:{ "Authorization": sessionStorage.getItem("authorization")  },
             type: 'POST',
             data: {

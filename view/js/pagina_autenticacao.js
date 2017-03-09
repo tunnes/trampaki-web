@@ -10,7 +10,7 @@ function paginaAutenticacao(){
 function efetuarAutenticacao(){
     $.ajax({
         type: 'POST',
-        url:'https://trampaki-api-tunnes.c9users.io/login',
+        url: API + '/login',
         data: { 
             login: document.getElementById('login').value, 
             senha: document.getElementById('senha').value
