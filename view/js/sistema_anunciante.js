@@ -571,4 +571,11 @@ messaging.requestPermission().then(function(){
 })
 messaging.onMessage(function(payload){
     console.log("onMessage", payload);
+    var notification = new Notification(payload.notification.title, {
+        icon: payload.notification.icon,
+        body: payload.notification.body
+    });
+    notification.onclick = function() {
+        window.open(WEB+payload.notification.href,"_self");
+    }
 });

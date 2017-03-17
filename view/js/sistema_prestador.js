@@ -137,6 +137,28 @@
     });
 }
 
+//  SOLICITAR CONEXÃO PARA UM ANUNCIO ------------------------------------------    
+function enviarSolicitacao(codigoAnuncio){
+	$.ajax({
+        type:"POST",
+        url: API + "/nova-conexao-prestador",
+        headers:{
+            "Authorization": sessionStorage.getItem("authorization")
+        },
+        data:{
+        	codigo_anuncio: codigoAnuncio
+        },
+    	statusCode:{
+    		400: function(){
+    		    modalConectar(400);
+    		},
+    		201: function(){
+    		    modalConectar(201);
+    		}
+    	}
+    });
+}     
+
 // CARREGA OS DADOS INICIAIS DO PRESTADOR QUE SERVIRÃO PARA AS NOTIFICAÇÕES
     function carregarDadosIniciais(){
         $.ajax({
@@ -191,4 +213,11 @@ messaging.requestPermission().then(function(){
 })
 messaging.onMessage(function(payload){
     console.log("onMessage", payload);
+    var notification = new Notification(payload.notification.title, {
+        icon: payload.notification.icon,
+        body: payload.notification.body
+    });
+    notification.onclick = function() {
+        window.open(WEB+payload.notification.href,"_self");
+    }
 });
