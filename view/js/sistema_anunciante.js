@@ -516,13 +516,6 @@
             
         });
     }
-<<<<<<< HEAD
-
-//  EDITAR ANUNCIO
-    function editarAnuncio(){
-        novaJanela("/view/ajax/editar-anuncio.html")
-    }
-=======
     
 // CARREGA OS DADOS INICIAIS DO ANUNCIANTE QUE SERVIRÃO PARA AS NOTIFICAÇÕES
     function carregarDadosIniciais(){
@@ -538,6 +531,10 @@
         });
         
     }
+//  EDITAR ANUNCIO
+function editarAnuncio(){
+    novaJanela("/view/ajax/editar-anuncio.html")
+}
 
 // LONG POLLING DE NOTIFICAÇÕES
 
@@ -586,4 +583,3 @@ messaging.onMessage(function(payload){
         window.open(WEB+payload.notification.href,"_self");
     }
 });
->>>>>>> 5ba50935dedda2fe3a8d76cce07aaafe76ab9e58

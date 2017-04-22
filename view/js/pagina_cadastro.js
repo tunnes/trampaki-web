@@ -118,7 +118,7 @@
                             sessionStorage.setItem('authorization', request.getResponseHeader('authorization'));
                             sessionStorage.setItem('trampaki-id', request.getResponseHeader('trampaki-id'));
                             sessionStorage.setItem('trampaki-user', request.getResponseHeader('trampaki-user'));                            
-                            window.location.assign(WEB+"/painel-anunciante");  
+                            window.location.href = "/painel-prestador";    
                     }
                 }
                 
@@ -147,7 +147,7 @@
                                 sessionStorage.setItem('authorization', request.getResponseHeader('authorization'));
                                 sessionStorage.setItem('trampaki-id', request.getResponseHeader('trampaki-id'));                            
                                 sessionStorage.setItem('trampaki-user', request.getResponseHeader('trampaki-user'));                            
-                                window.location.assign(WEB+"/painel-prestador");  
+                                window.location.href = "/painel-prestador";  
                         }
                     }
                     
