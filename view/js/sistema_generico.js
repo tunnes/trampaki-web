@@ -1,6 +1,3 @@
-
-
-
 //  FUNÇÕES AUXILIARES E ELEMENTOS GENÉRICOS ----------------------------------- 
     function carregarImagem(elemento, codigoImagem){
         elemento.style.backgroundImage = "url(" + API + "/carregar-imagem/" + codigoImagem;
@@ -237,7 +234,7 @@
 //  OPERAÇÕES COM CONEXÕES -----------------------------------------------------
     function aceitarConexao(codigoConexao){
     $.ajax({
-        type:"PUT",
+        type:"PUT", 
         url: API + "/aceitar-conexao",
         headers:{
             "authorization": sessionStorage.getItem("authorization"),
@@ -364,3 +361,18 @@
     	$("#solicitacoes_recebidas").fadeIn('slow');
         $("#solicitacoes_enviadas").hide();        
     }
+    
+//PERMISSÃO PARA NOTIFICAÇÕES BROWSER
+if (Notification.permission !== "granted"){
+    Notification.requestPermission();
+}
+
+var Notificacao = function (){
+    var notification = new Notification(data.anuncios_aceitos[0].titulo, {
+        icon:  API + "/carregar-imagem/" + data.anuncios_aceitos[0].imagem,
+        body:  data.anuncios_aceitos[0].prestador + ' aceitou o seu anúncio.'
+    });
+    notification.onclick = function() {
+        window.open(WEB+"/painel-anunciante","_self");
+    }
+}

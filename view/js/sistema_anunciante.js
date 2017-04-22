@@ -420,7 +420,7 @@
                 document.getElementById('info-moldura').style.opacity = 0;
                 document.getElementById('info-moldura').style.height = 1;
                 $("#janela").load("/view/ajax/anunciante-encerrar.html", function(){
-                    $("#janela").fadeIn('slow');
+                    $("#janela").fadeIn('slow') ;
             	    $("#mapa").hide();            
                     prestadoresEnvolvidos(codigo);
                 });
@@ -525,4 +525,69 @@
         });
     }
     
-   
+// CARREGA OS DADOS INICIAIS DO ANUNCIANTE QUE SERVIRÃO PARA AS NOTIFICAÇÕES
+    function carregarDadosIniciais(){
+        $.ajax({
+            url: API + '/dados-iniciais-anunciante',
+            headers:{ "Authorization": sessionStorage.getItem("authorization")  },
+            type: 'GET',
+            complete: function(data) {
+                data = JSON.parse(data.responseText);
+                sessionStorage.setItem('ultimo_anuncio_aceito',data.ultimo_anuncio_aceito);
+                LongPolling();
+            }
+        });
+        
+    }
+//  EDITAR ANUNCIO
+function editarAnuncio(){
+    novaJanela("/view/ajax/editar-anuncio.html")
+}
+
+// LONG POLLING DE NOTIFICAÇÕES
+
+    function LongPolling(){
+        $.ajax({
+            url: API + '/longpolling-anunciante',
+            headers:{ "Authorization": sessionStorage.getItem("authorization"),
+                      "ultimo_anuncio_aceito": sessionStorage.getItem('ultimo_anuncio_aceito')
+            },
+            type: 'GET',
+            complete: function(data) {
+                data = JSON.parse(data.responseText);
+                console.log(data);
+                if('anuncios_aceitos' in data){
+                    var notification = new Notification(data.anuncios_aceitos[0].titulo, {
+                        icon:  API + "/carregar-imagem/" + data.anuncios_aceitos[0].imagem,
+                        body:  data.anuncios_aceitos[0].prestador + ' aceitou o seu anúncio.'
+                    });
+                    notification.onclick = function() {
+                        window.open(WEB+"/painel-anunciante","_self");
+                    }
+                    sessionStorage.setItem('ultimo_anuncio_aceito',data.anuncios_aceitos[0].codigo);
+                }
+                setTimeout(LongPolling(),3000);
+            }
+        });
+    }
+
+//FIREBASE
+
+const messaging = firebase.messaging();
+messaging.requestPermission().then(function(){
+    console.log("Possui permissão.");
+    return messaging.getToken();
+}).catch(function(err){
+    carregarDadosIniciais();
+    console.log("Ocorreu um erro: " + err);
+})
+messaging.onMessage(function(payload){
+    console.log("onMessage", payload);
+    var notification = new Notification(payload.notification.title, {
+        icon: payload.notification.icon,
+        body: payload.notification.body
+    });
+    notification.onclick = function() {
+        window.open(WEB+payload.notification.href,"_self");
+    }
+});

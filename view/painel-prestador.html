@@ -6,7 +6,9 @@
         <title>Trampaki</title>
         <meta name="description" content="Cliente web Trampaki">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <link rel="shortcut icon" type="image/png" href="/view/img/fav_logo.png"/>
+        <link rel="manifest" href="/view/js/manifest.json">
         
         <!-- Bootstrap -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -26,12 +28,14 @@
         <link rel="stylesheet" href="/view/css/modal.css" type="text/css"/>
 
         <!-- Scripts -->
-        
+
+        <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
+        <script src="/view/js/firebaseconfig.js"></script>
         <script src="/configuration/sistema_global.js"></script>
         <script src="/view/js/sistema_generico.js"></script>
         <script src="/view/js/sistema_prestador.js"></script>
-        <script src="/view/js/sistema_prestador.js"></script>
         <script src="/view/js/navPrestador.js"></script>
+
         
     </head>
     <body>
@@ -39,13 +43,16 @@
         <div id="info-moldura" class="marcador_wrapper">
             <div id="info-fundo-imagem" class="marcador_imagem"></div>
             <div class="marcador_informacao">
-                <span id="titulo"   class=marcador_titulo></span>
-                <span id="descricao"class=marcador_descricao></span>
+                <span id="titulo" class="marcador_titulo"></span>
             </div>
-            <div class="marcador_botao">
-                <span id="pain" >DETALHES</span>
-                <span id="momo" >CONECTAR</span>                    
+            <div id="anuncios">
+                <div class="anuncio">
+      	            <div class="foto-anuncio"></div>
+                    <div class="titulo-anuncio">Titulo</div>
+                    <div class="botoes-anuncio">Botoes</div>
+                </div>
             </div>
+            
         </div>
         <!-- ============================================================================================== -->
         

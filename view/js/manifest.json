@@ -1,0 +1,12 @@
+{
+    "manifest_version": 2,
+    "name": "My Extension",
+    "version": "versionString",
+    "background": {
+        "scripts": ["sistema_anunciante.js"],
+        "persistent": false
+    },
+    "permissions":[
+        "gcm","storage","desktop-notification"
+    ]
+}

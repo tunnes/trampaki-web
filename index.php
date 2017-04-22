@@ -2,7 +2,7 @@
     require_once 'configuration/router.php';
 
     $roteador =  new Router();
-    $rotas = array(
+    $rotas = array (
         '/'                                 =>'pagina-principal',
         '/login'                            =>'pagina-autenticacao',
         '/painel-prestador'                 =>'painel-prestador',

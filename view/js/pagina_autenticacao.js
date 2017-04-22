@@ -1,6 +1,7 @@
 /*
     global $ 
 */    
+
 function paginaAutenticacao(){
     $(document).keypress(function(e){ 
         e.which == 13 ? efetuarAutenticacao() : null; 
@@ -11,9 +12,10 @@ function efetuarAutenticacao(){
     $.ajax({
         type: 'POST',
         url: API + '/login',
-        data: { 
+        data: {
             login: document.getElementById('login').value, 
-            senha: document.getElementById('senha').value
+            senha: document.getElementById('senha').value,
+            token: self.token
         },
         statusCode: {
             401:function() {
@@ -54,3 +56,17 @@ function autenticacaoErro(){
         event.target == modal ? modal.style.display = "none" : null; 
     }
 }
+
+//FIREBASE
+
+const messaging = firebase.messaging();
+messaging.requestPermission().then(function(){
+    console.log("Possui permissão");
+    return messaging.getToken();
+}).then(function(token){
+    self.token = token;
+    console.log("Token gerado: "+ token);
+}).catch(function(err){
+    self.token = null;
+    console.log("Ocorreu um erro: " + err);
+})
