@@ -516,3 +516,8 @@
             
         });
     }
+
+//  EDITAR ANUNCIO
+    function editarAnuncio(){
+        novaJanela("/view/ajax/editar-anuncio.html")
+    }

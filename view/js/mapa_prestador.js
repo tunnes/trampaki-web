@@ -41,15 +41,330 @@ function mapEngine(){
         
     //  Estilizando o mapa --------------------------------------------------------------------------------------------------
         function estiloDoMapa(){
-            var styles = [
-                {stylers: [{hue: "#FF8C1F"}, {saturation: 60}, { lightness: -20 }, { gamma: 1.51 }]},
-                {featureType: "road", elementType: "geometry", stylers: [{lightness: 100}, {visibility: "simplified"}]},
-                {featureType: "road", elementType: "labels"},
-                {featureType: "poi", stylers: [ { visibility: "off" }]},
-                {featureType: "transit.station.bus", stylers: [{ visibility: "off" }]}
-            ];
-            
-            var styledMap = new google.maps.StyledMapType(styles, {name: "Mapa Style"});
+            var meu_lost_desert =  [
+{
+"featureType": "all",
+"elementType": "labels",
+"stylers": [
+{
+    "visibility": "off"
+},
+{
+    "color": "#f49f53"
+}
+]
+},
+{
+"featureType": "administrative.country",
+"elementType": "labels",
+"stylers": [
+{
+    "visibility": "on"
+},
+{
+    "hue": "#ff0000"
+}
+]
+},
+{
+"featureType": "administrative.country",
+"elementType": "labels.text.fill",
+"stylers": [
+{
+    "color": "#d65600"
+}
+]
+},
+{
+"featureType": "administrative.country",
+"elementType": "labels.text.stroke",
+"stylers": [
+{
+    "visibility": "off"
+}
+]
+},
+{
+"featureType": "administrative.locality",
+"elementType": "labels",
+"stylers": [
+{
+    "visibility": "simplified"
+}
+]
+},
+{
+"featureType": "administrative.locality",
+"elementType": "labels.text",
+"stylers": [
+{
+    "visibility": "off"
+}
+]
+},
+{
+"featureType": "administrative.locality",
+"elementType": "labels.text.fill",
+"stylers": [
+{
+    "color": "#000000"
+}
+]
+},
+{
+"featureType": "administrative.locality",
+"elementType": "labels.text.stroke",
+"stylers": [
+{
+    "visibility": "simplified"
+},
+{
+    "color": "#060606"
+}
+]
+},
+{
+"featureType": "landscape",
+"elementType": "all",
+"stylers": [
+{
+    "color": "#f9ddc5"
+},
+{
+    "lightness": -7
+}
+]
+},
+{
+"featureType": "poi.business",
+"elementType": "all",
+"stylers": [
+{
+    "color": "#645c20"
+},
+{
+    "lightness": 38
+}
+]
+},
+{
+"featureType": "poi.government",
+"elementType": "all",
+"stylers": [
+{
+    "color": "#9e5916"
+},
+{
+    "lightness": 46
+}
+]
+},
+{
+"featureType": "poi.medical",
+"elementType": "geometry.fill",
+"stylers": [
+{
+    "color": "#813033"
+},
+{
+    "lightness": 38
+},
+{
+    "visibility": "off"
+}
+]
+},
+{
+"featureType": "poi.park",
+"elementType": "all",
+"stylers": [
+{
+    "color": "#645c20"
+},
+{
+    "lightness": 39
+}
+]
+},
+{
+"featureType": "poi.school",
+"elementType": "all",
+"stylers": [
+{
+    "color": "#a95521"
+},
+{
+    "lightness": 35
+}
+]
+},
+{
+"featureType": "poi.sports_complex",
+"elementType": "all",
+"stylers": [
+{
+    "color": "#9e5916"
+},
+{
+    "lightness": 32
+}
+]
+},
+{
+"featureType": "road",
+"elementType": "all",
+"stylers": [
+{
+    "color": "#813033"
+},
+{
+    "lightness": 43
+}
+]
+},
+{
+"featureType": "road",
+"elementType": "geometry.fill",
+"stylers": [
+{
+    "color": "#f97006"
+}
+]
+},
+{
+"featureType": "road.highway",
+"elementType": "geometry.fill",
+"stylers": [
+{
+    "color": "#f97006"
+},
+{
+    "lightness": "20"
+},
+{
+    "saturation": "10"
+}
+]
+},
+{
+"featureType": "road.highway",
+"elementType": "geometry.stroke",
+"stylers": [
+{
+    "color": "#f97006"
+},
+{
+    "saturation": "10"
+},
+{
+    "lightness": "20"
+}
+]
+},
+{
+"featureType": "road.arterial",
+"elementType": "geometry.fill",
+"stylers": [
+{
+    "color": "#f97006"
+},
+{
+    "saturation": "10"
+},
+{
+    "lightness": "20"
+}
+]
+},
+{
+"featureType": "road.arterial",
+"elementType": "labels.text.stroke",
+"stylers": [
+{
+    "color": "#db0303"
+}
+]
+},
+{
+"featureType": "road.local",
+"elementType": "geometry.fill",
+"stylers": [
+{
+    "color": "#f19f53"
+},
+{
+    "weight": 1.3
+},
+{
+    "visibility": "on"
+},
+{
+    "lightness": 16
+}
+]
+},
+{
+"featureType": "road.local",
+"elementType": "geometry.stroke",
+"stylers": [
+{
+    "color": "#f19f53"
+},
+{
+    "lightness": -10
+}
+]
+},
+{
+"featureType": "transit",
+"elementType": "all",
+"stylers": [
+{
+    "lightness": 38
+}
+]
+},
+{
+"featureType": "transit.line",
+"elementType": "all",
+"stylers": [
+{
+    "color": "#793e10"
+},
+{
+    "lightness": 22
+}
+]
+},
+{
+"featureType": "transit.station",
+"elementType": "all",
+"stylers": [
+{
+    "visibility": "off"
+}
+]
+},
+{
+"featureType": "water",
+"elementType": "all",
+"stylers": [
+{
+    "color": "#1994bf"
+},
+{
+    "saturation": -69
+},
+{
+    "gamma": 0.99
+},
+{
+    "lightness": 43
+}
+]
+}
+]
+            var styledMap = new google.maps.StyledMapType(meu_lost_desert, {name: "Mapa Style"});
             
             mapa.mapTypes.set('map_style', styledMap);
             mapa.setMapTypeId('map_style');
