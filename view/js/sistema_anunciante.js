@@ -5,10 +5,10 @@
     ItemSolicitacao 
 */
 
-
 /*  VISUALIZAR MEU PERFIL --------------------------------------------------- */
     function carregarDadosAnunciante(){
-        novaJanela("/view/ajax/prestador-perfil.html")
+        //novaJanela("/view/ajax/prestador-perfil.html");
+        pageCaller("/view/ajax/prestador-perfil.html", null);
         $.ajax({
             type:"GET",
             url:API + "/carregar-dados-anunciante",
@@ -145,9 +145,13 @@
             }
         });
     }
+    
+    /*
     function novoAnuncio(){
         novaJanela('view/ajax/novo-anuncio.html');
     }
+    */
+    
     function alertaCadastrado(){
         document.getElementById('modal_titulo').innerHTML = "ANUNCIO CADASTRADO";
         document.getElementById('modal_descricao').innerHTML = "SEU ANUNCIO FOI CADASTRO COM SUCESSO PARABENS CARA, SÉRIO MESMO.";                
@@ -160,7 +164,7 @@
 
 //  VISUALIZAR MEU ANUNCIO -----------------------------------------------------  
     function visualizaMeuAnuncio(codigoAnuncio){
-            novaJanela("view/ajax/visualizar-anuncio.html");
+            novaJanela("/view/ajax/visualizar-anuncio.html");
         	$.ajax({
                 type:"GET",
                 url:API + "/carregar-anuncio/" + codigoAnuncio,
@@ -313,7 +317,9 @@
     
     
         
-        novaJanela("/view/ajax/visualizar-anuncios.html");
+        //novaJanela("/view/ajax/visualizar-anuncios.html");
+        pageCaller("/view/ajax/visualizar-anuncios.html", null); 
+        
         $.ajax({
             type:"GET",
             url:API + "/carregar-meus-anuncios",
@@ -344,7 +350,9 @@
 
 //  VISUALIZAR SOLICITAÇÕES ----------------------------------------------------
     function visualizarSolicitacoes(){
-    novaJanela("view/ajax/visualizar-solicitacoes.html");
+    //novaJanela("view/ajax/visualizar-solicitacoes.html");
+    pageCaller("/view/ajax/visualizar-solicitacoes.html", null);
+    
     $.ajax({
         type:"GET",
         url:API + "/carregar-solicitacoes",
@@ -516,3 +524,5 @@
             
         });
     }
+    
+   

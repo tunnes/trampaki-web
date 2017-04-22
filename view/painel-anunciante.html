@@ -6,7 +6,7 @@
         <title>Trampaki</title>
         <meta name="description" content="Cliente web Trampaki">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" type="image/png" href="view/img/fav_logo.png"/>
+        <link rel="shortcut icon" type="image/png" href="/view/img/fav_logo.png"/>
         
         <!-- Bootstrap -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -18,19 +18,20 @@
         <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 
         <!-- Estilos -->
-        <link rel="stylesheet" href="view/css/sistema_generico.css"  type="text/css"/>
-        <link rel="stylesheet" href="view/css/sistema_principal.css" type="text/css"/>        
-        <link rel="stylesheet" href="view/css/sistema_anunciante.css" type="text/css"/>
+        <link rel="stylesheet" href="/view/css/sistema_generico.css"  type="text/css"/>
+        <link rel="stylesheet" href="/view/css/sistema_principal.css" type="text/css"/>        
+        <link rel="stylesheet" href="/view/css/sistema_anunciante.css" type="text/css"/>
         
         <!-- *** Provisório *** -->
-        <link rel="stylesheet" href="view/css/modal.css" type="text/css"/>
+        <link rel="stylesheet" href="/view/css/modal.css" type="text/css"/>
 
         <!-- Scripts -->
         
-        <script src="configuration/sistema_global.js"></script>
-        <script src="view/js/sistema_generico.js"></script>
-        <script src="view/js/sistema_anunciante.js"></script>
-        <script src="view/js/mapa_anunciante.js"></script>
+        <script src="/configuration/sistema_global.js"></script>
+        <script src="/view/js/sistema_generico.js"></script>
+        <script src="/view/js/sistema_anunciante.js"></script>
+        <script src="/view/js/mapa_anunciante.js"></script>
+        <script src="/view/js/navAnunciante.js"></script>
         
     </head>
     <body>
@@ -72,12 +73,20 @@
             </div>
             <div class="main">
                 <div id="painel">
+                    <!--
                     <span id="meu_perfil" onclick='carregarDadosAnunciante()'>MEU PERFIL</span>
                     <span onclick='novoAnuncio()' id='meus_servicos'>NOVO ANUNCIO</span> 
                     <span onclick='meusAnuncios()' id='meus_servicos'>MEUS ANUNCIOS</span>
                     <span onclick='visualizarSolicitacoes()'>SOLICITAÇÕES</span>                  
-                    <span onclick='retornar()' >VER MAPA</span>
+                    <span onclick='retornar()'>VER MAPA</span>
                     <span onclick='sairDoSistema()' id='sair'>SAIR</span>
+                    -->
+                    <span data-content="perfil" id="meu_perfil">MEU PERFIL</span>
+                    <span data-content="novoAnuncio" id='meus_servicos'>NOVO ANUNCIO</span> 
+                    <span data-content="anuncios" id='meus_servicos'>MEUS ANUNCIOS</span>
+                    <span data-content="solicitacoes">SOLICITAÇÕES</span>
+                    <span data-content="mapa">VER MAPA</span>
+                    <span data-content="sair" id='sair'>SAIR</span>
                 </div>
                 <div id="chat"> 
                 </div>

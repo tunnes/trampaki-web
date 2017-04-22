@@ -82,7 +82,7 @@ function mapEngine(){
                     var marcador = new google.maps.Marker({
                         position: new google.maps.LatLng(anuncio.cd_latitude, anuncio.cd_longitude),
                         title: anuncio.titulo,
-                        icon: "view/img/blackHoleSun.png",
+                        icon: "/view/img/blackHoleSun.png",
                         // icon: "view/img/more_marker.png",
                         // icon: "view/img/blackHoleSun.png",
                         map: mapa,
@@ -103,19 +103,19 @@ function mapEngine(){
                 var clusterStyles = [
                   {
                     textColor: 'white',
-                    url: 'view/img/patrick_cluster.png',
+                    url: '/view/img/patrick_cluster.png',
                     height: 53,
                     width: 53
                   },
                  {
                     textColor: 'white',
-                    url: 'view/img/patrick_cluster.png',
+                    url: '/view/img/patrick_cluster.png',
                     height: 53,
                     width: 53
                   },
                  {
                     textColor: 'white',
-                    url: 'view/img/patrick_cluster.png',
+                    url: '/view/img/patrick_cluster.png',
                     height: 53,
                     width: 53
                   }

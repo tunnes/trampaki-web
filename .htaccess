@@ -23,4 +23,5 @@
 #   Não to entendo que caralhos esta acontecendo aqui..
     # RewriteRule ^(.+)/?([0-9]+)/?$ index.php?url=$1&param=$2 [QSA]
     
-    RewriteRule ^([^/]*)/?(.*)$ index.php?url=$1&param=$2 
+    #RewriteRule ^([^/]*)/?(.*)$ index.php?url=$1&param=$2 
+    RewriteRule ^(.*)/?(.*)$ index.php?url=$1&param=$2

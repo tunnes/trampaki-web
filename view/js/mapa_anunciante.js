@@ -805,7 +805,7 @@ function mapEngineAnunciante(){
                     var marcador = new google.maps.Marker({
                         position: new google.maps.LatLng(prestador.cd_latitude, prestador.cd_longitude),
                         title: prestador.titulo,
-                        icon: "view/img/blackHoleSun.png",
+                        icon: "/view/img/blackHoleSun.png",
                         map: mapa,
                         animation: google.maps.Animation.DROP,
                         imagem: API + '/carregar-imagem/'+prestador.cd_imagem,

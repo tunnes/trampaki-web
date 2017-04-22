@@ -15,6 +15,8 @@
             categoriasDOM.innerHTML = categoriasDOM.innerHTML + "<div class='categoria'>" + categoria.nome + "</div>";	
         });
     }
+    
+
     function novaJanela(caminho, funcao){
         document.getElementById('info-moldura').style.opacity = 0;
         document.getElementById('info-moldura').style.height = 1;
@@ -23,8 +25,8 @@
     	    $("#mapa").hide();
     	    funcao != null ? funcao() : null;
         });
-
     }
+    
     
     var ItemSolicitacao = function(imagem, titulo, subtitulo, codigo){
     this.codigo = codigo;
@@ -131,7 +133,7 @@
             let x = document.createElement("span");
             x.innerHTML = v['nuu'];
             x.onclick = function() {
-                janelaChat("view/ajax/chat.html", v['cuu'], v['nuu']);
+                janelaChat("/view/ajax/chat.html", v['cuu'], v['nuu']);
             }
             document.getElementById('chat').appendChild(x);
             document.getElementById('chat').appendChild(document.createElement("br"));
