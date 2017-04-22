@@ -17,7 +17,8 @@
         </td>
     </tr>
 </table>
-![Page Preview](https://github.com/tunnes/trampaki-web/blob/master/view/img/readme_body.gif)
+
+![Gif Demo](https://github.com/tunnes/trampaki-web/blob/master/view/img/readme_body.gif)
 
 ---
 

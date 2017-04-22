@@ -118,7 +118,7 @@
                             sessionStorage.setItem('authorization', request.getResponseHeader('authorization'));
                             sessionStorage.setItem('trampaki-id', request.getResponseHeader('trampaki-id'));
                             sessionStorage.setItem('trampaki-user', request.getResponseHeader('trampaki-user'));                            
-                            window.location.assign("https://trampaki-web-tunnes.c9users.io/painel-anunciante");  
+                            window.location.assign(WEB+"/painel-anunciante");  
                     }
                 }
                 
@@ -147,7 +147,7 @@
                                 sessionStorage.setItem('authorization', request.getResponseHeader('authorization'));
                                 sessionStorage.setItem('trampaki-id', request.getResponseHeader('trampaki-id'));                            
                                 sessionStorage.setItem('trampaki-user', request.getResponseHeader('trampaki-user'));                            
-                                window.location.assign("https://trampaki-web-tunnes.c9users.io/painel-prestador");  
+                                window.location.assign(WEB+"/painel-prestador");  
                         }
                     }
                     
