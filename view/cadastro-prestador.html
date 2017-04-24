@@ -12,7 +12,11 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet">
-    
+
+        <!-- Tagify -->
+        <script type="text/javascript" src="view/js/external/tagify.js"></script>
+        <link rel="stylesheet" type="text/css" href="view/css/external/tagify.css"/>
+        
         <!-- Estilos -->
         <link rel="stylesheet" href="view/css/pagina_generica.css" type="text/css"/>
         <link rel="stylesheet" href="view/css/pagina_cadastro.css" type="text/css"/>
@@ -164,24 +168,10 @@
 				        <h2>Dados Profissionais</h2>
 				        <hr>
 						<div class="row">
-							<div class="col-sm-3 form-group">
-							    <label>Categoria 01</label>
-                                <select id='codigo_categoria_01' name='codigo_categoria_01'>
-                                    <option value='' selected="selected">Nenhuma Categoria</option>
-                                </select>
-							</div>	
-							<div class="col-sm-3 form-group">
-							    <label>Categoria 02</label>
-                                <select id='codigo_categoria_02' name='codigo_categoria_02'>
-                                    <option value='' selected="selected">Nenhuma Categoria</option>
-                                </select>							
-                            </div>							
-							<div class="col-sm-3 form-group">
-							    <label>Categoria 03</label>
-                                <select id='codigo_categoria_03' name='codigo_categoria_03'>
-                                    <option value='' selected="selected">Nenhuma Categoria</option>
-                                </select>							
-                            </div>
+							<div class="col-sm-12 form-group">
+							    <label>Categorias</label>
+                                <input id='tags3' name='tags3' placeholder='Digite algumas de suas habilidades' value=''>
+							</div>
 						</div>
 						<div class="row">
 						    <div class="col-sm-12 form-group">

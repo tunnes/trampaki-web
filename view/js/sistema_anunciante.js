@@ -141,7 +141,7 @@
                     arrayResponse.forEach(function(categoria){
                         categoriasDOM = categoriasDOM + "<option value='" + categoria.cd_categoria + "'>" + categoria.nm_categoria + "</option>";
                     });
-                $('#codigo_categoria_01, #codigo_categoria_02, #codigo_categoria_03').append(categoriasDOM);
+                    $('#codigo_categoria_01, #codigo_categoria_02, #codigo_categoria_03').append(categoriasDOM);
             }
         });
     }

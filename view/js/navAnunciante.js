@@ -2,18 +2,20 @@
 // de estilo ou imagens.
 
 document.addEventListener("DOMContentLoaded", function() {
-  verificaStack();
-  manipulaNav("painel", alteraEstado);
-  switchItemNav("painel", window.history.state, "#ef914c");
-  
-  
-window.onpopstate = () => {
-    if(window.history.state != null) {
-        inserirConteudo(ajeitaCaminho(window.history.state));
-        switchItemNav("painel", window.history.state, "#ef914c");
-     } else {
-         window.location.href="/login";   
-    }}});
+ 
+    verificaStack();
+    manipulaNav("painel", alteraEstado);
+    switchItemNav("painel", window.history.state, "#ef914c");
+ 
+    window.onpopstate = () => {
+        if(window.history.state != null) {
+            inserirConteudo(ajeitaCaminho(window.history.state));
+            switchItemNav("painel", window.history.state, "#ef914c");
+        }else{
+            window.location.href="/login";   
+        }
+    }
+});
 
 var adapterPaths = {
     "perfil"       : "prestador-perfil",
@@ -101,7 +103,6 @@ var pageCaller = function(ref, action) {
                   $("#janela").html(data.responseText);
                   $("#janela").fadeIn('slow');
                   $("#mapa").hide();
-                 
               }
          }
      });
@@ -116,11 +117,10 @@ var ajaxGenerico = function(metodo, resource, callback, obj) {
                 "Authorization": sessionStorage.getItem("authorization")
             },
             complete: function(data) {
-                obj === null ? callback(JSON.parse(data.responseText))
-                             : $("#janela").html(obj["data"].responseText);
-                               callback(JSON.parse(data.responseText));
-                               $("#janela").fadeIn('slow');
-                               $("#mapa").hide();
+                obj === null ? callback(JSON.parse(data.responseText)) : $("#janela").html(obj["data"].responseText);
+                callback(JSON.parse(data.responseText));
+                $("#janela").fadeIn('slow');
+                $("#mapa").hide();
             }
         });
 }
