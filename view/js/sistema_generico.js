@@ -1,4 +1,54 @@
-//  FUNÇÕES AUXILIARES E ELEMENTOS GENÉRICOS ----------------------------------- 
+    // Setting Headers
+    var headerPrestador = {
+         "Authorization": sessionStorage.getItem("authorization"),
+         "trampaki_user": "1"
+    };
+    
+    var headerAnunciante = {
+         "Authorization": sessionStorage.getItem("authorization"),
+         "trampaki_user": "0"
+    };
+    
+    
+    //Carregador de paginas
+    var pageCaller = function(ref, action, headers) {
+     $.ajax({
+         url: ref,
+         method: "GET",
+         beforeSend: function () {
+            $("#loading-frame").fadeIn();
+         },
+         complete: function(data) {
+             if(action != null) {
+                  ajaxGenerico(action.met, action.resource, action.func, {data: data}, headers);
+              } else {
+                  $("#janela").html(data.responseText);
+                  $("#janela").fadeIn('slow');
+                  $("#mapa").hide();
+                  $("#loading-frame").css("display", "none");
+              }
+         }
+     });
+    }
+    
+    // Ajax Getter Genérico
+    var ajaxGenerico = function(metodo, resource, callback, obj, headers) {
+    	$.ajax({
+            type: metodo,
+            url: API + resource,
+            headers: headers,
+            complete: function(data) {
+                $("#loading-frame").css("display", "none");
+                obj === null ? callback(JSON.parse(data.responseText))
+                             : $("#janela").html(obj["data"].responseText);
+                               callback(JSON.parse(data.responseText));
+                               $("#janela").fadeIn('slow');
+                               $("#mapa").hide();
+                }
+            });
+        }
+    
+    //  FUNÇÕES AUXILIARES E ELEMENTOS GENÉRICOS ----------------------------------- 
     function carregarImagem(elemento, codigoImagem){
         elemento.style.backgroundImage = "url(" + API + "/carregar-imagem/" + codigoImagem;
         return elemento;
@@ -13,7 +63,7 @@
         });
     }
     
-
+    //Deprecated
     function novaJanela(caminho, funcao){
         document.getElementById('info-moldura').style.opacity = 0;
         document.getElementById('info-moldura').style.height = 1;
@@ -189,46 +239,31 @@
     function retornar(){
     	$("#janela").hide();
     	$("#mapa").show();
-    	mapEngineAnunciante();
+    	//mapEngineAnunciante();
     }
 
 //  OPERAÇÕES COM ANÚNCIOS ----------------------------------------------------- 
-    function visualizaAnuncio(codigoAnuncio){
-        novaJanela("view/ajax/prestador-anuncio.html");
-    	$.ajax({
-            type:"GET",
-            url: API + "/carregar-anuncio/" + codigoAnuncio,
-            headers:{
-                "Authorization": sessionStorage.getItem("authorization")
-            },
-            complete: function(data){
-                data = JSON.parse(data.responseText);
-
-                carregarCategorias(data.categorias);
-                
-                var descricaoDOM = document.getElementById('longHistorio');
-                    descricaoDOM.innerHTML = data.descricao;
-    			
-    			var tituloAnuncioDOM = document.getElementById('tituloAnuncioDOM');
-                    tituloAnuncioDOM.innerHTML = data.titulo;
-                    
-                var caminhoImagem = "url(" + API + "/carregar-imagem/"   
-                    
-                var imagem01 = document.getElementById('imagem01');
-                    data.cd_imagem_01 != null ? imagem01.style.backgroundImage = caminhoImagem + data.cd_imagem_01 : null;
-                
-                var imagem02 = document.getElementById('imagem02');
-            	    data.cd_imagem_02 != null ? imagem02.style.backgroundImage = caminhoImagem + data.cd_imagem_02 : null;
-                
-                var imagem03 = document.getElementById('imagem03');
-                    data.cd_imagem_03 != null ? imagem03.style.backgroundImage = caminhoImagem + data.cd_imagem_03 : null;
-                    		
-                $('#conectar').click(function(){
-                    enviarSolicitacao(codigoAnuncio);
-                });
-            }
+    var setVisualizaAnuncio = function (data) {
+        $("#info-moldura").css("display", "none");
+        carregarCategorias(data.categorias);
+        var descricaoDOM = document.getElementById('longHistorio');
+            descricaoDOM.innerHTML = data.descricao;
+    	var tituloAnuncioDOM = document.getElementById('tituloAnuncioDOM');
+            tituloAnuncioDOM.innerHTML = data.titulo;
+        var caminhoImagem = "url(" + API + "/carregar-imagem/";
+        var imagem01 = document.getElementById('imagem01');
+            data.cd_imagem_01 != null ? imagem01.style.backgroundImage = caminhoImagem + data.cd_imagem_01 : null;
+        var imagem02 = document.getElementById('imagem02');
+    	    data.cd_imagem_02 != null ? imagem02.style.backgroundImage = caminhoImagem + data.cd_imagem_02 : null;
+        var imagem03 = document.getElementById('imagem03');
+            data.cd_imagem_03 != null ? imagem03.style.backgroundImage = caminhoImagem + data.cd_imagem_03 : null;
+        $('#conectar').click(function(){
+            enviarSolicitacao(codigoAnuncio);
         });
-
+    } 
+    function visualizaAnuncio(codigoAnuncio) {
+        pageCaller("/view/ajax/prestador-anuncio.html", 
+                {func: setVisualizaAnuncio, resource: "/carregar-anuncio/" + codigoAnuncio, met: "GET"}, headerAnunciante);
     }
 
 //  OPERAÇÕES COM CONEXÕES -----------------------------------------------------

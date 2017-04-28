@@ -21,7 +21,7 @@ function efetuarAutenticacao(){
             401:function() {
                 autenticacaoErro();
             },
-            200:function(data, textStatus, request){
+            200:function(data, textStatus, request) {
                 sessionStorage.setItem('authorization', request.getResponseHeader('authorization'));
                 sessionStorage.setItem('trampaki_user', request.getResponseHeader('trampaki_user'));
                 sessionStorage.setItem('trampaki-id', request.getResponseHeader('trampaki-id'));

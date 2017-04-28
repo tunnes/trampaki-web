@@ -61,7 +61,7 @@ var switchItemNav = function(idPainel, itemAtual, cor) {
           n.style.backgroundColor = "inherit";
           return n;
      }).forEach(function(e) {
-         if(e["attributes"]["data-content"]["value"] == itemAtual){
+         if(e["attributes"]["data-content"]["value"] == itemAtual) {
              e.style.backgroundColor = cor;
          }
      });
@@ -70,51 +70,17 @@ var inserirConteudo = function (ref) {
      // Direcionador de Chamadas
      switch (window.history.state) {
             case "perfil":
-                meuPerfil()
+                pageCaller(ref, {func: setPerfilPrestador, resource: "/carregar-dados-prestador", met: "GET"}, headerPrestador);
                 break;
             case "solicitacoes":
-                solicitacoes();
+                pageCaller(ref, {func: setSolicitacoesPrestador, resource: "/carregar-solicitacoes", met: "GET"}, headerPrestador);
                 break;
             case "servicos":
-                meusServicos();
+                pageCaller(ref, {func: setServicos, resource: "/meus-servicos", met: "GET"}, headerPrestador);
                 break;
             case "mapa":             $("#janela").fadeOut(500); $("#mapa").show();  break;
             case "sair":             window.sairDoSistema(); break;
-            default:                 pageCaller(ref, null); break;
+            default:                 pageCaller(ref, null, headerPrestador); break;
      }
 }
-var pageCaller = function(ref, action) {
-    $("#janela").html("<img alt='carregando' src='/view/img/loading.gif'>");
-     $.ajax({
-         url: ref,
-         method: "GET",
-         complete: function(data) {
-             if(action != null) {
-                  ajaxGenerico("GET", action.resource, action.func, {data: data});
-              } else {
-                  $("#janela").html(data.responseText);
-                  $("#janela").fadeIn('slow');
-                  $("#mapa").hide();
-                 
-              }
-         }
-     });
-}
 
-// Ajax Getter Genérico
-var ajaxGenerico = function(metodo, resource, callback, obj) {
-    	$.ajax({
-            type: metodo,
-            url: API + resource,
-            headers: {
-                "Authorization": sessionStorage.getItem("authorization")
-            },
-            complete: function(data) {
-                obj === null ? callback(JSON.parse(data.responseText))
-                             : $("#janela").html(obj["data"].responseText);
-                               callback(JSON.parse(data.responseText));
-                               $("#janela").fadeIn('slow');
-                               $("#mapa").hide();
-            }
-        });
-}

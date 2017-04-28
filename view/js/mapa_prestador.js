@@ -419,6 +419,8 @@ function mapEngine(){
                     marcador.addListener('click', function(){
                         ultimo.getAnimation() != null ? ultimo.setAnimation(null) : null;
                         carregarVisualizacao(marcador);
+                        $("#info-moldura").css("display", "block");
+                        
                     });
                     arrayMarcadores.push(marcador);
                 }

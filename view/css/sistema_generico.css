@@ -9,7 +9,6 @@ body::-webkit-scrollbar {
     width: 6px;
     background: #F4F4F4;
 }
-
 .texto_nao_selecionavel{
     -webkit-touch-callout:none;
     -webkit-user-select:none;
@@ -349,6 +348,33 @@ span.namebox{
 /*SOLICITAÇÕES -------------------------------------------------------------- */
 #solicitacoes_recebidas{
     display: none;   
+}
+/* CARREGAMENTOS -------------------------------------------------------------- */
+#loading-frame {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    background-color: rgb(255,255,255);
+    display: none;
+}
+#loading-frame .center-loading{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+    width: 140px;
+    text-align: center;
+    
+}
+#loading-frame .center-loading span{
+     color: rgb(239, 145, 76);
+     font-weight: bold;
+     font-size: 1em;
+}
+#loading-frame i {
+    font-size: 10em;
+    color: rgb(239, 145, 76);
 }
 
 /* MEDIAQUERY GLOBAL -------------------------------------------------------- */

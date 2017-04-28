@@ -1,4 +1,4 @@
-// Evento acionado quando html é carregado não esperando por folhas
+// Evento acionado quando o html é carregado não esperando por folhas
 // de estilo ou imagens.
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -17,7 +17,7 @@ window.onpopstate = () => {
 
 var adapterPaths = {
     "perfil"       : "prestador-perfil",
-    "novoAnuncio"  : "novo-anuncio",
+    "novo-anuncio" : "novo-anuncio",
     "anuncios"     : "visualizar-anuncios",
     "solicitacoes" : "visualizar-solicitacoes"
 };
@@ -71,76 +71,20 @@ var inserirConteudo = function (ref) {
      // Direcionador de Chamadas
      switch (window.history.state) {
             case "perfil":
-                //pageCaller(ref, {func: setperfilAnunciante, resource: "/carregar-dados-anunciante"});
-                carregarDadosAnunciante()
+                pageCaller(ref, {func: setperfilAnunciante, resource: "/carregar-dados-anunciante", met: "GET"}, headerAnunciante);
                 break;
-            case "novoAnuncio":
-                    pageCaller(ref, null);
-                    cadastrarAnuncio();
+            case "novo-anuncio":
+                    pageCaller(ref, null, headerAnunciante); cadastrarAnuncio();
                 break;
             case "anuncios":
-                    meusAnuncios();
+                    pageCaller(ref, {func: setMeusAnuncios, resource: "/carregar-meus-anuncios", met: "GET"}, headerAnunciante); 
                 break;
             case "solicitacoes": 
-                    visualizarSolicitacoes();
+                   pageCaller("/view/ajax/visualizar-solicitacoes.html",
+                             {func: setVisualizarSolicitacoes, resource: "/carregar-solicitacoes", met: "GET"}, headerAnunciante);
                 break;
             case "mapa":             $("#janela").fadeOut(500); $("#mapa").show(); break;
             case "sair":             window.sairDoSistema(); break;
-            default:                 pageCaller(ref, null); break;
+            default:                 pageCaller(ref, null, headerAnunciante); break;
      }
-}
-var pageCaller = function(ref, action) {
-    $("#janela").html("<img alt='carregando' src='/view/img/loading.gif'>");
-     $.ajax({
-         url: ref,
-         method: "GET",
-         complete: function(data) {
-             if(action != null) {
-                  ajaxGenerico("GET", action.resource, action.func, {data: data});
-              } else {
-                  $("#janela").html(data.responseText);
-                  $("#janela").fadeIn('slow');
-                  $("#mapa").hide();
-                 
-              }
-         }
-     });
-}
-
-// Ajax Getter Genérico
-var ajaxGenerico = function(metodo, resource, callback, obj) {
-    	$.ajax({
-            type: metodo,
-            url: API + resource,
-            headers: {
-                "Authorization": sessionStorage.getItem("authorization")
-            },
-            complete: function(data) {
-                obj === null ? callback(JSON.parse(data.responseText))
-                             : $("#janela").html(obj["data"].responseText);
-                               callback(JSON.parse(data.responseText));
-                               $("#janela").fadeIn('slow');
-                               $("#mapa").hide();
-            }
-        });
-}
-
-function setperfilAnunciante (data) {
-    //carregarCategorias(data.categorias);
-    var imagem = document.getElementById('imagem_header');
-            	data.cd_imagem != null ? carregarImagem(imagem, data.cd_imagem) : null;
-            	document.getElementById('nm_prestador').innerHTML = data.nm_usuario;
-                document.getElementById('nome').innerHTML = data.nm_usuario;
-                document.getElementById('ds_profissional').innerHTML = data.ds_perfilProfissional;
-                document.getElementById('ds_email').innerHTML = data.ds_email;
-            	document.getElementById('cd_telefone').innerHTML = data.ds_telefone;
-                document.getElementById('sg_estado1').innerHTML = data.sg_estado;
-            	document.getElementById('header_estado').innerHTML = data.sg_estado;
-            	document.getElementById('cidade').innerHTML = data.endereco.cidade;
-            	document.getElementById('header_cidade').innerHTML =  data.endereco.cidade;
-            	document.getElementById('cep').innerHTML = data.cd_cep;
-            	document.getElementById('numResiden').innerHTML = data.cd_numeroResidencia;
-            	document.getElementById('dados_acesso').style.display = 'none';
-            	document.getElementById('botao_01').innerHTML = 'ME CONECTAR!';
-            	document.getElementById("botao_01").onclick = function (){ alert('foo');}
 }

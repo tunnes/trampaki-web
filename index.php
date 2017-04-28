@@ -13,7 +13,7 @@
         '/painel-prestador/sair'            =>'painel-prestador',
         '/painel-anunciante'                =>'painel-anunciante',
         '/painel-anunciante/perfil'         =>'painel-anunciante',
-        '/painel-anunciante/novoAnuncio'    =>'painel-anunciante',
+        '/painel-anunciante/novo-anuncio'    =>'painel-anunciante',
         '/painel-anunciante/anuncios'       =>'painel-anunciante',
         '/painel-anunciante/solicitacoes'   =>'painel-anunciante',
         '/painel-anunciante/mapa'           =>'painel-anunciante',

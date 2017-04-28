@@ -14,10 +14,12 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,800" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        
+        <!-- FontAwesome -->
+        <link rel="stylesheet" href="/view/css/font-awesome.min.css" type="text/css"/>
+        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
         <!-- GoogleMaps -->
         <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-
+        
         <!-- Estilos -->
         <link rel="stylesheet" href="/view/css/sistema_generico.css"  type="text/css"/>
         <link rel="stylesheet" href="/view/css/sistema_principal.css" type="text/css"/>        
@@ -37,6 +39,13 @@
         
     </head>
     <body>
+        <!-- Tela de Loading ============================================================================= --> 
+        <div id="loading-frame">
+            <div class="center-loading">
+               <i class="fa fa-spinner fa-spin"></i>
+               <span>CARREGANDO</span>
+           </div>
+        </div>
         <!-- Marcador Expandido =========================================================================== -->
         <div id="info-moldura" class="marcador_wrapper">
             <div id="info-fundo-imagem" class="marcador_imagem"></div>
@@ -62,7 +71,7 @@
                     <p id='modal_descricao'></p>
                 </div>
                 <div class="modal-footer">
-                    <!--<button id='modal_retornar'>RETORNAR</button>-->
+                    <button id='modal_retornar'>RETORNAR</button>
                 </div>
             </div>
         </div>
@@ -84,7 +93,7 @@
                     <span onclick='sairDoSistema()' id='sair'>SAIR</span>
                     -->
                     <span data-content="perfil" id="meu_perfil">MEU PERFIL</span>
-                    <span data-content="novoAnuncio" id='meus_servicos'>NOVO ANUNCIO</span> 
+                    <span data-content="novo-anuncio" id='meus_servicos'>NOVO ANUNCIO</span> 
                     <span data-content="anuncios" id='meus_servicos'>MEUS ANUNCIOS</span>
                     <span data-content="solicitacoes">SOLICITAÇÕES</span>
                     <span data-content="mapa">VER MAPA</span>

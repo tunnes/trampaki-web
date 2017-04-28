@@ -221,7 +221,9 @@
 #wrapper_encerrar_anuncio #buttons{
     margin-top: 0px;
 }
-
+.wrapper_item .item{
+    cursor: pointer;
+}
 
 fieldset, label { 
     margin: 0; padding: 0; 

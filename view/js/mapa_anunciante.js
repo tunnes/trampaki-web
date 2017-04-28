@@ -815,6 +815,7 @@ function mapEngineAnunciante(){
                         codigo: prestador.cd_usuario
                     });
                     marcador.addListener('click', function(){
+                        
                         ultimo.getAnimation() != null ? ultimo.setAnimation(null) : null;
                         carregarVisualizacao(marcador);
                     });
@@ -824,19 +825,19 @@ function mapEngineAnunciante(){
                 var clusterStyles = [
                   {
                     textColor: 'white',
-                    url: 'view/img/patrick_cluster.png',
+                    url: '/view/img/patrick_cluster.png',
                     height: 53,
                     width: 53
                   },
                  {
                     textColor: 'white',
-                    url: 'view/img/patrick_cluster.png',
+                    url: '/view/img/patrick_cluster.png',
                     height: 53,
                     width: 53
                   },
                  {
                     textColor: 'white',
-                    url: 'view/img/patrick_cluster.png',
+                    url: '/view/img/patrick_cluster.png',
                     height: 53,
                     width: 53
                   }
@@ -853,6 +854,7 @@ function mapEngineAnunciante(){
         
         
         function carregarVisualizacao(marcador){
+            
             document.getElementById('titulo').textContent = marcador.titulo;
             document.getElementById('info-moldura').style.opacity = 1;
             document.getElementById('info-moldura').style.height = "auto";
@@ -871,6 +873,8 @@ function mapEngineAnunciante(){
                 visualizarPrestador(marcador.codigo);
                 document.getElementById('info-moldura').style.opacity = 0;
                 document.getElementById('info-moldura').style.height = 1;
+                
+               
                 ultimo.setAnimation(null);
             };
             document.getElementById('momo').onclick=function(){

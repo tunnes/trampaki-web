@@ -9,13 +9,13 @@
 
         <link rel="shortcut icon" type="image/png" href="/view/img/fav_logo.png"/>
         <link rel="manifest" href="/view/js/manifest.json">
-        
         <!-- Bootstrap -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,800" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        
+        <!-- FontAwesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- GoogleMaps -->
         <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 
@@ -28,17 +28,21 @@
         <link rel="stylesheet" href="/view/css/modal.css" type="text/css"/>
 
         <!-- Scripts -->
-
         <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
         <script src="/view/js/firebaseconfig.js"></script>
         <script src="/configuration/sistema_global.js"></script>
         <script src="/view/js/sistema_generico.js"></script>
         <script src="/view/js/sistema_prestador.js"></script>
         <script src="/view/js/navPrestador.js"></script>
-
-        
     </head>
     <body>
+    <!-- Tela de Loading ============================================================================= --> 
+    <div id="loading-frame">
+        <div class="center-loading">
+           <i class="fa fa-spinner fa-spin"></i>
+           <span>CARREGANDO</span>
+       </div>
+    </div>
         <!-- Marcador Expandido =========================================================================== -->
         <div id="info-moldura" class="marcador_wrapper">
             <div id="info-fundo-imagem" class="marcador_imagem"></div>
