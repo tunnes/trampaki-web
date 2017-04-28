@@ -51,6 +51,18 @@ a{
     font-size: 20px;
     color: black;
 }
+
+.wrapper_logotipo{
+    width: 780px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: -webkit-translate(-50%, -50%);
+    transform: -moz-translate(-50%, -50%);
+    transform: -ms-translate(-50%, -50%);
+}
+
 .floating{
     float: left;
     -webkit-animation-name: Floatingx;
@@ -375,6 +387,10 @@ a{
     }
     
     /* CABEÇALHO ---------------- */
+    .wrapper_logotipo{
+        top: 50%;
+        left: 50%;
+    }
     .home_section img{
         width: 37%;
         float: none;
@@ -387,7 +403,7 @@ a{
     }
     .name_logo {
         width: 100%;
-        margin-top: 0px;
+        margin-top: 0px !important;
         display: block;
         margin-right: auto;
         margin-left: auto !important;
@@ -447,12 +463,7 @@ a{
         margin-top: 30px;
     }
 }
-@media (max-width: 680px) {
-    /* COMECAR AGORA ----------- */
-    .cadastro_section .button{
-        font-size: 20px;
-    }
-}
+
 @media (max-width: 600px) {
     /* CABEÇALHO -------------- */    
     .home_section h1 {

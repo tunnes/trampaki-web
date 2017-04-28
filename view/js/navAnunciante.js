@@ -2,18 +2,20 @@
 // de estilo ou imagens.
 
 document.addEventListener("DOMContentLoaded", function() {
-  verificaStack();
-  manipulaNav("painel", alteraEstado);
-  switchItemNav("painel", window.history.state, "#ef914c");
-  
-  
-window.onpopstate = () => {
-    if(window.history.state != null) {
-        inserirConteudo(ajeitaCaminho(window.history.state));
-        switchItemNav("painel", window.history.state, "#ef914c");
-     } else {
-         window.location.href="/login";   
-    }}});
+ 
+    verificaStack();
+    manipulaNav("painel", alteraEstado);
+    switchItemNav("painel", window.history.state, "#ef914c");
+ 
+    window.onpopstate = () => {
+        if(window.history.state != null) {
+            inserirConteudo(ajeitaCaminho(window.history.state));
+            switchItemNav("painel", window.history.state, "#ef914c");
+        }else{
+            window.location.href="/login";   
+        }
+    }
+});
 
 var adapterPaths = {
     "perfil"       : "prestador-perfil",
